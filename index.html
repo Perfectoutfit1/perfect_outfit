@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfect Outfit — Coming Soon</title>
+  <meta name="description" content="Perfect Outfit is coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --text: #1c1a17;
+      --muted: #7a7268;
+      --accent: #b08d57;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141210;
+        --text: #f3eee6;
+        --muted: #a39a8e;
+        --accent: #d4b07a;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px 16px;
+    }
+    main { max-width: 720px; }
+    .rule {
+      width: 56px;
+      height: 1px;
+      background: var(--accent);
+      margin: 0 auto 28px;
+    }
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 9vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    p {
+      margin-top: 20px;
+      font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    p span { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="rule"></div>
+    <h1>Perfect Outfit</h1>
+    <p><span>Coming</span> Soon</p>
+  </main>
+</body>
+</html>

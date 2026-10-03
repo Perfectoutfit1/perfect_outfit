@@ -1,0 +1,14 @@
+# Secrets / per-project credentials
+.claude/settings.local.json
+.envrc
+.env
+.env.*
+!.env.example
+
+# Supabase local
+supabase/.temp/
+supabase/.branches/
+
+.vercel
+.env*
+!.env.example

@@ -3,68 +3,719 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perfect Outfit — Coming Soon</title>
-  <meta name="description" content="Perfect Outfit is coming soon.">
+  <title>Custom Streetwear Manufacturer | Low MOQ Private Label Clothing | Perfect Outfit Intl</title>
+  <meta name="description" content="Custom hoodies, tees, sports uniforms, leather and workwear manufacturer. Low MOQ from 50 pcs, samples in 7–10 days, worldwide shipping. Get a free quote.">
+  <meta property="og:title" content="Perfect Outfit Intl — Your Brand. Our Factory.">
+  <meta property="og:description" content="Custom clothing manufacturer for streetwear brands, teams and private labels. Low MOQ, fast samples, worldwide shipping.">
+  <meta name="theme-color" content="#0A0A0A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #faf7f2;
-      --text: #1c1a17;
-      --muted: #7a7268;
-      --accent: #b08d57;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #141210;
-        --text: #f3eee6;
-        --muted: #a39a8e;
-        --accent: #d4b07a;
-      }
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --surface-2: #1C1C1C;
+      --line: #2A2A2A;
+      --text: #FFFFFF;
+      --muted: #A3A3A3;
+      --accent: #F5C518;
+      --accent-ink: #0A0A0A;
+      --max: 1200px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
       font-family: "Inter", system-ui, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    main { max-width: 720px; }
-    .rule {
-      width: 56px;
-      height: 1px;
-      background: var(--accent);
-      margin: 0 auto 28px;
-    }
-    h1 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 700;
-      font-size: clamp(2.6rem, 9vw, 5.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-    }
-    p {
-      margin-top: 20px;
-      font-size: clamp(0.8rem, 2.4vw, 0.95rem);
-      font-weight: 500;
-      letter-spacing: 0.4em;
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+
+    h1, h2, h3, .display {
+      font-family: "Anton", Impact, sans-serif;
+      font-weight: 400;
       text-transform: uppercase;
-      color: var(--muted);
+      letter-spacing: 0.01em;
+      line-height: 1.02;
     }
-    p span { color: var(--accent); }
+    h2 { font-size: clamp(2rem, 5.5vw, 3.6rem); }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 620px; margin-top: 16px; }
+    .gold { color: var(--accent); }
+    section { padding: 88px 0; }
+    @media (max-width: 640px) { section { padding: 64px 0; } }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 15px 26px;
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 2px solid var(--accent);
+      transition: transform .15s ease, background .15s ease, color .15s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: var(--accent-ink); }
+    .btn-primary:hover { background: #FFD84D; transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 3px;
+    }
+
+    /* Announcement bar */
+    .announce {
+      background: var(--accent); color: var(--accent-ink);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      text-align: center; padding: 9px 16px;
+    }
+    .announce span { margin: 0 10px; opacity: .5; }
+
+    /* Header */
+    header.site {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,10,10,.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
+    .logo { font-family: "Anton", sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
+    .logo small { font-family: "Inter", sans-serif; font-size: .6rem; font-weight: 700; letter-spacing: .3em; color: var(--accent); margin-left: 6px; vertical-align: middle; }
+    .menu { display: flex; gap: 26px; list-style: none; }
+    .menu a { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .15s; }
+    .menu a:hover { color: var(--accent); }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn { padding: 11px 18px; font-size: .75rem; }
+    .burger { display: none; background: none; border: 0; color: var(--text); width: 44px; height: 44px; cursor: pointer; }
+    .burger svg { width: 26px; height: 26px; }
+    @media (max-width: 1020px) {
+      .menu {
+        display: none; position: absolute; top: 72px; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line);
+      }
+      .menu.open { display: flex; }
+      .menu a { display: block; padding: 16px; border-top: 1px solid var(--line); }
+      .burger { display: inline-flex; align-items: center; justify-content: center; }
+    }
+    @media (max-width: 480px) { .nav-cta .btn { display: none; } }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: calc(100vh - 106px);
+      display: flex; align-items: center;
+      padding: 80px 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 85% 20%, rgba(245,197,24,.14), transparent 70%),
+        radial-gradient(ellipse 50% 60% at 0% 100%, rgba(255,255,255,.05), transparent 70%),
+        var(--bg);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 20%, transparent 75%);
+      opacity: .45;
+    }
+    .hero-bg-word {
+      position: absolute; right: -2vw; bottom: -4vw;
+      font-family: "Anton", sans-serif; font-size: 26vw; line-height: .8;
+      color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.06);
+      pointer-events: none; user-select: none; white-space: nowrap;
+    }
+    .hero .wrap { position: relative; }
+    .hero h1 { font-size: clamp(3.4rem, 12vw, 9rem); margin: 4px 0 24px; }
+    .hero p.sub { font-size: clamp(1rem, 2.2vw, 1.2rem); color: #D4D4D4; max-width: 600px; }
+    .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+    .checks { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 32px; font-size: .85rem; color: var(--muted); list-style: none; }
+    .checks li::before { content: "✓"; color: var(--accent); font-weight: 700; margin-right: 8px; }
+
+    /* Stats */
+    .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); padding: 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat { padding: 40px 24px; border-left: 1px solid var(--line); }
+    .stat:first-child { border-left: 0; }
+    .stat .num { font-family: "Anton", sans-serif; font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--accent); line-height: 1; }
+    .stat .lbl { margin-top: 10px; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 760px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(3) { border-left: 0; }
+      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    }
+
+    /* Audience */
+    .aud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+    .aud { background: var(--surface); border: 1px solid var(--line); padding: 28px 24px; }
+    .aud .n { font-family: "Anton", sans-serif; color: var(--accent); font-size: 1rem; }
+    .aud h3 { font-size: 1.5rem; margin: 14px 0 8px; }
+    .aud p { color: var(--muted); font-size: .92rem; }
+    @media (max-width: 900px) { .aud-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .aud-grid { grid-template-columns: 1fr; } }
+
+    /* Product lines */
+    .cats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
+    .cat {
+      position: relative; overflow: hidden; min-height: 360px;
+      border: 1px solid var(--line); padding: 32px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      transition: border-color .2s ease;
+    }
+    .cat::before {
+      content: ""; position: absolute; inset: 0; z-index: 0;
+      transition: transform .5s ease;
+    }
+    .cat:hover { border-color: var(--accent); }
+    .cat:hover::before { transform: scale(1.05); }
+    .cat > * { position: relative; z-index: 1; }
+    .cat .big {
+      position: absolute; top: 18px; right: 24px; z-index: 0;
+      font-family: "Anton", sans-serif; font-size: 7rem; line-height: 1;
+      color: transparent; -webkit-text-stroke: 1px rgba(245,197,24,.28);
+    }
+    .cat h3 { font-size: clamp(2rem, 4vw, 2.8rem); }
+    .cat p { color: #CFCFCF; margin: 10px 0 20px; max-width: 440px; font-size: .95rem; }
+    .cat .go { font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+    .cat-street::before { background: linear-gradient(160deg, #1d1d1d 0%, #0b0b0b 60%), #111; background-image: repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 14px), linear-gradient(160deg, #222 0%, #0b0b0b 70%); }
+    .cat-sport::before { background-image: repeating-linear-gradient(90deg, rgba(245,197,24,.05) 0 40px, transparent 40px 80px), linear-gradient(200deg, #1f1f1f 0%, #0b0b0b 70%); }
+    .cat-leather::before { background-image: radial-gradient(circle at 30% 30%, rgba(120,72,30,.35), transparent 60%), radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(160deg, #1a1612 0%, #0b0b0b 70%); background-size: auto, 6px 6px, auto; }
+    .cat-work::before { background-image: repeating-linear-gradient(45deg, rgba(245,197,24,.06) 0 12px, transparent 12px 24px), linear-gradient(200deg, #1c1c1c 0%, #0b0b0b 70%); }
+    @media (max-width: 760px) { .cats { grid-template-columns: 1fr; } .cat { min-height: 300px; padding: 24px; } }
+
+    /* Why us */
+    .why { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .why-item { padding: 32px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .why-item .ic { width: 44px; height: 44px; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); margin-bottom: 20px; }
+    .why-item .ic svg { width: 22px; height: 22px; }
+    .why-item h3 { font-size: 1.5rem; margin-bottom: 8px; }
+    .why-item p { color: var(--muted); font-size: .93rem; }
+    @media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+
+    /* Customization */
+    .custom-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
+    .cust { border: 1px solid var(--line); padding: 26px 22px; background: linear-gradient(180deg, var(--surface-2), var(--bg)); }
+    .cust h3 { font-size: 1.3rem; color: var(--accent); margin-bottom: 14px; }
+    .cust ul { list-style: none; }
+    .cust li { font-size: .9rem; color: #D4D4D4; padding: 7px 0; border-top: 1px solid var(--line); }
+    .cust li:first-child { border-top: 0; }
+    @media (max-width: 1020px) { .custom-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 680px) { .custom-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 440px) { .custom-grid { grid-template-columns: 1fr; } }
+
+    /* Process */
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 56px; counter-reset: s; list-style: none; }
+    .step { position: relative; padding: 0 20px 0 0; }
+    .step .dot {
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 2px solid var(--accent); color: var(--accent);
+      display: grid; place-items: center;
+      font-family: "Anton", sans-serif; font-size: 1.3rem;
+      background: var(--bg); position: relative; z-index: 1;
+    }
+    .step::before { content: ""; position: absolute; top: 28px; left: 56px; right: 0; height: 2px; background: var(--line); }
+    .step:last-child::before { display: none; }
+    .step h3 { font-size: 1.35rem; margin: 22px 0 8px; }
+    .step p { color: var(--muted); font-size: .9rem; }
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: 1fr; gap: 28px; }
+      .step { display: grid; grid-template-columns: 56px 1fr; gap: 0 20px; padding: 0; }
+      .step::before { top: 56px; left: 27px; right: auto; width: 2px; height: calc(100% - 28px); }
+      .step h3 { margin: 6px 0 4px; }
+      .step p { grid-column: 2; }
+    }
+
+    /* Portfolio */
+    .port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; }
+    .tile {
+      aspect-ratio: 1; border: 1px solid var(--line);
+      display: flex; align-items: flex-end; padding: 18px;
+      font-family: "Anton", sans-serif; text-transform: uppercase; font-size: 1.2rem;
+      position: relative; overflow: hidden;
+      transition: border-color .2s;
+    }
+    .tile:hover { border-color: var(--accent); }
+    .tile span { position: relative; z-index: 1; }
+    .tile small { display: block; font-family: "Inter", sans-serif; font-size: .7rem; font-weight: 600; letter-spacing: .15em; color: var(--accent); }
+    .t1 { background: radial-gradient(circle at 70% 30%, #3a3a3a, #0d0d0d 70%); }
+    .t2 { background: repeating-radial-gradient(circle at 30% 40%, #1b1b1b 0 6px, #141414 6px 12px); }
+    .t3 { background: linear-gradient(135deg, #2b2410, #0d0d0d 65%); }
+    .t4 { background: radial-gradient(circle at 20% 80%, #5a5a5a 0%, #262626 30%, #0d0d0d 70%); }
+    .t5 { background: repeating-linear-gradient(0deg, #161616 0 3px, #101010 3px 6px); }
+    .t6 { background: radial-gradient(circle at 60% 60%, #3d2a1a, #0d0d0d 70%); }
+    .center { text-align: center; }
+    .center .lead { margin-left: auto; margin-right: auto; }
+    .mt { margin-top: 40px; }
+    @media (max-width: 600px) { .port-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* Testimonials */
+    .testi { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .t-card { border: 1px dashed #3A3A3A; padding: 28px; background: var(--bg); }
+    .t-card .q { font-family: "Anton", sans-serif; font-size: 3rem; color: var(--accent); line-height: .6; }
+    .t-card p { color: #D4D4D4; margin: 16px 0 20px; }
+    .t-card .who { font-size: .85rem; color: var(--muted); }
+    .t-card .who b { color: var(--text); }
+    @media (max-width: 860px) { .t-grid { grid-template-columns: 1fr; } }
+
+    /* Quote */
+    .quote-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+    .quote-points { list-style: none; margin-top: 32px; }
+    .quote-points li { padding: 14px 0; border-top: 1px solid var(--line); color: #D4D4D4; display: flex; gap: 12px; }
+    .quote-points li::before { content: "→"; color: var(--accent); font-weight: 700; }
+    form.quote { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 32px; }
+    .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .field input, .field select, .field textarea {
+      background: var(--bg); color: var(--text);
+      border: 1px solid var(--line); padding: 13px 14px;
+      font: inherit; font-size: .95rem; border-radius: 0;
+      width: 100%;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; }
+    .field textarea { min-height: 110px; resize: vertical; }
+    form.quote .btn { width: 100%; margin-top: 22px; }
+    .secure { margin-top: 14px; font-size: .8rem; color: var(--muted); text-align: center; }
+    .form-msg { margin-top: 14px; font-size: .9rem; color: var(--accent); text-align: center; min-height: 1em; }
+    @media (max-width: 900px) { .quote-wrap { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 520px) { .fields { grid-template-columns: 1fr; } form.quote { padding: 22px 18px; } }
+
+    /* FAQ */
+    .faq { max-width: 860px; margin: 48px auto 0; }
+    .faq details { border-top: 1px solid var(--line); }
+    .faq details:last-child { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      list-style: none; cursor: pointer;
+      padding: 22px 40px 22px 0; position: relative;
+      font-weight: 600; font-size: 1.02rem;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.6rem; font-weight: 400; transition: transform .2s; }
+    .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+    .faq details p { padding: 0 0 22px; color: var(--muted); max-width: 720px; }
+
+    /* CTA band */
+    .band { background: var(--accent); color: var(--accent-ink); padding: 64px 0; }
+    .band .wrap { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+    .band h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+    .band .btn { background: var(--accent-ink); color: var(--accent); border-color: var(--accent-ink); }
+    .band .btn:hover { transform: translateY(-2px); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); padding: 64px 0 28px; }
+    .f-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; gap: 32px; }
+    .f-grid h4 { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .f-grid ul { list-style: none; }
+    .f-grid li { padding: 4px 0; }
+    .f-grid li a, .f-grid p { color: var(--muted); font-size: .9rem; }
+    .f-grid li a:hover { color: var(--text); }
+    .socials { display: flex; gap: 10px; margin-top: 18px; }
+    .socials a { width: 40px; height: 40px; border: 1px solid var(--line); display: grid; place-items: center; transition: border-color .15s, color .15s; }
+    .socials a:hover { border-color: var(--accent); color: var(--accent); }
+    .socials svg { width: 18px; height: 18px; }
+    .ship { display: flex; gap: 10px; margin-top: 14px; }
+    .ship span { border: 1px solid var(--line); padding: 6px 12px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; color: var(--muted); }
+    .copy { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: #6B6B6B; font-size: .8rem; }
+    @media (max-width: 900px) { .f-grid { grid-template-columns: 1fr 1fr; } .f-brand { grid-column: 1 / -1; } }
+
+    /* Floating WhatsApp */
+    .wa {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; color: #fff; display: grid; place-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      transition: transform .15s;
+    }
+    .wa:hover { transform: scale(1.08); }
+    .wa svg { width: 28px; height: 28px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <div class="rule"></div>
-    <h1>Perfect Outfit</h1>
-    <p><span>Coming</span> Soon</p>
+
+  <div class="announce">Low MOQ from 50 pcs<span>/</span>Samples in 7–10 days<span>/</span>Worldwide DHL &amp; FedEx shipping</div>
+
+  <header class="site">
+    <div class="wrap nav">
+      <a href="#top" class="logo" aria-label="Perfect Outfit Intl home">Perfect Outfit<small>INTL</small></a>
+      <ul class="menu" id="menu">
+        <li><a href="#products">Streetwear</a></li>
+        <li><a href="#products">Sportswear</a></li>
+        <li><a href="#products">Leather</a></li>
+        <li><a href="#products">Workwear</a></li>
+        <li><a href="#customization">Customization</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#quote" class="btn btn-primary">Get a Quote</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-word" aria-hidden="true">MADE</div>
+      <div class="wrap">
+        <span class="eyebrow">Custom clothing manufacturer · Private label · OEM / ODM</span>
+        <h1>Your <span class="gold">brand.</span><br>Our factory.</h1>
+        <p class="sub">Heavyweight streetwear, sports uniforms, leather and workwear — manufactured to your design, under your label. Start from just 50 pieces per design.</p>
+        <div class="ctas">
+          <a href="#quote" class="btn btn-primary">Upload your tech pack →</a>
+          <a href="#quote" class="btn btn-ghost">Request a sample</a>
+        </div>
+        <ul class="checks">
+          <li>Free quote within 24 hours</li>
+          <li>NDA available</li>
+          <li>Shipping to USA, UK, EU &amp; Australia</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Key numbers">
+      <div class="wrap stats-grid">
+        <div class="stat"><div class="num">50 PCS</div><div class="lbl">Minimum order per design</div></div>
+        <div class="stat"><div class="num">7–10 DAYS</div><div class="lbl">Sample turnaround</div></div>
+        <div class="stat"><div class="num">500+ GSM</div><div class="lbl">Heavyweight fabrics</div></div>
+        <div class="stat"><div class="num">WORLDWIDE</div><div class="lbl">DHL / FedEx doorstep delivery</div></div>
+      </div>
+    </section>
+
+    <!-- AUDIENCE -->
+    <section>
+      <div class="wrap">
+        <span class="eyebrow">Who we make for</span>
+        <h2>Built for brands just starting out —<br>and the ones <span class="gold">scaling up.</span></h2>
+        <div class="aud-grid">
+          <div class="aud"><div class="n">01</div><h3>Streetwear brands</h3><p>Drops, capsules and restocks with the heavyweight feel your customers expect.</p></div>
+          <div class="aud"><div class="n">02</div><h3>Apparel startups</h3><p>Launch your first collection without five-figure minimums.</p></div>
+          <div class="aud"><div class="n">03</div><h3>Sports teams &amp; clubs</h3><p>Fully custom uniforms with your colours, crests, names and numbers.</p></div>
+          <div class="aud"><div class="n">04</div><h3>Private labels</h3><p>Your label, our production — ready for your shelves or webstore.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" style="padding-top:0">
+      <div class="wrap">
+        <span class="eyebrow">Product lines</span>
+        <h2>What we manufacture</h2>
+        <div class="cats">
+          <a href="#quote" class="cat cat-street">
+            <span class="big" aria-hidden="true">01</span>
+            <h3>Streetwear</h3>
+            <p>Heavyweight hoodies, acid wash tees, sweat suits, denim, varsity jackets, windbreakers, jerseys, caps, socks, balaclavas and more.</p>
+            <span class="go">Get a streetwear quote →</span>
+          </a>
+          <a href="#quote" class="cat cat-sport">
+            <span class="big" aria-hidden="true">02</span>
+            <h3>Sportswear &amp; Uniforms</h3>
+            <p>American football, soccer, baseball, basketball, rugby and ice hockey uniforms — fully sublimated or stitched.</p>
+            <span class="go">Get a uniform quote →</span>
+          </a>
+          <a href="#quote" class="cat cat-leather">
+            <span class="big" aria-hidden="true">03</span>
+            <h3>Leather Garments</h3>
+            <p>Leather jackets, suits, pants, shorts and vests, cut and finished to your specification.</p>
+            <span class="go">Get a leather quote →</span>
+          </a>
+          <a href="#quote" class="cat cat-work">
+            <span class="big" aria-hidden="true">04</span>
+            <h3>Workwear</h3>
+            <p>Durable workwear suits, jackets, pants and accessories built for the job — and branded for your company.</p>
+            <span class="go">Get a workwear quote →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why">
+      <div class="wrap">
+        <span class="eyebrow">Why Perfect Outfit</span>
+        <h2>Why founders switch <span class="gold">to us</span></h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h16M4 12h10M4 17h6"/></svg></div>
+            <h3>Low MOQ</h3><p>Start with 30–50 pcs per design. Test the market without filling a warehouse.</p>
+          </div>
+          <div class="why-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+            <h3>Fast samples</h3><p>Your sample in 7–10 days — launch while the hype is still alive.</p>
+          </div>
+          <div class="why-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+            <h3>Premium quality</h3><p>240 GSM tees up to 500+ GSM fleece. Heavyweight feel, retail-ready finish.</p>
+          </div>
+          <div class="why-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+            <h3>Full private label</h3><p>Woven neck tags, care labels, hangtags, polybags and metal zipper pulls — all with your brand.</p>
+          </div>
+          <div class="why-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+            <h3>Direct factory pricing</h3><p>No middlemen, no agent markups. You deal with the people who make your product.</p>
+          </div>
+          <div class="why-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M1 7h13v10H1zM14 10h4l3 3v4h-7"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg></div>
+            <h3>Doorstep delivery</h3><p>Express DHL / FedEx shipping to wherever your brand is based.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUSTOMIZATION -->
+    <section id="customization">
+      <div class="wrap">
+        <span class="eyebrow">Customization &amp; branding</span>
+        <h2>Every detail. <span class="gold">Your way.</span></h2>
+        <p class="lead">From the fabric weight to the zipper pull — every piece is built around your brand identity.</p>
+        <div class="custom-grid">
+          <div class="cust"><h3>Printing</h3><ul><li>3D puff print</li><li>High-density screen print</li><li>Sublimation</li><li>DTG</li></ul></div>
+          <div class="cust"><h3>Embroidery</h3><ul><li>Flat embroidery</li><li>3D embroidery</li><li>Chenille patches</li><li>Towel patches</li></ul></div>
+          <div class="cust"><h3>Washes</h3><ul><li>Acid wash</li><li>Vintage wash</li><li>Distressed</li><li>Ripped finish</li></ul></div>
+          <div class="cust"><h3>Construction</h3><ul><li>Custom cut &amp; sew</li><li>Custom fits &amp; patterns</li><li>240–500+ GSM fabrics</li><li>Fleece &amp; heavy cotton</li></ul></div>
+          <div class="cust"><h3>Branding</h3><ul><li>Woven neck tags</li><li>Printed care labels</li><li>Hangtags &amp; polybags</li><li>Metal zipper pulls</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="why">
+      <div class="wrap">
+        <span class="eyebrow">How it works</span>
+        <h2>From idea to doorstep <span class="gold">in 5 steps</span></h2>
+        <ol class="steps">
+          <li class="step"><div class="dot">1</div><div><h3>Send your design</h3></div><p>Upload a tech pack, a mockup or even a sketch.</p></li>
+          <li class="step"><div class="dot">2</div><div><h3>Get your quote</h3></div><p>Pricing and timeline within 24 hours.</p></li>
+          <li class="step"><div class="dot">3</div><div><h3>Approve sample</h3></div><p>Your sample made in 7–10 days and shipped to you.</p></li>
+          <li class="step"><div class="dot">4</div><div><h3>Bulk production</h3></div><p>Made to your approved sample, quality-checked at every stage.</p></li>
+          <li class="step"><div class="dot">5</div><div><h3>Delivered</h3></div><p>Express shipping straight to your door, worldwide.</p></li>
+        </ol>
+        <div class="mt"><a href="#quote" class="btn btn-primary">Start step 1 →</a></div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section>
+      <div class="wrap center">
+        <span class="eyebrow">Recent work</span>
+        <h2>Made by us. <span class="gold">Worn by their customers.</span></h2>
+        <p class="lead">See production updates, finished pieces and client drops on our Instagram.</p>
+        <div class="port-grid">
+          <a class="tile t1" href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener"><span><small>Streetwear</small>Heavyweight hoodie</span></a>
+          <a class="tile t2" href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener"><span><small>Finish</small>Acid wash tee</span></a>
+          <a class="tile t3" href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener"><span><small>Outerwear</small>Varsity jacket</span></a>
+          <a class="tile t4" href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener"><span><small>Print</small>3D puff print</span></a>
+          <a class="tile t5" href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener"><span><small>Sets</small>Sweat suit</span></a>
+          <a class="tile t6" href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener"><span><small>Leather</small>Leather jacket</span></a>
+        </div>
+        <div class="mt"><a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener" class="btn btn-ghost">Follow @perfect_outfit_intl →</a></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (replace with real client reviews) -->
+    <section class="testi">
+      <div class="wrap">
+        <span class="eyebrow">Client feedback</span>
+        <h2>What brand owners say</h2>
+        <div class="t-grid">
+          <div class="t-card"><div class="q">“</div><p>[Real client review goes here — quality, communication, delivery time.]</p><div class="who"><b>[Name]</b> · [Brand] · [Country]</div></div>
+          <div class="t-card"><div class="q">“</div><p>[Real client review goes here — quality, communication, delivery time.]</p><div class="who"><b>[Name]</b> · [Brand] · [Country]</div></div>
+          <div class="t-card"><div class="q">“</div><p>[Real client review goes here — quality, communication, delivery time.]</p><div class="who"><b>[Name]</b> · [Brand] · [Country]</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section id="quote">
+      <div class="wrap quote-wrap">
+        <div>
+          <span class="eyebrow">Free quote</span>
+          <h2>Ready to build your <span class="gold">collection?</span></h2>
+          <p class="lead">Send us your design and get a free quote within 24 hours. No tech pack? A mockup, reference photo or sketch is enough.</p>
+          <ul class="quote-points">
+            <li>Reply within 24 hours</li>
+            <li>MOQ from 30–50 pcs per design</li>
+            <li>Sample in 7–10 days</li>
+            <li>Your designs stay 100% confidential</li>
+          </ul>
+        </div>
+        <form class="quote" id="quoteForm" novalidate>
+          <div class="fields">
+            <div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" name="brand" autocomplete="organization"></div>
+            <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="f-wa">WhatsApp number</label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" autocomplete="country-name"></div>
+            <div class="field"><label for="f-type">Product type</label>
+              <select id="f-type" name="product">
+                <option>Streetwear</option><option>Sportswear &amp; Uniforms</option><option>Leather Garments</option><option>Workwear</option><option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field full"><label for="f-qty">Quantity per design</label>
+              <select id="f-qty" name="quantity">
+                <option>30–50 pcs</option><option>50–100 pcs</option><option>100–300 pcs</option><option>300+ pcs</option>
+              </select>
+            </div>
+            <div class="field full"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" name="message" placeholder="Product, fabric/GSM, print or embroidery, colours, deadline…"></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Get my free quote</button>
+          <p class="secure">🔒 Your designs are 100% confidential. NDA available on request.<br>Your email app will open — attach your tech pack or mockup before sending.</p>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="why">
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions founders ask</h2>
+        </div>
+        <div class="faq">
+          <details><summary>What is your minimum order quantity?</summary><p>Our MOQ starts at 30–50 pieces per design, depending on the product and the customization involved.</p></details>
+          <details><summary>How much does a sample cost?</summary><p>[Sample policy — e.g. sample fee and whether it is credited against your bulk order.]</p></details>
+          <details><summary>How long does bulk production take?</summary><p>Bulk production typically takes [X–X] weeks after your sample is approved, depending on quantity and decoration.</p></details>
+          <details><summary>Do I need a tech pack?</summary><p>No. A mockup, reference photo or even a sketch is enough — our team will help you develop it into a production-ready spec.</p></details>
+          <details><summary>Do you ship to my country?</summary><p>Yes. We ship worldwide by DHL and FedEx express, door to door — including the USA, UK, Europe and Australia.</p></details>
+          <details><summary>Will my designs stay private?</summary><p>Always. We never resell, reuse or share client designs, and we're happy to sign an NDA before you send your files.</p></details>
+          <details><summary>What payment methods do you accept?</summary><p>[Payment terms — e.g. 50% deposit to start production, 50% before shipping.]</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <div class="band">
+      <div class="wrap">
+        <h2>Your next drop starts here.</h2>
+        <a href="#quote" class="btn">Get a free quote →</a>
+      </div>
+    </div>
+
   </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="f-grid">
+        <div class="f-brand">
+          <div class="logo">Perfect Outfit<small>INTL</small></div>
+          <p style="margin-top:14px;max-width:300px">Custom clothing manufacturer for streetwear brands, teams and private labels worldwide.</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul><li><a href="#products">Streetwear</a></li><li><a href="#products">Sportswear</a></li><li><a href="#products">Leather</a></li><li><a href="#products">Workwear</a></li></ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul><li><a href="#customization">Printing</a></li><li><a href="#customization">Embroidery</a></li><li><a href="#customization">Private label</a></li><li><a href="#process">How it works</a></li></ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="#faq">FAQ</a></li><li><a href="#quote">Get a quote</a></li><li><a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a></li></ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#" class="js-email">[Business email]</a></li>
+            <li><a href="#" class="js-wa">[WhatsApp number]</a></li>
+            <li><p>[Factory address]</p></li>
+          </ul>
+          <div class="ship"><span>DHL</span><span>FEDEX</span></div>
+        </div>
+      </div>
+      <div class="copy">
+        <span>© <span id="yr">2026</span> Perfect Outfit Intl. All rights reserved.</span>
+        <span>Custom · Private Label · OEM / ODM</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#quote" class="wa js-wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+  </a>
+
+  <script>
+    // Fill these in to make the form and WhatsApp buttons go live.
+    const CONTACT_EMAIL = "";      // e.g. "orders@perfectoutfitintl.com"
+    const WHATSAPP_NUMBER = "";    // international format, digits only, e.g. "923001234567"
+
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+    burger.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open);
+    });
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      menu.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+
+    if (WHATSAPP_NUMBER) {
+      const wa = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Hi Perfect Outfit Intl, I'd like a quote for my brand.");
+      document.querySelectorAll(".js-wa, .js-wa-float").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
+      document.querySelectorAll(".js-wa").forEach(a => a.textContent = "+" + WHATSAPP_NUMBER);
+    }
+    if (CONTACT_EMAIL) {
+      document.querySelectorAll(".js-email").forEach(a => { a.href = "mailto:" + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; });
+    }
+
+    const form = document.getElementById("quoteForm");
+    const msg = document.getElementById("formMsg");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(form));
+      if (!d.name.trim() || !form.email.checkValidity() || !d.email.trim()) {
+        msg.textContent = "Please add your name and a valid email.";
+        return;
+      }
+      if (!CONTACT_EMAIL) {
+        msg.textContent = "Quote form is being set up — please message us on Instagram @perfect_outfit_intl for now.";
+        return;
+      }
+      const body = [
+        "Name: " + d.name, "Brand: " + d.brand, "Email: " + d.email,
+        "WhatsApp: " + d.whatsapp, "Country: " + d.country,
+        "Product: " + d.product, "Quantity per design: " + d.quantity,
+        "", d.message, "", "(Tech pack / mockup attached)"
+      ].join("\n");
+      window.location.href = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent("Quote request — " + (d.brand || d.name)) +
+        "&body=" + encodeURIComponent(body);
+      msg.textContent = "Opening your email app — don't forget to attach your tech pack.";
+    });
+  </script>
 </body>
 </html>

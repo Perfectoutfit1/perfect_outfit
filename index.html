@@ -8,6 +8,7 @@
   <meta property="og:title" content="Perfect Outfit Intl — Your Brand. Our Factory.">
   <meta property="og:description" content="Custom clothing manufacturer for streetwear brands, teams and private labels. Low MOQ, fast samples, worldwide shipping.">
   <meta name="theme-color" content="#0A0A0A">
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="preload" as="image" href="images/hero.jpg" media="(min-width: 761px)">
   <link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width: 760px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -182,72 +183,213 @@
     /* Product lines */
     .cats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
     .cat {
-      position: relative; overflow: hidden; min-height: 360px;
+      position: relative; overflow: hidden; isolation: isolate; min-height: 440px;
       border: 1px solid var(--line); padding: 32px;
       display: flex; flex-direction: column; justify-content: flex-end;
-      transition: border-color .2s ease;
+      transition: border-color .3s ease, transform .4s ease;
     }
-    .cat::before {
-      content: ""; position: absolute; inset: 0; z-index: 0;
-      transition: transform .5s ease;
+    .cat-media {
+      position: absolute; inset: 0; z-index: -2;
+      background-size: cover; background-position: center;
+      filter: grayscale(.9) brightness(.55) contrast(1.05);
+      transform: scale(1.04);
+      transition: transform 1.1s cubic-bezier(.2,.8,.2,1), filter .7s ease;
+    }
+    .cat::after {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(0deg, rgba(10,10,10,.97) 8%, rgba(10,10,10,.55) 50%, rgba(10,10,10,.1) 100%);
     }
     .cat:hover { border-color: var(--accent); }
-    .cat:hover::before { transform: scale(1.05); }
-    .cat > * { position: relative; z-index: 1; }
+    .cat:hover .cat-media { filter: grayscale(0) brightness(.75) contrast(1.05); transform: scale(1.12); }
     .cat .big {
-      position: absolute; top: 18px; right: 24px; z-index: 0;
+      position: absolute; top: 18px; right: 24px;
       font-family: "Anton", sans-serif; font-size: 7rem; line-height: 1;
-      color: transparent; -webkit-text-stroke: 1px rgba(245,197,24,.28);
+      color: transparent; -webkit-text-stroke: 1.5px rgba(245,197,24,.55);
+      transition: color .4s ease, transform .6s ease;
     }
+    .cat:hover .big { color: rgba(245,197,24,.18); transform: translateY(-6px); }
     .cat h3 { font-size: clamp(2rem, 4vw, 2.8rem); }
-    .cat p { color: #CFCFCF; margin: 10px 0 20px; max-width: 440px; font-size: .95rem; }
-    .cat .go { font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
-    .cat-street::before { background: linear-gradient(160deg, #1d1d1d 0%, #0b0b0b 60%), #111; background-image: repeating-linear-gradient(115deg, rgba(255,255,255,.025) 0 2px, transparent 2px 14px), linear-gradient(160deg, #222 0%, #0b0b0b 70%); }
-    .cat-sport::before { background-image: repeating-linear-gradient(90deg, rgba(245,197,24,.05) 0 40px, transparent 40px 80px), linear-gradient(200deg, #1f1f1f 0%, #0b0b0b 70%); }
-    .cat-leather::before { background-image: radial-gradient(circle at 30% 30%, rgba(120,72,30,.35), transparent 60%), radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(160deg, #1a1612 0%, #0b0b0b 70%); background-size: auto, 6px 6px, auto; }
-    .cat-work::before { background-image: repeating-linear-gradient(45deg, rgba(245,197,24,.06) 0 12px, transparent 12px 24px), linear-gradient(200deg, #1c1c1c 0%, #0b0b0b 70%); }
-    @media (max-width: 760px) { .cats { grid-template-columns: 1fr; } .cat { min-height: 300px; padding: 24px; } }
+    .cat p { color: #D9D9D9; margin: 10px 0 16px; max-width: 460px; font-size: .95rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .chips span {
+      font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      padding: 5px 10px; border: 1px solid rgba(255,255,255,.18); background: rgba(10,10,10,.5);
+      backdrop-filter: blur(4px); color: #E5E5E5;
+    }
+    .cat .go { font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: inline-flex; gap: 8px; }
+    .cat .go i { font-style: normal; transition: transform .3s ease; }
+    .cat:hover .go i { transform: translateX(8px); }
+    .cat .bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); box-shadow: 0 0 18px var(--accent); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+    .cat:hover .bar { width: 100%; }
+    @media (max-width: 760px) { .cats { grid-template-columns: 1fr; } .cat { min-height: 380px; padding: 24px; } .cat .big { font-size: 5rem; } }
 
-    /* Why us */
+    /* Why us — bento */
     .why { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .why-item { padding: 32px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .why-item .ic { width: 44px; height: 44px; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); margin-bottom: 20px; }
-    .why-item .ic svg { width: 22px; height: 22px; }
-    .why-item h3 { font-size: 1.5rem; margin-bottom: 8px; }
-    .why-item p { color: var(--muted); font-size: .93rem; }
-    @media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+    .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 48px; }
+    .b {
+      --mx: 50%; --my: 50%;
+      position: relative; overflow: hidden; isolation: isolate;
+      background: var(--bg); border: 1px solid var(--line); padding: 30px;
+      transition: border-color .3s ease, transform .4s ease;
+    }
+    .b::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0;
+      background: radial-gradient(420px circle at var(--mx) var(--my), rgba(245,197,24,.14), transparent 45%);
+      transition: opacity .3s ease;
+    }
+    .b:hover { border-color: rgba(245,197,24,.55); transform: translateY(-4px); }
+    .b:hover::before { opacity: 1; }
+    .b h3 { font-size: 1.6rem; margin-bottom: 8px; }
+    .b p { color: var(--muted); font-size: .93rem; max-width: 460px; }
+    .b .tagline { font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: block; }
+    .b .huge { font-family: "Anton", sans-serif; font-size: clamp(5rem, 11vw, 9rem); line-height: .9; color: var(--accent); text-shadow: 0 0 40px rgba(245,197,24,.25); }
+    .b .huge small { font-size: .28em; color: var(--text); margin-left: 8px; letter-spacing: .04em; text-shadow: none; }
+    .b-moq { grid-column: span 3; grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+    .b-sample, .b-gsm { grid-column: span 3; }
+    .b-label, .b-price, .b-ship { grid-column: span 2; }
 
-    /* Customization */
-    .custom-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 48px; }
-    .cust { border: 1px solid var(--line); padding: 26px 22px; background: linear-gradient(180deg, var(--surface-2), var(--bg)); }
-    .cust h3 { font-size: 1.3rem; color: var(--accent); margin-bottom: 14px; }
-    .cust ul { list-style: none; }
-    .cust li { font-size: .9rem; color: #D4D4D4; padding: 7px 0; border-top: 1px solid var(--line); }
-    .cust li:first-child { border-top: 0; }
-    @media (max-width: 1020px) { .custom-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 680px) { .custom-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 440px) { .custom-grid { grid-template-columns: 1fr; } }
+    .compare { display: grid; gap: 14px; }
+    .compare .row { display: grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items: center; font-size: .82rem; color: var(--muted); }
+    .compare .row b { color: var(--text); text-align: right; font-weight: 700; }
+    .compare .track { height: 10px; background: #1f1f1f; overflow: hidden; }
+    .compare .fill { height: 100%; width: 0; background: #4a4a4a; transition: width 1.6s cubic-bezier(.2,.8,.2,1) .3s; }
+    .compare .row.us .fill { background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+    .compare .row.us { color: var(--text); }
+    .in .compare .fill { width: var(--w); }
+
+    .days { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; margin-top: 20px; }
+    .days span { height: 26px; background: #1f1f1f; position: relative; }
+    .days span::after { content: ""; position: absolute; inset: 0; background: var(--accent); transform: scaleY(0); transform-origin: bottom; transition: transform .35s ease; transition-delay: calc(var(--d) * 110ms + .3s); }
+    .in .days span::after { transform: scaleY(1); }
+    .days span:nth-child(n+8)::after { background: #FFE27A; }
+    .days-lbl { display: flex; justify-content: space-between; font-size: .7rem; color: var(--muted); margin-top: 8px; letter-spacing: .1em; text-transform: uppercase; }
+
+    .row-flex { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+    .bars { display: flex; align-items: flex-end; gap: 10px; height: 110px; }
+    .bars div { width: 34px; background: linear-gradient(0deg, rgba(245,197,24,.25), var(--accent)); height: 0; transition: height 1s cubic-bezier(.2,.8,.2,1); position: relative; }
+    .bars div span { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: .65rem; color: var(--muted); white-space: nowrap; }
+    .in .bars div { height: var(--h); }
+    .bars div:nth-child(2) { transition-delay: .15s; } .bars div:nth-child(3) { transition-delay: .3s; } .bars div:nth-child(4) { transition-delay: .45s; }
+    .mid-num { font-family: "Anton", sans-serif; font-size: clamp(3rem, 6vw, 4.6rem); color: var(--accent); line-height: 1; }
+    .mid-num small { font-size: .4em; color: var(--text); margin-left: 6px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tags span { font-size: .75rem; font-weight: 600; padding: 7px 12px; border: 1px dashed rgba(245,197,24,.5); color: #EDEDED; opacity: 0; transform: translateY(10px) rotate(-3deg); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--d) * 90ms + .3s); }
+    .in .tags span { opacity: 1; transform: none; }
+    .tags span:hover { background: var(--accent); color: var(--accent-ink); border-style: solid; }
+
+    .chain { display: grid; gap: 10px; margin-top: 20px; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .chain div { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .chain .node { padding: 7px 10px; border: 1px solid var(--line); }
+    .chain .old { color: #6B6B6B; text-decoration: line-through; }
+    .chain .old .node { border-style: dashed; }
+    .chain .new .node { border-color: var(--accent); color: var(--accent); }
+    .chain .new .ok { color: var(--accent); }
+
+    .route { margin-top: 18px; position: relative; }
+    .route svg { width: 100%; height: 90px; overflow: visible; }
+    .route .path { fill: none; stroke: #333; stroke-width: 2; stroke-dasharray: 5 6; }
+    .route .glow { fill: var(--accent); filter: drop-shadow(0 0 6px var(--accent)); }
+    .route text { fill: var(--muted); font-size: 11px; font-family: Inter, sans-serif; font-weight: 700; letter-spacing: .08em; }
+    .route .pin { fill: var(--accent); }
+
+    @media (max-width: 1020px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .b-moq, .b-sample, .b-gsm { grid-column: span 2; grid-row: auto; }
+      .b-label, .b-price, .b-ship { grid-column: span 1; }
+      .b-ship { grid-column: span 2; }
+    }
+    @media (max-width: 620px) {
+      .bento { grid-template-columns: 1fr; }
+      .b-moq, .b-sample, .b-gsm, .b-label, .b-price, .b-ship { grid-column: auto; }
+      .b { padding: 24px; }
+      .compare .row { grid-template-columns: 96px 1fr 44px; }
+    }
+
+    /* Marquee */
+    .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; background: var(--bg); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+    .marquee span { font-family: "Anton", sans-serif; font-size: clamp(1.4rem, 3vw, 2.2rem); text-transform: uppercase; white-space: nowrap; padding: 0 22px; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.5); }
+    .marquee span:nth-child(even) { color: var(--accent); -webkit-text-stroke: 0; font-size: clamp(1rem, 2vw, 1.4rem); align-self: center; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* Customization — expanding panels */
+    .acc { display: flex; gap: 12px; height: 540px; margin-top: 48px; }
+    .panel {
+      position: relative; flex: 1; min-width: 0; overflow: hidden; isolation: isolate; cursor: pointer;
+      border: 1px solid var(--line);
+      transition: flex 0.8s cubic-bezier(.2,.8,.2,1), border-color .4s ease;
+    }
+    .panel.active { flex: 4.2; border-color: var(--accent); }
+    .panel-img {
+      position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center;
+      filter: grayscale(1) brightness(.45); transform: scale(1.15);
+      transition: filter .8s ease, transform 1.2s cubic-bezier(.2,.8,.2,1);
+    }
+    .panel.active .panel-img { filter: grayscale(.1) brightness(.6); transform: scale(1); }
+    .panel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(10,10,10,.96) 15%, rgba(10,10,10,.2) 70%); }
+    .panel-num { position: absolute; top: 20px; left: 22px; font-family: "Anton", sans-serif; font-size: 1.1rem; color: var(--accent); }
+    .panel-v {
+      position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%) rotate(180deg);
+      writing-mode: vertical-rl; white-space: nowrap;
+      font-family: "Anton", sans-serif; font-size: 1.8rem; text-transform: uppercase; letter-spacing: .04em;
+      transition: opacity .3s ease;
+    }
+    .panel.active .panel-v { opacity: 0; }
+    .panel-body {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 32px;
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .4s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+      min-width: 360px;
+    }
+    .panel.active .panel-body { opacity: 1; transform: none; transition-delay: .35s; }
+    .panel-body h3 { font-size: clamp(2.2rem, 4vw, 3.4rem); color: var(--accent); margin-bottom: 6px; }
+    .panel-body p { color: #D4D4D4; max-width: 420px; margin-bottom: 18px; }
+    .panel-body ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .panel-body li { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 12px; background: rgba(245,197,24,.12); border: 1px solid rgba(245,197,24,.45); }
+    @media (max-width: 860px) {
+      .acc { flex-direction: column; height: auto; }
+      .panel { flex: none; height: 84px; transition: height .7s cubic-bezier(.2,.8,.2,1), border-color .4s ease; }
+      .panel.active { flex: none; height: 400px; }
+      .panel-v { writing-mode: horizontal-tb; transform: none; left: 64px; bottom: auto; top: 22px; font-size: 1.6rem; }
+      .panel-body { min-width: 0; padding: 22px; }
+    }
 
     /* Process */
-    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 56px; counter-reset: s; list-style: none; }
-    .step { position: relative; padding: 0 20px 0 0; }
+    .steps { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 56px; list-style: none; }
+    .rail { position: absolute; top: 28px; left: 28px; right: 28px; height: 2px; background: var(--line); pointer-events: none; }
+    .rail-fill { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: linear-gradient(90deg, rgba(245,197,24,.2), var(--accent)); box-shadow: 0 0 12px rgba(245,197,24,.6); transition: width .9s cubic-bezier(.65,0,.35,1), height .9s cubic-bezier(.65,0,.35,1); }
+    .runner {
+      position: absolute; top: 0; left: 0; width: 16px; height: 16px; margin: -7px 0 0 -8px; border-radius: 50%;
+      background: #FFF6CC; box-shadow: 0 0 0 4px rgba(245,197,24,.35), 0 0 22px 6px rgba(245,197,24,.85);
+      transition: left .9s cubic-bezier(.65,0,.35,1), top .9s cubic-bezier(.65,0,.35,1);
+    }
+    .step { position: relative; padding: 0 8px 18px 0; cursor: default; }
     .step .dot {
       width: 56px; height: 56px; border-radius: 50%;
-      border: 2px solid var(--accent); color: var(--accent);
+      border: 2px solid #3a3a3a; color: var(--muted);
       display: grid; place-items: center;
       font-family: "Anton", sans-serif; font-size: 1.3rem;
-      background: var(--bg); position: relative; z-index: 1;
+      background: var(--surface); position: relative; z-index: 1;
+      transition: all .45s ease;
     }
-    .step::before { content: ""; position: absolute; top: 28px; left: 56px; right: 0; height: 2px; background: var(--line); }
-    .step:last-child::before { display: none; }
-    .step h3 { font-size: 1.35rem; margin: 22px 0 8px; }
-    .step p { color: var(--muted); font-size: .9rem; }
+    .step h3 { font-size: 1.35rem; margin: 22px 0 8px; transition: color .3s ease; }
+    .step p { color: var(--muted); font-size: .9rem; transition: color .3s ease; }
+    .step.done .dot { border-color: var(--accent); color: var(--accent); }
+    .step.active .dot, .step:hover .dot {
+      background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+      box-shadow: 0 0 0 8px rgba(245,197,24,.12), 0 0 34px 6px rgba(245,197,24,.55);
+      transform: scale(1.1);
+    }
+    .step.active h3, .step:hover h3 { color: var(--accent); }
+    .step.active p, .step:hover p { color: #E5E5E5; }
+    .step:hover .dot { animation: pulse 1.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { box-shadow: 0 0 0 14px rgba(245,197,24,.06), 0 0 46px 10px rgba(245,197,24,.7); } }
     @media (max-width: 900px) {
-      .steps { grid-template-columns: 1fr; gap: 28px; }
+      .steps { grid-template-columns: 1fr; gap: 30px; }
+      .rail { top: 28px; bottom: 28px; left: 27px; right: auto; width: 2px; height: auto; }
       .step { display: grid; grid-template-columns: 56px 1fr; gap: 0 20px; padding: 0; }
-      .step::before { top: 56px; left: 27px; right: auto; width: 2px; height: calc(100% - 28px); }
       .step h3 { margin: 6px 0 4px; }
       .step p { grid-column: 2; }
     }
@@ -285,29 +427,85 @@
     .t-card .who b { color: var(--text); }
     @media (max-width: 860px) { .t-grid { grid-template-columns: 1fr; } }
 
-    /* Quote */
-    .quote-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+    /* Quote — inverted gold section */
+    #quote {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: var(--accent); color: var(--accent-ink);
+      padding: 110px 0;
+    }
+    #quote::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; opacity: .12;
+      background-image: repeating-linear-gradient(45deg, #000 0 2px, transparent 2px 22px);
+    }
+    .quote-ghost {
+      position: absolute; z-index: -1; left: 0; bottom: -3vw; white-space: nowrap;
+      font-family: "Anton", sans-serif; font-size: 20vw; line-height: .8; text-transform: uppercase;
+      color: transparent; -webkit-text-stroke: 2px rgba(10,10,10,.12);
+      animation: drift 30s linear infinite alternate; pointer-events: none;
+    }
+    @keyframes drift { to { transform: translateX(-30%); } }
+    #quote .eyebrow { color: var(--accent-ink); }
+    #quote h2 { font-size: clamp(2.6rem, 6.5vw, 5rem); }
+    #quote h2 .gold { color: transparent; -webkit-text-stroke: 2px var(--accent-ink); }
+    #quote .lead { color: #2A2A2A; }
+    .quote-wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: center; }
     .quote-points { list-style: none; margin-top: 32px; }
-    .quote-points li { padding: 14px 0; border-top: 1px solid var(--line); color: #D4D4D4; display: flex; gap: 12px; }
-    .quote-points li::before { content: "→"; color: var(--accent); font-weight: 700; }
-    form.quote { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); padding: 32px; }
+    .quote-points li { padding: 14px 0; border-top: 2px solid rgba(10,10,10,.15); color: #111; font-weight: 600; display: flex; gap: 12px; }
+    .quote-points li::before { content: "✦"; color: var(--accent-ink); }
+    .form-shell {
+      position: relative; padding: 2px;
+      background: conic-gradient(from var(--ang, 0deg), #0A0A0A 0 60%, #FFFFFF 75%, #0A0A0A 90%);
+      box-shadow: 18px 18px 0 rgba(10,10,10,.9);
+      animation: spin 5s linear infinite;
+    }
+    @property --ang { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+    @keyframes spin { to { --ang: 360deg; } }
+    form.quote { background: var(--bg); color: var(--text); padding: 36px; position: relative; }
+    form.quote .form-title { font-family: "Anton", sans-serif; text-transform: uppercase; font-size: 1.6rem; margin-bottom: 20px; }
+    form.quote .form-title span { color: var(--accent); }
     .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .field { display: flex; flex-direction: column; gap: 6px; }
     .field.full { grid-column: 1 / -1; }
     .field label { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
     .field input, .field select, .field textarea {
-      background: var(--bg); color: var(--text);
+      background: var(--surface); color: var(--text);
       border: 1px solid var(--line); padding: 13px 14px;
       font: inherit; font-size: .95rem; border-radius: 0;
-      width: 100%;
+      width: 100%; transition: border-color .2s, box-shadow .2s;
     }
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(245,197,24,.18); }
     .field textarea { min-height: 110px; resize: vertical; }
-    form.quote .btn { width: 100%; margin-top: 22px; }
+    form.quote .btn { width: 100%; margin-top: 22px; position: relative; overflow: hidden; }
+    form.quote .btn::after { content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent); transform: skewX(-20deg); animation: shine 3s ease-in-out infinite; }
+    @keyframes shine { 0%, 60% { left: -60%; } 100% { left: 130%; } }
     .secure { margin-top: 14px; font-size: .8rem; color: var(--muted); text-align: center; }
     .form-msg { margin-top: 14px; font-size: .9rem; color: var(--accent); text-align: center; min-height: 1em; }
-    @media (max-width: 900px) { .quote-wrap { grid-template-columns: 1fr; gap: 40px; } }
-    @media (max-width: 520px) { .fields { grid-template-columns: 1fr; } form.quote { padding: 22px 18px; } }
+    @media (max-width: 900px) { .quote-wrap { grid-template-columns: 1fr; gap: 48px; } #quote { padding: 80px 0; } }
+    @media (max-width: 520px) { .fields { grid-template-columns: 1fr; } form.quote { padding: 24px 18px; } .form-shell { box-shadow: 10px 10px 0 rgba(10,10,10,.9); } }
+
+    /* Scroll reveal */
+    .js .rv { opacity: 0; transition: opacity .9s ease, transform 1s cubic-bezier(.16,1,.3,1), filter .9s ease; transition-delay: calc(var(--i, 0) * 110ms); will-change: transform, opacity; }
+    .js .rv-up { transform: translateY(70px); }
+    .js .rv-left { transform: translateX(-90px); }
+    .js .rv-right { transform: translateX(90px); }
+    .js .rv-zoom { transform: scale(.82) translateY(40px); }
+    .js .rv-blur { transform: translateY(40px) scale(.96); filter: blur(14px); }
+    .js .rv-flip { transform: perspective(900px) rotateX(35deg) translateY(60px); transform-origin: top; }
+    .js .rv-clip { transform: translateY(70px) skewY(6deg); filter: blur(10px); letter-spacing: .08em; transition-property: opacity, transform, filter, letter-spacing; transition-duration: .9s, 1.1s, .9s, 1.2s; }
+    .js .rv.in { opacity: 1; transform: none; filter: none; }
+    .js .rv-clip.in { letter-spacing: .01em; }
+
+    /* Hero entrance */
+    .js .hero .eyebrow, .js .hero h1 .ln, .js .hero .sub, .js .hero .ctas, .js .hero .checks { opacity: 0; transform: translateY(50px); animation: heroIn 1s cubic-bezier(.16,1,.3,1) forwards; }
+    .hero h1 .ln { display: inline-block; }
+    .js .hero h1 .ln:nth-of-type(1) { animation-delay: .15s; }
+    .js .hero h1 .ln:nth-of-type(2) { animation-delay: .3s; }
+    .js .hero .sub { animation-delay: .5s; }
+    .js .hero .ctas { animation-delay: .65s; }
+    .js .hero .checks { animation-delay: .8s; }
+    .js .hero-img { animation: heroImg 1.8s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes heroIn { to { opacity: 1; transform: none; } }
+    @keyframes heroImg { from { opacity: 0; transform: scale(1.15); } }
 
     /* FAQ */
     .faq { max-width: 860px; margin: 48px auto 0; }
@@ -359,7 +557,8 @@
     .wa svg { width: 28px; height: 28px; }
 
     @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; scroll-behavior: auto !important; }
+      * { transition: none !important; scroll-behavior: auto !important; animation: none !important; }
+      .js .rv, .js .hero * { opacity: 1 !important; transform: none !important; filter: none !important; }
     }
   </style>
 </head>
@@ -396,7 +595,7 @@
       <div class="hero-bg-word" aria-hidden="true">MADE</div>
       <div class="wrap">
         <span class="eyebrow">Custom clothing manufacturer · Private label · OEM / ODM</span>
-        <h1>Your <span class="gold">brand.</span><br>Our factory.</h1>
+        <h1><span class="ln">Your <span class="gold">brand.</span></span><br><span class="ln">Our factory.</span></h1>
         <p class="sub">Heavyweight streetwear, sports uniforms, leather and workwear — manufactured to your design, under your label. Start from just 50 pieces per design.</p>
         <div class="ctas">
           <a href="#quote" class="btn btn-primary">Upload your tech pack →</a>
@@ -413,10 +612,10 @@
     <!-- STATS -->
     <section class="stats" aria-label="Key numbers">
       <div class="wrap stats-grid">
-        <div class="stat"><div class="num">50 PCS</div><div class="lbl">Minimum order per design</div></div>
-        <div class="stat"><div class="num">7–10 DAYS</div><div class="lbl">Sample turnaround</div></div>
-        <div class="stat"><div class="num">500+ GSM</div><div class="lbl">Heavyweight fabrics</div></div>
-        <div class="stat"><div class="num">WORLDWIDE</div><div class="lbl">DHL / FedEx doorstep delivery</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="50">0</span> PCS</div><div class="lbl">Minimum order per design</div></div>
+        <div class="stat"><div class="num">7–<span class="count" data-to="10">0</span> DAYS</div><div class="lbl">Sample turnaround</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="500">0</span>+ GSM</div><div class="lbl">Heavyweight fabrics</div></div>
+        <div class="stat"><div class="num" data-scramble="WORLDWIDE">WORLDWIDE</div><div class="lbl">DHL / FedEx doorstep delivery</div></div>
       </div>
     </section>
 
@@ -439,30 +638,42 @@
       <div class="wrap">
         <span class="eyebrow">Product lines</span>
         <h2>What we manufacture</h2>
-        <div class="cats">
-          <a href="#quote" class="cat cat-street">
+        <div class="cats" data-stagger="rv-zoom">
+          <a href="#quote" class="cat">
+            <div class="cat-media" style="background-image:url('images/cat-streetwear.jpg')"></div>
             <span class="big" aria-hidden="true">01</span>
             <h3>Streetwear</h3>
-            <p>Heavyweight hoodies, acid wash tees, sweat suits, denim, varsity jackets, windbreakers, jerseys, caps, socks, balaclavas and more.</p>
-            <span class="go">Get a streetwear quote →</span>
+            <p>Heavyweight hoodies, acid wash tees, sweat suits, denim, varsity jackets, windbreakers and more.</p>
+            <div class="chips"><span>Hoodies</span><span>Tees</span><span>Sweat suits</span><span>Denim</span><span>Varsity</span><span>Caps</span></div>
+            <span class="go">Get a streetwear quote <i>→</i></span>
+            <span class="bar"></span>
           </a>
-          <a href="#quote" class="cat cat-sport">
+          <a href="#quote" class="cat">
+            <div class="cat-media" style="background-image:url('images/cat-sportswear.jpg')"></div>
             <span class="big" aria-hidden="true">02</span>
             <h3>Sportswear &amp; Uniforms</h3>
-            <p>American football, soccer, baseball, basketball, rugby and ice hockey uniforms — fully sublimated or stitched.</p>
-            <span class="go">Get a uniform quote →</span>
+            <p>Team uniforms fully sublimated or stitched — your colours, crests, names and numbers.</p>
+            <div class="chips"><span>American football</span><span>Soccer</span><span>Baseball</span><span>Basketball</span><span>Rugby</span><span>Ice hockey</span></div>
+            <span class="go">Get a uniform quote <i>→</i></span>
+            <span class="bar"></span>
           </a>
-          <a href="#quote" class="cat cat-leather">
+          <a href="#quote" class="cat">
+            <div class="cat-media" style="background-image:url('images/cat-leather.jpg')"></div>
             <span class="big" aria-hidden="true">03</span>
             <h3>Leather Garments</h3>
-            <p>Leather jackets, suits, pants, shorts and vests, cut and finished to your specification.</p>
-            <span class="go">Get a leather quote →</span>
+            <p>Genuine leather pieces, cut and finished to your specification.</p>
+            <div class="chips"><span>Jackets</span><span>Suits</span><span>Pants</span><span>Shorts</span><span>Vests</span></div>
+            <span class="go">Get a leather quote <i>→</i></span>
+            <span class="bar"></span>
           </a>
-          <a href="#quote" class="cat cat-work">
+          <a href="#quote" class="cat">
+            <div class="cat-media" style="background-image:url('images/cat-workwear.jpg')"></div>
             <span class="big" aria-hidden="true">04</span>
             <h3>Workwear</h3>
-            <p>Durable workwear suits, jackets, pants and accessories built for the job — and branded for your company.</p>
-            <span class="go">Get a workwear quote →</span>
+            <p>Durable workwear built for the job — and branded for your company.</p>
+            <div class="chips"><span>Suits</span><span>Jackets</span><span>Pants</span><span>Accessories</span></div>
+            <span class="go">Get a workwear quote <i>→</i></span>
+            <span class="bar"></span>
           </a>
         </div>
       </div>
@@ -473,31 +684,81 @@
       <div class="wrap">
         <span class="eyebrow">Why Perfect Outfit</span>
         <h2>Why founders switch <span class="gold">to us</span></h2>
-        <div class="why-grid">
-          <div class="why-item">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h16M4 12h10M4 17h6"/></svg></div>
-            <h3>Low MOQ</h3><p>Start with 30–50 pcs per design. Test the market without filling a warehouse.</p>
-          </div>
-          <div class="why-item">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
-            <h3>Fast samples</h3><p>Your sample in 7–10 days — launch while the hype is still alive.</p>
-          </div>
-          <div class="why-item">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
-            <h3>Premium quality</h3><p>240 GSM tees up to 500+ GSM fleece. Heavyweight feel, retail-ready finish.</p>
-          </div>
-          <div class="why-item">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 12l-8 8-9-9V3h8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
-            <h3>Full private label</h3><p>Woven neck tags, care labels, hangtags, polybags and metal zipper pulls — all with your brand.</p>
-          </div>
-          <div class="why-item">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
-            <h3>Direct factory pricing</h3><p>No middlemen, no agent markups. You deal with the people who make your product.</p>
-          </div>
-          <div class="why-item">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M1 7h13v10H1zM14 10h4l3 3v4h-7"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg></div>
-            <h3>Doorstep delivery</h3><p>Express DHL / FedEx shipping to wherever your brand is based.</p>
-          </div>
+        <div class="bento" data-stagger="rv-blur">
+
+          <article class="b b-moq">
+            <div>
+              <span class="tagline">Low MOQ</span>
+              <div class="huge"><span class="count" data-to="50">0</span><small>PCS / DESIGN</small></div>
+            </div>
+            <div>
+              <h3>Test the market. Not your bank balance.</h3>
+              <p>Start with just 30–50 pieces per design. Launch a drop, see what sells, then scale — without filling a warehouse.</p>
+            </div>
+            <div class="compare">
+              <div class="row"><span>Many factories</span><div class="track"><div class="fill" style="--w:100%"></div></div><b>300+</b></div>
+              <div class="row us"><span>Perfect Outfit</span><div class="track"><div class="fill" style="--w:16%"></div></div><b>50</b></div>
+            </div>
+          </article>
+
+          <article class="b b-sample">
+            <span class="tagline">Fast samples</span>
+            <div class="row-flex">
+              <div class="mid-num">7–<span class="count" data-to="10">0</span><small>DAYS</small></div>
+              <h3 style="max-width:260px">Sample in hand while the hype is alive.</h3>
+            </div>
+            <div class="days">
+              <span style="--d:0"></span><span style="--d:1"></span><span style="--d:2"></span><span style="--d:3"></span><span style="--d:4"></span><span style="--d:5"></span><span style="--d:6"></span><span style="--d:7"></span><span style="--d:8"></span><span style="--d:9"></span>
+            </div>
+            <div class="days-lbl"><span>Design received</span><span>Sample shipped</span></div>
+          </article>
+
+          <article class="b b-gsm">
+            <span class="tagline">Premium quality</span>
+            <div class="row-flex">
+              <div>
+                <div class="mid-num"><span class="count" data-to="500">0</span>+<small>GSM</small></div>
+                <p style="margin-top:10px">240 GSM tees up to 500+ GSM fleece. Heavyweight feel, retail-ready finish.</p>
+              </div>
+              <div class="bars" aria-hidden="true">
+                <div style="--h:40%"><span>240</span></div>
+                <div style="--h:58%"><span>320</span></div>
+                <div style="--h:78%"><span>400</span></div>
+                <div style="--h:100%"><span>500+</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="b b-label">
+            <span class="tagline">Full private label</span>
+            <h3>Your brand on every detail</h3>
+            <div class="tags">
+              <span style="--d:0">Woven neck tags</span><span style="--d:1">Care labels</span><span style="--d:2">Hangtags</span><span style="--d:3">Polybags</span><span style="--d:4">Zipper pulls</span>
+            </div>
+          </article>
+
+          <article class="b b-price">
+            <span class="tagline">Factory direct</span>
+            <h3>No middlemen. No markups.</h3>
+            <div class="chain">
+              <div class="old"><span class="node">Brand</span>→<span class="node">Agent</span>→<span class="node">Factory</span></div>
+              <div class="new"><span class="node">Brand</span>→<span class="node">Perfect Outfit</span><span class="ok">✓</span></div>
+            </div>
+          </article>
+
+          <article class="b b-ship">
+            <span class="tagline">Doorstep delivery</span>
+            <h3>DHL / FedEx express, worldwide</h3>
+            <div class="route" aria-hidden="true">
+              <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+                <path id="routePath" class="path" d="M20 62 Q60 0 110 26 T175 42 Q235 96 282 66"/>
+                <circle class="pin" cx="20" cy="62" r="4"/><circle class="pin" cx="110" cy="26" r="4"/><circle class="pin" cx="175" cy="42" r="4"/><circle class="pin" cx="282" cy="66" r="4"/>
+                <text x="8" y="84">USA</text><text x="100" y="14">UK</text><text x="166" y="30">EU</text><text x="262" y="88">AUS</text>
+                <circle class="glow" r="5"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#routePath"/></animateMotion></circle>
+              </svg>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -507,13 +768,46 @@
       <div class="wrap">
         <span class="eyebrow">Customization &amp; branding</span>
         <h2>Every detail. <span class="gold">Your way.</span></h2>
-        <p class="lead">From the fabric weight to the zipper pull — every piece is built around your brand identity.</p>
-        <div class="custom-grid">
-          <div class="cust"><h3>Printing</h3><ul><li>3D puff print</li><li>High-density screen print</li><li>Sublimation</li><li>DTG</li></ul></div>
-          <div class="cust"><h3>Embroidery</h3><ul><li>Flat embroidery</li><li>3D embroidery</li><li>Chenille patches</li><li>Towel patches</li></ul></div>
-          <div class="cust"><h3>Washes</h3><ul><li>Acid wash</li><li>Vintage wash</li><li>Distressed</li><li>Ripped finish</li></ul></div>
-          <div class="cust"><h3>Construction</h3><ul><li>Custom cut &amp; sew</li><li>Custom fits &amp; patterns</li><li>240–500+ GSM fabrics</li><li>Fleece &amp; heavy cotton</li></ul></div>
-          <div class="cust"><h3>Branding</h3><ul><li>Woven neck tags</li><li>Printed care labels</li><li>Hangtags &amp; polybags</li><li>Metal zipper pulls</li></ul></div>
+        <p class="lead">From the fabric weight to the zipper pull — every piece is built around your brand identity. Hover to explore.</p>
+      </div>
+      <div class="marquee" style="margin-top:40px" aria-hidden="true">
+        <div class="marquee-track">
+          <span>3D Puff Print</span><span>✦</span><span>Chenille Patches</span><span>✦</span><span>Acid Wash</span><span>✦</span><span>High-Density Screen</span><span>✦</span><span>Sublimation</span><span>✦</span><span>Vintage Wash</span><span>✦</span><span>Cut &amp; Sew</span><span>✦</span><span>Woven Labels</span><span>✦</span>
+          <span>3D Puff Print</span><span>✦</span><span>Chenille Patches</span><span>✦</span><span>Acid Wash</span><span>✦</span><span>High-Density Screen</span><span>✦</span><span>Sublimation</span><span>✦</span><span>Vintage Wash</span><span>✦</span><span>Cut &amp; Sew</span><span>✦</span><span>Woven Labels</span><span>✦</span>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="acc" id="acc" data-stagger="rv-flip">
+          <div class="panel active" tabindex="0">
+            <div class="panel-img" style="background-image:url('images/cust-printing.jpg')"></div>
+            <span class="panel-num">01</span><span class="panel-v">Printing</span>
+            <div class="panel-body"><h3>Printing</h3><p>Bold, raised and long-lasting prints that survive the wash.</p>
+              <ul><li>3D puff print</li><li>High-density screen</li><li>Sublimation</li><li>DTG</li></ul></div>
+          </div>
+          <div class="panel" tabindex="0">
+            <div class="panel-img" style="background-image:url('images/cust-embroidery.jpg')"></div>
+            <span class="panel-num">02</span><span class="panel-v">Embroidery</span>
+            <div class="panel-body"><h3>Embroidery</h3><p>Texture your customers can feel — from clean flat logos to chenille patches.</p>
+              <ul><li>Flat embroidery</li><li>3D embroidery</li><li>Chenille patches</li><li>Towel patches</li></ul></div>
+          </div>
+          <div class="panel" tabindex="0">
+            <div class="panel-img" style="background-image:url('images/cust-washes.jpg')"></div>
+            <span class="panel-num">03</span><span class="panel-v">Washes</span>
+            <div class="panel-body"><h3>Washes &amp; finishes</h3><p>Lived-in looks straight from the factory.</p>
+              <ul><li>Acid wash</li><li>Vintage wash</li><li>Distressed</li><li>Ripped finish</li></ul></div>
+          </div>
+          <div class="panel" tabindex="0">
+            <div class="panel-img" style="background-image:url('images/cust-construction.jpg')"></div>
+            <span class="panel-num">04</span><span class="panel-v">Construction</span>
+            <div class="panel-body"><h3>Construction</h3><p>Your fit, your pattern, your fabric weight.</p>
+              <ul><li>Custom cut &amp; sew</li><li>Custom fits</li><li>240–500+ GSM</li><li>Fleece &amp; heavy cotton</li></ul></div>
+          </div>
+          <div class="panel" tabindex="0">
+            <div class="panel-img" style="background-image:url('images/cust-branding.jpg')"></div>
+            <span class="panel-num">05</span><span class="panel-v">Branding</span>
+            <div class="panel-body"><h3>Private label</h3><p>Retail-ready packaging with your name on everything.</p>
+              <ul><li>Woven neck tags</li><li>Care labels</li><li>Hangtags &amp; polybags</li><li>Metal zipper pulls</li></ul></div>
+          </div>
         </div>
       </div>
     </section>
@@ -523,7 +817,8 @@
       <div class="wrap">
         <span class="eyebrow">How it works</span>
         <h2>From idea to doorstep <span class="gold">in 5 steps</span></h2>
-        <ol class="steps">
+        <ol class="steps" id="steps" data-stagger="rv-up">
+          <li class="rail" aria-hidden="true"><div class="rail-fill"></div><div class="runner"></div></li>
           <li class="step"><div class="dot">1</div><div><h3>Send your design</h3></div><p>Upload a tech pack, a mockup or even a sketch.</p></li>
           <li class="step"><div class="dot">2</div><div><h3>Get your quote</h3></div><p>Pricing and timeline within 24 hours.</p></li>
           <li class="step"><div class="dot">3</div><div><h3>Approve sample</h3></div><p>Your sample made in 7–10 days and shipped to you.</p></li>
@@ -567,6 +862,7 @@
 
     <!-- QUOTE -->
     <section id="quote">
+      <div class="quote-ghost" aria-hidden="true">Let&rsquo;s build &nbsp; Let&rsquo;s build</div>
       <div class="wrap quote-wrap">
         <div>
           <span class="eyebrow">Free quote</span>
@@ -579,7 +875,9 @@
             <li>Your designs stay 100% confidential</li>
           </ul>
         </div>
+        <div class="form-shell">
         <form class="quote" id="quoteForm" novalidate>
+          <div class="form-title">Start your <span>project</span></div>
           <div class="fields">
             <div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" required autocomplete="name"></div>
             <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" name="brand" autocomplete="organization"></div>
@@ -602,6 +900,7 @@
           <p class="secure">🔒 Your designs are 100% confidential. NDA available on request.<br>Your email app will open — attach your tech pack or mockup before sending.</p>
           <p class="form-msg" id="formMsg" role="status"></p>
         </form>
+        </div>
       </div>
     </section>
 
@@ -730,6 +1029,125 @@
         "&body=" + encodeURIComponent(body);
       msg.textContent = "Opening your email app — don't forget to attach your tech pack.";
     });
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Scroll reveal: headings wipe in, grids stagger in with a per-section effect.
+    const autoReveal = [
+      ["main section:not(.hero) .eyebrow, main section:not(.hero) .lead, .band h2, .band .btn, footer .f-grid > div", "rv-up"],
+      ["main section:not(.hero) h2", "rv-clip"],
+      [".stats .stat", "rv-flip"],
+      [".aud-grid > *", "rv-right"],
+      [".port-grid > *", "rv-zoom"],
+      [".t-grid > *", "rv-left"],
+      [".faq details", "rv-up"],
+      [".quote-points li", "rv-left"],
+      [".form-shell", "rv-right"],
+      ["section .mt", "rv-up"]
+    ];
+    autoReveal.forEach(([sel, fx]) => document.querySelectorAll(sel).forEach(el => el.classList.add("rv", fx)));
+    document.querySelectorAll("[data-stagger]").forEach(box => {
+      [...box.children].filter(c => !c.classList.contains("rail")).forEach(c => c.classList.add("rv", box.dataset.stagger));
+    });
+    // Stagger siblings that reveal together
+    const groups = new Map();
+    document.querySelectorAll(".rv").forEach(el => {
+      const p = el.parentElement;
+      if (!groups.has(p)) groups.set(p, 0);
+      el.style.setProperty("--i", groups.get(p));
+      groups.set(p, groups.get(p) + 1);
+    });
+
+    // Count-up numbers
+    function countUp(el) {
+      if (el.dataset.done) return;
+      el.dataset.done = 1;
+      const to = +el.dataset.to, dur = 1800, t0 = performance.now();
+      if (reduceMotion) { el.textContent = to; return; }
+      (function tick(t) {
+        const p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(2, -10 * p);
+        el.textContent = Math.round(to * (p === 1 ? 1 : e));
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    }
+    function scramble(el) {
+      if (el.dataset.done || reduceMotion) return;
+      el.dataset.done = 1;
+      const word = el.dataset.scramble, chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&";
+      let frame = 0;
+      const iv = setInterval(() => {
+        el.textContent = word.split("").map((c, i) => i < frame / 3 ? c : chars[Math.floor(Math.random() * chars.length)]).join("");
+        if (++frame > word.length * 3) { clearInterval(iv); el.textContent = word; }
+      }, 40);
+    }
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        el.classList.add("in");
+        // Once revealed, drop the reveal classes so hover transitions work normally
+        if (el.classList.contains("rv")) {
+          const wait = 1300 + (parseInt(el.style.getPropertyValue("--i")) || 0) * 110;
+          setTimeout(() => el.classList.remove(...[...el.classList].filter(c => c.startsWith("rv"))), wait);
+        }
+        el.querySelectorAll(".count").forEach(countUp);
+        el.querySelectorAll("[data-scramble]").forEach(scramble);
+        if (el.matches(".count")) countUp(el);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+    document.querySelectorAll(".rv, .count").forEach(el => io.observe(el));
+
+    // Bento spotlight follows the cursor
+    document.querySelectorAll(".b").forEach(card => {
+      card.addEventListener("pointermove", e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
+
+    // Customization panels: expand on hover / tap / focus
+    const panels = document.querySelectorAll("#acc .panel");
+    panels.forEach(p => {
+      const open = () => panels.forEach(x => x.classList.toggle("active", x === p));
+      p.addEventListener("mouseenter", open);
+      p.addEventListener("click", open);
+      p.addEventListener("focus", open);
+    });
+
+    // Process: a glowing dot travels 1 → 2 → 3 … lighting up each step
+    const stepsEl = document.getElementById("steps");
+    const steps = [...stepsEl.querySelectorAll(".step")];
+    const rail = stepsEl.querySelector(".rail"), fill = rail.querySelector(".rail-fill"), runner = rail.querySelector(".runner");
+    let cur = 0, hoverLock = false, timer = null;
+    function goTo(i) {
+      cur = i;
+      const vertical = getComputedStyle(stepsEl).gridTemplateColumns.split(" ").length === 1;
+      // offset* ignores the reveal transforms, so positions are right mid-animation
+      const s = steps[i], d = s.querySelector(".dot");
+      const x = s.offsetLeft + d.offsetLeft + d.offsetWidth / 2 - rail.offsetLeft;
+      const y = s.offsetTop + d.offsetTop + d.offsetHeight / 2 - rail.offsetTop;
+      runner.style.left = (vertical ? 1 : x) + "px";
+      runner.style.top = (vertical ? y : 1) + "px";
+      fill.style.width = vertical ? "100%" : x + "px";
+      fill.style.height = vertical ? y + "px" : "100%";
+      steps.forEach((s, k) => { s.classList.toggle("done", k < i); s.classList.toggle("active", k === i); });
+    }
+    function startLoop() {
+      clearInterval(timer);
+      if (reduceMotion) return;
+      timer = setInterval(() => { if (!hoverLock) goTo((cur + 1) % steps.length); }, 1700);
+    }
+    steps.forEach((s, k) => {
+      s.addEventListener("mouseenter", () => { hoverLock = true; goTo(k); });
+      s.addEventListener("mouseleave", () => { hoverLock = false; });
+    });
+    new IntersectionObserver(([en]) => {
+      if (en.isIntersecting) { goTo(0); startLoop(); } else clearInterval(timer);
+    }, { threshold: 0.3 }).observe(stepsEl);
+    window.addEventListener("resize", () => goTo(cur));
   </script>
 </body>
 </html>

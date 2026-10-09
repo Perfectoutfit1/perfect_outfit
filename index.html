@@ -8,6 +8,8 @@
   <meta property="og:title" content="Perfect Outfit Intl — Your Brand. Our Factory.">
   <meta property="og:description" content="Custom clothing manufacturer for streetwear brands, teams and private labels. Low MOQ, fast samples, worldwide shipping.">
   <meta name="theme-color" content="#0A0A0A">
+  <link rel="preload" as="image" href="images/hero.jpg" media="(min-width: 761px)">
+  <link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width: 760px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -117,25 +119,36 @@
       min-height: calc(100vh - 106px);
       display: flex; align-items: center;
       padding: 80px 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 85% 20%, rgba(245,197,24,.14), transparent 70%),
-        radial-gradient(ellipse 50% 60% at 0% 100%, rgba(255,255,255,.05), transparent 70%),
-        var(--bg);
+      background: var(--bg);
+    }
+    .hero-img {
+      position: absolute; top: 0; right: 0; bottom: 0; width: 62%;
+      background: url("images/hero.jpg") 25% center / cover no-repeat;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 45%);
+    }
+    .hero-img::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(0deg, var(--bg) 0%, transparent 30%), rgba(10,10,10,.25);
     }
     .hero::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000 20%, transparent 75%);
-      opacity: .45;
+      background: radial-gradient(ellipse 50% 50% at 80% 30%, rgba(245,197,24,.12), transparent 70%);
     }
     .hero-bg-word {
-      position: absolute; right: -2vw; bottom: -4vw;
+      position: absolute; left: -1vw; bottom: -4vw;
       font-family: "Anton", sans-serif; font-size: 26vw; line-height: .8;
-      color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.06);
+      color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.05);
       pointer-events: none; user-select: none; white-space: nowrap;
+    }
+    @media (max-width: 760px) {
+      .hero-img {
+        width: 100%;
+        background-image: url("images/hero-mobile.jpg");
+        background-position: center top;
+        -webkit-mask-image: none; mask-image: none;
+      }
+      .hero-img::after { background: linear-gradient(0deg, rgba(10,10,10,.97) 0%, rgba(10,10,10,.82) 55%, rgba(10,10,10,.45) 100%); }
     }
     .hero .wrap { position: relative; }
     .hero h1 { font-size: clamp(3.4rem, 12vw, 9rem); margin: 4px 0 24px; }
@@ -379,6 +392,7 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-img" aria-hidden="true"></div>
       <div class="hero-bg-word" aria-hidden="true">MADE</div>
       <div class="wrap">
         <span class="eyebrow">Custom clothing manufacturer · Private label · OEM / ODM</span>

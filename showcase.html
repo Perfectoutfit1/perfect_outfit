@@ -987,7 +987,8 @@
       const it = view[cur], btn = $("leadForm").querySelector("button[type=submit]");
       btn.disabled = true; msg.textContent = "Sending…";
       PO.sendLead("Price sheet request — " + it.title, {
-        Product: it.title, Category: CATS[it.line.cat].label, email: email, WhatsApp: wa
+        Product: it.title, Category: CATS[it.line.cat].label, email: email, WhatsApp: wa,
+        ...(email && { _autoresponse: PO.autoReply(`Hi,\n\nThanks for your interest in the ${it.title}! We've received your price sheet request and will send pricing by quantity within 24 hours.`) })
       }).then(ok => {
         btn.disabled = false;
         const chat = PO.waLink(`Hi Perfect Outfit Intl, please send me the price sheet for: ${it.title} (${CATS[it.line.cat].label}).`);

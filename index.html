@@ -1023,7 +1023,8 @@
       btn.disabled = true; btn.textContent = "Sending…"; msg.textContent = "";
       const ok = await PO.sendLead("New quote request — " + (d.brand.trim() || d.name.trim()), {
         Name: d.name.trim(), Brand: d.brand.trim(), email: d.email.trim(), WhatsApp: d.whatsapp.trim(),
-        Country: d.country.trim(), Product: d.product, "Quantity per design": d.quantity, Project: d.message.trim()
+        Country: d.country.trim(), Product: d.product, "Quantity per design": d.quantity, Project: d.message.trim(),
+        _autoresponse: PO.autoReply(`Hi ${d.name.trim()},\n\nThanks for contacting Perfect Outfit Intl — we've received your quote request (${d.product}, ${d.quantity} per design). Our team will review it and reply within 24 hours with pricing and next steps.`)
       });
       if (ok) {
         const wa = PO.waLink("Hi Perfect Outfit Intl, I just sent a quote request from your website (" + (d.brand.trim() || d.name.trim()) + "). Here is my tech pack / mockup:");

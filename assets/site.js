@@ -16,6 +16,15 @@
     if (!window.open(url, "_blank", "noopener")) location.href = url;
   };
 
+  // Confirmation FormSubmit emails to the visitor (sent only when the lead has an "email" field).
+  PO.autoReply = body => [
+    body, "",
+    "Have a tech pack, mockup or reference photos? Just reply to this email or WhatsApp us at " + PO.whatsappDisplay + ".", "",
+    "Team Perfect Outfit Intl",
+    "Custom clothing manufacturer · Sialkot, Pakistan",
+    "https://perfectoutfit.vercel.app"
+  ].join("\n");
+
   // Emails a lead to the inbox. Resolves true when it was accepted.
   PO.sendLead = (subject, fields) =>
     fetch(PO.formEndpoint, {

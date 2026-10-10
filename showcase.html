@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factory Showcase — Streetwear, Uniforms, Leather &amp; Workwear | Perfect Outfit Intl</title>
+  <meta name="description" content="Browse 31 product lines made in our factory: heavyweight hoodies, sweat suits, team uniforms, leather jackets and workwear. Low MOQ, 7–10 day samples, NDA protected. Get a price sheet.">
+  <meta property="og:title" content="Factory Showcase — Perfect Outfit Intl">
+  <meta property="og:description" content="31 product lines, 100% custom cut &amp; sew. Pick a style and get the price sheet.">
+  <meta name="theme-color" content="#0A0A0A">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --surface-2: #1C1C1C;
+      --line: #2A2A2A;
+      --text: #FFFFFF;
+      --muted: #A3A3A3;
+      --accent: #F5C518;
+      --accent-ink: #0A0A0A;
+      --max: 1280px;
+      --header: 72px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.lb-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+
+    h1, h2, h3, .display {
+      font-family: "Anton", Impact, sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      line-height: 1.02;
+    }
+    h2 { font-size: clamp(2rem, 5.5vw, 3.6rem); }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .gold { color: var(--accent); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 15px 26px;
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 2px solid var(--accent);
+      transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+      cursor: pointer; white-space: nowrap;
+    }
+    .btn-primary { background: var(--accent); color: var(--accent-ink); }
+    .btn-primary:hover { background: #FFD84D; transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--text); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 3px;
+    }
+
+    /* Trust micro-copy — reused next to every CTA */
+    .trust { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; font-size: .78rem; color: var(--muted); }
+    .trust li { display: inline-flex; align-items: center; gap: 7px; }
+    .trust li::before {
+      content: ""; width: 14px; height: 14px; flex: none;
+      background: var(--accent);
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3'%3E%3Cpath d='M4 12l5 5L20 6'/%3E%3C/svg%3E") center / contain no-repeat;
+              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3'%3E%3Cpath d='M4 12l5 5L20 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    /* Announcement bar */
+    .announce {
+      background: var(--accent); color: var(--accent-ink);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      text-align: center; padding: 9px 16px;
+    }
+    .announce span { margin: 0 10px; opacity: .5; }
+
+    /* Header */
+    header.site {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,10,10,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: var(--header); gap: 24px; }
+    .logo { font-family: "Anton", sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
+    .logo small { font-family: "Inter", sans-serif; font-size: .6rem; font-weight: 700; letter-spacing: .3em; color: var(--accent); margin-left: 6px; vertical-align: middle; }
+    .menu { display: flex; gap: 26px; list-style: none; }
+    .menu a { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .15s; }
+    .menu a:hover, .menu a[aria-current] { color: var(--accent); }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn { padding: 11px 18px; font-size: .75rem; }
+    .burger { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; }
+    .burger svg { width: 26px; height: 26px; }
+    @media (max-width: 1020px) {
+      .menu {
+        display: none; position: absolute; top: var(--header); left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line);
+      }
+      .menu.open { display: flex; }
+      .menu a { display: block; padding: 16px; border-top: 1px solid var(--line); }
+      .burger { display: inline-flex; align-items: center; justify-content: center; }
+    }
+    @media (max-width: 480px) { .nav-cta .btn { display: none; } }
+
+    /* ---------- HERO ---------- */
+    .s-hero { position: relative; overflow: hidden; padding: 72px 0 64px; border-bottom: 1px solid var(--line); }
+    .s-hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 45% 60% at 85% 20%, rgba(245,197,24,.10), transparent 70%);
+    }
+    .s-hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .s-hero h1 { font-size: clamp(2.6rem, 6.4vw, 5.2rem); }
+    .s-hero .sub { color: var(--muted); font-size: 1.08rem; max-width: 540px; margin-top: 20px; }
+    .s-hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .s-hero .trust { margin-top: 22px; }
+    .proof {
+      display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 40px;
+      border: 1px solid var(--line); background: var(--surface);
+    }
+    .proof div { padding: 16px 14px; border-left: 1px solid var(--line); }
+    .proof div:first-child { border-left: 0; }
+    .proof b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 1.6rem; line-height: 1.1; color: var(--accent); }
+    .proof span { font-size: .72rem; color: var(--muted); letter-spacing: .04em; }
+
+    .collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; aspect-ratio: 1 / 1.02; }
+    .collage button {
+      position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--surface) center / cover no-repeat;
+      cursor: pointer; text-align: left;
+    }
+    .collage button::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.1) 55%); transition: background .3s; }
+    .collage button:hover::after { background: linear-gradient(0deg, rgba(10,10,10,.85) 0%, rgba(245,197,24,.12) 100%); }
+    .collage button:hover { border-color: var(--accent); }
+    .collage .lbl { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 12px; }
+    .collage .lbl b { display: block; font-family: "Anton", sans-serif; font-weight: 400; font-size: 1.35rem; text-transform: uppercase; line-height: 1.1; }
+    .collage .lbl span { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+    @media (max-width: 900px) {
+      .s-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .collage { aspect-ratio: 16 / 11; }
+    }
+    @media (max-width: 560px) {
+      .s-hero { padding: 48px 0 40px; }
+      .proof { grid-template-columns: 1fr 1fr; }
+      .proof div:nth-child(3) { border-left: 0; }
+      .proof div:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .s-hero .ctas .btn { flex: 1 1 100%; }
+    }
+
+    /* ---------- FILTER BAR ---------- */
+    .filters {
+      position: sticky; top: var(--header); z-index: 40;
+      background: rgba(10,10,10,.94); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .tabs, .subs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .tabs::-webkit-scrollbar, .subs::-webkit-scrollbar { display: none; }
+    .tabs { padding: 14px 0; }
+    .tab {
+      flex: none; display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 16px; background: transparent; border: 1px solid var(--line);
+      font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+      cursor: pointer; transition: color .15s, border-color .15s, background .15s;
+    }
+    .tab:hover { color: var(--text); border-color: var(--muted); }
+    .tab .n { font-size: .68rem; padding: 2px 7px; background: var(--surface-2); color: var(--muted); }
+    .tab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .tab[aria-pressed="true"] .n { background: var(--accent-ink); color: var(--accent); }
+    .subs { padding: 0 0 12px; }
+    .subs[hidden] { display: none; }
+    .chip {
+      flex: none; padding: 6px 12px; background: var(--surface); border: 1px solid transparent; border-radius: 999px;
+      font-size: .78rem; font-weight: 500; color: var(--muted); cursor: pointer; transition: color .15s, border-color .15s;
+    }
+    .chip:hover { color: var(--text); }
+    .chip[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+    .f-meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 28px 0 18px; }
+    .f-meta p { font-size: .85rem; color: var(--muted); }
+    .f-meta p b { color: var(--text); }
+    .f-meta .trust { justify-content: flex-end; }
+    @media (max-width: 760px) { .f-meta .trust { display: none; } }
+
+    /* ---------- GRID + CARDS ---------- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 22px; padding-bottom: 96px; }
+    @media (max-width: 620px) { .grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+
+    .card {
+      position: relative; display: flex; flex-direction: column;
+      background: var(--surface); border: 1px solid var(--line);
+      transition: transform .25s cubic-bezier(.16,1,.3,1), border-color .2s, box-shadow .25s;
+    }
+    .card:hover, .card:focus-within { transform: translateY(-6px); border-color: var(--accent); box-shadow: 10px 10px 0 var(--accent); }
+    .card.enter { animation: cardIn .55s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(var(--i, 0) * 45ms); }
+    @keyframes cardIn { from { opacity: 0; transform: translateY(28px); } }
+
+    .media {
+      position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; overflow: hidden;
+      border: 0; padding: 0; background: var(--surface-2); cursor: zoom-in;
+    }
+    .media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.16,1,.3,1), filter .4s; }
+    .card:hover .media img { transform: scale(1.07); filter: contrast(1.08) saturate(1.05); }
+    .media .veil {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      background: rgba(10,10,10,.55); opacity: 0; transition: opacity .25s;
+    }
+    .media .veil span {
+      padding: 10px 16px; border: 2px solid var(--text); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      transform: translateY(10px); transition: transform .3s cubic-bezier(.16,1,.3,1);
+    }
+    .card:hover .veil { opacity: 1; }
+    .card:hover .veil span { transform: none; }
+    @media (hover: none) { .media .veil { display: none; } }
+
+    .badges { position: absolute; z-index: 2; top: 10px; left: 10px; right: 10px; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none; }
+    .badge {
+      padding: 4px 8px; font-size: .64rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      background: rgba(10,10,10,.82); color: var(--text); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(4px);
+    }
+    .badge.hot { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    @media (max-width: 620px) { .badges .badge:nth-child(n+2) { display: none; } }
+
+    /* Placeholder until real factory photos are added */
+    .ph {
+      position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(245,197,24,.08), transparent 70%),
+        repeating-linear-gradient(135deg, transparent 0 14px, rgba(255,255,255,.025) 14px 15px),
+        var(--surface-2);
+      transition: transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .card:hover .ph { transform: scale(1.04); }
+    .ph b {
+      font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; line-height: .95;
+      font-size: clamp(1.8rem, 4.2vw, 2.8rem); color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.22);
+      word-break: break-word;
+    }
+    .ph small { margin-top: 10px; font-size: .66rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #6B6B6B; }
+
+    .body { display: flex; flex-direction: column; gap: 4px; padding: 16px 16px 18px; flex: 1; }
+    .body .cat { font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+    .body h3 { font-size: 1.45rem; }
+    .body .fab { font-size: .82rem; color: var(--muted); line-height: 1.45; }
+    .body .btn { margin-top: auto; width: 100%; padding: 12px 14px; font-size: .74rem; }
+    .body .fab { margin-bottom: 14px; }
+    @media (max-width: 620px) {
+      .body { padding: 12px 10px 12px; }
+      .body h3 { font-size: 1.1rem; }
+      .body .fab { display: none; }
+      .body .btn { padding: 10px 8px; font-size: .66rem; letter-spacing: .06em; margin-top: 10px; }
+    }
+
+    .g-head {
+      grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+      padding: 26px 0 4px; border-bottom: 1px solid var(--line);
+    }
+    .g-head:first-child { padding-top: 0; }
+    .g-head h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+    .g-head h3 span { font-family: "Inter", sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .14em; color: var(--muted); margin-left: 10px; vertical-align: middle; }
+    .g-head button, .more {
+      background: none; border: 0; cursor: pointer; white-space: nowrap;
+      font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+    }
+    .g-head button:hover, .more:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .more { align-self: flex-start; padding: 0; margin: -6px 0 12px; }
+    .pcount {
+      position: absolute; z-index: 2; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 8px; background: rgba(10,10,10,.82); font-size: .66rem; font-weight: 700; letter-spacing: .06em;
+    }
+    .pcount svg { width: 12px; height: 12px; }
+    @media (max-width: 620px) { .g-head { padding-top: 18px; } .g-head button { font-size: .66rem; } .more { font-size: .66rem; margin: 2px 0 0; } }
+    .empty { grid-column: 1 / -1; padding: 64px 16px; text-align: center; color: var(--muted); border: 1px dashed var(--line); }
+
+    /* ---------- CUSTOM BAND ---------- */
+    .custom { border-top: 1px solid var(--line); padding: 88px 0; background: var(--surface); }
+    .custom .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+    .custom p { color: var(--muted); margin-top: 16px; max-width: 560px; }
+    .custom .side { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    @media (max-width: 860px) { .custom .wrap { grid-template-columns: 1fr; } .custom { padding: 64px 0; } }
+
+    footer { border-top: 1px solid var(--line); padding: 32px 0 120px; color: #6B6B6B; font-size: .8rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer a:hover { color: var(--text); }
+
+    /* ---------- STICKY QUICK-QUOTE BAR ---------- */
+    .qbar {
+      position: fixed; left: 50%; bottom: 16px; z-index: 55;
+      width: min(980px, calc(100% - 24px));
+      display: flex; align-items: center; gap: 16px; padding: 10px 10px 10px 10px;
+      background: rgba(20,20,20,.94); backdrop-filter: blur(12px);
+      border: 1px solid var(--accent); box-shadow: 0 18px 50px rgba(0,0,0,.6);
+      transform: translate(-50%, 140%); transition: transform .45s cubic-bezier(.16,1,.3,1);
+    }
+    .qbar.show { transform: translate(-50%, 0); }
+    .qbar .thumb { width: 52px; height: 52px; flex: none; background: var(--surface-2) center / cover no-repeat; border: 1px solid var(--line); display: grid; place-items: center; font-family: "Anton", sans-serif; color: var(--accent); font-size: 1.2rem; }
+    .qbar .info { flex: 1; min-width: 0; }
+    .qbar .info small { display: block; font-size: .64rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+    .qbar .info b { display: block; font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .qbar .trust { font-size: .72rem; flex-wrap: nowrap; }
+    .qbar .btn { padding: 14px 20px; font-size: .74rem; }
+    @media (max-width: 1060px) { .qbar .trust { display: none; } }
+    @media (max-width: 560px) {
+      .qbar { bottom: 0; width: 100%; border-width: 1px 0 0; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 10px; }
+      .qbar .thumb { width: 42px; height: 42px; }
+      .qbar .btn { padding: 12px 12px; font-size: .66rem; letter-spacing: .06em; }
+      .qbar .btn .long { display: none; }
+    }
+    @media (min-width: 561px) { .qbar .btn .short { display: none; } }
+
+    /* Floating WhatsApp — lifts above the quote bar */
+    .wa {
+      position: fixed; right: 18px; bottom: 18px; z-index: 56;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366; color: #fff; display: grid; place-items: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      transition: transform .3s cubic-bezier(.16,1,.3,1), bottom .45s cubic-bezier(.16,1,.3,1);
+    }
+    .wa:hover { transform: scale(1.08); }
+    .wa svg { width: 28px; height: 28px; }
+    body.bar-on .wa { bottom: 104px; }
+    @media (max-width: 560px) { body.bar-on .wa { bottom: 86px; width: 50px; height: 50px; } }
+
+    /* ---------- LIGHTBOX ---------- */
+    dialog.lb {
+      position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+      border: 0; padding: 0; background: var(--bg); color: var(--text);
+    }
+    dialog.lb::backdrop { background: rgba(0,0,0,.85); }
+    dialog.lb[open] { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(360px, 1fr); animation: lbIn .35s cubic-bezier(.16,1,.3,1); }
+    @keyframes lbIn { from { opacity: 0; transform: scale(.98); } }
+    .lb-stage { position: relative; background: #050505; display: grid; place-items: center; overflow: hidden; min-height: 0; }
+    .lb-stage img { width: 100%; height: 100%; object-fit: contain; }
+    .lb-stage .ph { position: absolute; inset: 0; padding: 40px 40px 72px; }
+    .lb-stage .ph b { font-size: clamp(3rem, 9vw, 7rem); }
+    .lb-nav {
+      position: absolute; top: 50%; z-index: 3; transform: translateY(-50%);
+      width: 52px; height: 52px; display: grid; place-items: center; cursor: pointer;
+      background: rgba(10,10,10,.75); border: 1px solid var(--line); transition: border-color .15s, color .15s;
+    }
+    .lb-nav:hover { border-color: var(--accent); color: var(--accent); }
+    .lb-nav svg { width: 22px; height: 22px; }
+    .lb-nav[hidden] { display: none; }
+    .lb-prev { left: 16px; } .lb-next { right: 16px; }
+    .lb-count { position: absolute; z-index: 3; left: 16px; bottom: 16px; font-size: .72rem; font-weight: 700; letter-spacing: .14em; color: var(--muted); background: rgba(10,10,10,.75); padding: 6px 10px; }
+    .lb-thumbs {
+      position: absolute; z-index: 3; left: 50%; bottom: 14px; transform: translateX(-50%);
+      display: flex; gap: 8px; max-width: calc(100% - 140px); overflow-x: auto; scrollbar-width: none;
+    }
+    .lb-thumbs button { flex: none; width: 56px; height: 56px; padding: 0; border: 2px solid transparent; background: #000 center / cover no-repeat; cursor: pointer; opacity: .6; transition: opacity .15s, border-color .15s; }
+    .lb-thumbs button:hover { opacity: 1; }
+    .lb-thumbs button[aria-current="true"] { border-color: var(--accent); opacity: 1; }
+    .lb-stage:has(.lb-thumbs:not(:empty)) .lb-count { bottom: 84px; }
+    @media (max-width: 900px) { .lb-thumbs button { width: 46px; height: 46px; } .lb-thumbs { max-width: calc(100% - 24px); } }
+    .lb-close {
+      position: absolute; z-index: 5; top: 14px; right: 14px; width: 46px; height: 46px; display: grid; place-items: center;
+      background: var(--surface); border: 1px solid var(--line); cursor: pointer;
+    }
+    .lb-close:hover { border-color: var(--accent); color: var(--accent); }
+    .lb-close svg { width: 20px; height: 20px; }
+
+    .lb-panel { overflow-y: auto; padding: 56px 40px 40px; border-left: 1px solid var(--line); display: flex; flex-direction: column; }
+    .lb-panel h2 { font-size: clamp(2.2rem, 3.6vw, 3.2rem); }
+    .lb-panel .badges { position: static; margin-top: 14px; }
+    .specs { margin-top: 26px; border-top: 1px solid var(--line); }
+    .specs div { display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .specs dt { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+    .specs dd { font-size: .92rem; }
+
+    .lead-box { margin-top: 28px; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent); }
+    .lead-box h3 { font-size: 1.5rem; }
+    .lead-box > p { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+    .lead-fields { display: grid; gap: 10px; margin-top: 16px; }
+    .lead-fields label { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .lead-fields input {
+      width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); padding: 13px 14px;
+      font: inherit; font-size: .95rem; border-radius: 0; transition: border-color .2s, box-shadow .2s;
+    }
+    .lead-fields input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(245,197,24,.18); }
+    .lead-box .btn { width: 100%; margin-top: 14px; }
+    .lead-box .trust { margin-top: 14px; }
+    .lead-msg { margin-top: 10px; font-size: .85rem; color: var(--accent); min-height: 1.2em; }
+    .lb-more { margin-top: 18px; font-size: .85rem; color: var(--muted); }
+    .lb-more a { color: var(--text); border-bottom: 1px solid var(--accent); }
+
+    @media (max-width: 900px) {
+      dialog.lb[open] { display: block; overflow-y: auto; }
+      .lb-stage { height: 56vh; }
+      .lb-panel { border-left: 0; padding: 28px 16px 40px; overflow: visible; }
+      .lb-nav { width: 44px; height: 44px; }
+      .lb-prev { left: 8px; } .lb-next { right: 8px; }
+      .specs div { grid-template-columns: 110px 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announce">Low MOQ from 30 pcs<span>/</span>Samples in 7–10 days<span>/</span>NDA protected designs</div>
+
+  <header class="site">
+    <div class="wrap nav">
+      <a href="index.html" class="logo" aria-label="Perfect Outfit Intl home">Perfect Outfit<small>INTL</small></a>
+      <ul class="menu" id="menu">
+        <li><a href="showcase.html" aria-current="page">Showcase</a></li>
+        <li><a href="#catalog" data-go="streetwear">Streetwear</a></li>
+        <li><a href="#catalog" data-go="sportswear">Sportswear</a></li>
+        <li><a href="#catalog" data-go="leather">Leather</a></li>
+        <li><a href="#catalog" data-go="workwear">Workwear</a></li>
+        <li><a href="index.html#process">How It Works</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="index.html#quote" class="btn btn-primary">Get a Quote</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="s-hero">
+      <div class="wrap s-hero-grid">
+        <div>
+          <span class="eyebrow">Factory showcase · <span id="lineCount">31</span> product lines</span>
+          <h1>Made in our factory.<br><span class="gold">Ready for your label.</span></h1>
+          <p class="sub">Every piece below was cut, sewn and finished on our own floor. Pick a style, tap <b>Quote this item</b>, and get the price sheet sent to your inbox or WhatsApp.</p>
+          <div class="ctas">
+            <a href="#catalog" class="btn btn-primary">Browse the catalog ↓</a>
+            <a href="index.html#quote" class="btn btn-ghost">Upload a tech pack</a>
+          </div>
+          <ul class="trust">
+            <li>7–10 Days Fast Sampling</li>
+            <li>100% Custom Cut &amp; Sew</li>
+            <li>NDA Protected Designs</li>
+          </ul>
+          <div class="proof">
+            <div><b>30+</b><span>Pcs MOQ per design</span></div>
+            <div><b>7–10</b><span>Day samples</span></div>
+            <div><b>500+</b><span>GSM fleece available</span></div>
+            <div><b>24H</b><span>Quote reply</span></div>
+          </div>
+        </div>
+        <div class="collage" aria-label="Jump to a category">
+          <button data-go="streetwear" style="background-image:url('images/cat-streetwear.jpg')"><span class="lbl"><span data-count="streetwear">16 styles</span><b>Streetwear</b></span></button>
+          <button data-go="sportswear" style="background-image:url('images/cat-sportswear.jpg')"><span class="lbl"><span data-count="sportswear">6 uniforms</span><b>Sportswear</b></span></button>
+          <button data-go="leather" style="background-image:url('images/cat-leather.jpg')"><span class="lbl"><span data-count="leather">5 styles</span><b>Leather</b></span></button>
+          <button data-go="workwear" style="background-image:url('images/cat-workwear.jpg')"><span class="lbl"><span data-count="workwear">4 lines</span><b>Workwear</b></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filters" id="catalog">
+      <div class="wrap">
+        <div class="tabs" id="tabs" role="toolbar" aria-label="Filter by category"></div>
+        <div class="subs" id="subs" role="toolbar" aria-label="Filter by product" hidden></div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <section class="wrap" id="results" aria-label="Product showcase">
+      <div class="f-meta">
+        <p id="resultMeta" aria-live="polite"></p>
+        <ul class="trust">
+          <li>7–10 Days Fast Sampling</li>
+          <li>100% Custom Cut &amp; Sew</li>
+          <li>NDA Protected Designs</li>
+        </ul>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- DON'T SEE IT? -->
+    <section class="custom" id="custom">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Don&rsquo;t see your style?</span>
+          <h2>If you can sketch it, <span class="gold">we can make it.</span></h2>
+          <p>Everything we make is 100% custom cut &amp; sew. Send a tech pack, a mockup or a reference photo and we&rsquo;ll come back with a quote within 24 hours.</p>
+        </div>
+        <div class="side">
+          <a href="index.html#quote" class="btn btn-primary">Start a custom quote →</a>
+          <ul class="trust">
+            <li>7–10 Days Fast Sampling</li>
+            <li>100% Custom Cut &amp; Sew</li>
+            <li>NDA Protected Designs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Perfect Outfit Intl. All rights reserved.</span>
+      <span><a href="index.html">Home</a> · <a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a> · Custom · Private Label · OEM / ODM</span>
+    </div>
+  </footer>
+
+  <!-- STICKY QUICK-QUOTE BAR -->
+  <div class="qbar" id="qbar" aria-hidden="true">
+    <div class="thumb" id="qThumb"></div>
+    <div class="info">
+      <small>You&rsquo;re viewing</small>
+      <b id="qName">Our catalog</b>
+    </div>
+    <ul class="trust">
+      <li>7–10 Days Sampling</li>
+      <li>NDA Protected</li>
+    </ul>
+    <button class="btn btn-primary" id="qBtn" tabindex="-1"><span class="long">Get Instant Quote for This Style</span><span class="short">Get Quote</span> →</button>
+  </div>
+
+  <a href="index.html#quote" class="wa js-wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <dialog class="lb" id="lb" aria-labelledby="lbTitle">
+    <div class="lb-stage" id="lbStage">
+      <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous style"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div id="lbMedia" style="position:absolute;inset:0;display:grid;place-items:center"></div>
+      <button class="lb-nav lb-next" id="lbNext" aria-label="Next style"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+      <div class="lb-thumbs" id="lbThumbs"></div>
+      <span class="lb-count" id="lbCount"></span>
+    </div>
+    <div class="lb-panel">
+      <span class="eyebrow" id="lbCat"></span>
+      <h2 id="lbTitle"></h2>
+      <div class="badges" id="lbBadges"></div>
+      <dl class="specs">
+        <div><dt>Fabric</dt><dd id="lbFabric"></dd></div>
+        <div><dt>Customization</dt><dd id="lbCustom"></dd></div>
+        <div><dt>Turnaround</dt><dd id="lbTurn"></dd></div>
+        <div><dt>MOQ</dt><dd id="lbMoq"></dd></div>
+      </dl>
+      <form class="lead-box" id="leadForm" novalidate>
+        <h3>Get the <span class="gold">price sheet</span></h3>
+        <p>Pricing for <b id="lbFormName"></b> by quantity — sent within 24 hours.</p>
+        <div class="lead-fields">
+          <div><label for="l-email">Email</label><input id="l-email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com"></div>
+          <div><label for="l-wa">WhatsApp</label><input id="l-wa" name="whatsapp" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send me the price sheet →</button>
+        <p class="lead-msg" id="leadMsg" role="status"></p>
+        <ul class="trust">
+          <li>7–10 Days Fast Sampling</li>
+          <li>100% Custom Cut &amp; Sew</li>
+          <li>NDA Protected Designs</li>
+        </ul>
+      </form>
+      <p class="lb-more">Have a tech pack or full collection? <a href="index.html#quote">Request a full custom quote →</a></p>
+    </div>
+    <button class="lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </dialog>
+
+  <script>
+    // Fill these in to make the price-sheet form and WhatsApp buttons go live (same values as index.html).
+    const CONTACT_EMAIL = "";      // e.g. "orders@perfectoutfitintl.com"
+    const WHATSAPP_NUMBER = "";    // international format, digits only, e.g. "923001234567"
+
+    const SAMPLE_TIME = "Sample in 7–10 days";
+
+    const CATS = {
+      streetwear: { label: "Streetwear", moq: "30 pcs per design / colour", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" },
+      sportswear: { label: "Sportswear", moq: "30 pcs per design (team sizes mixable)", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" },
+      leather:    { label: "Leather Garments", moq: "30 pcs per design", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" },
+      workwear:   { label: "Workwear", moq: "30 pcs per design", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" }
+    };
+
+    // One entry per product line. Badges: first one is highlighted on the card.
+    const LINES = [
+      // STREETWEAR
+      { id: "sweat-suits", cat: "streetwear", name: "Sweat Suits", badges: ["400+ GSM", "3D Puff Print", "Low MOQ 30 Pcs"], fabric: "Brushed fleece or French terry, 320–500 GSM", custom: "Screen print, 3D puff, embroidery, garment dye, custom trims" },
+      { id: "hoodies", cat: "streetwear", name: "Hoodies", badges: ["400+ GSM", "3D Puff Print", "Low MOQ 30 Pcs"], fabric: "Heavyweight cotton fleece, 320–500 GSM", custom: "3D puff, screen print, chenille, embroidery, acid / vintage wash" },
+      { id: "t-shirts", cat: "streetwear", name: "T-Shirts", badges: ["240+ GSM", "Acid Wash", "Boxy Fit"], fabric: "Combed cotton jersey, 180–300 GSM", custom: "Screen print, DTG, puff print, embroidery, acid & vintage wash" },
+      { id: "shorts", cat: "streetwear", name: "Shorts", badges: ["French Terry", "Embroidery", "Low MOQ 30 Pcs"], fabric: "French terry, fleece, nylon or mesh", custom: "Embroidery, screen print, custom drawcords & aglets" },
+      { id: "pants", cat: "streetwear", name: "Pants", badges: ["Heavy Fleece", "Custom Fit", "Low MOQ 30 Pcs"], fabric: "Fleece, French terry, twill or nylon", custom: "Stacked / flared / cargo fits, embroidery, print, custom hardware" },
+      { id: "sweat-shirts", cat: "streetwear", name: "Sweat Shirts", badges: ["400+ GSM", "Chenille Patch", "Low MOQ 30 Pcs"], fabric: "Heavyweight cotton fleece, 320–500 GSM", custom: "Chenille, embroidery, puff print, garment dye" },
+      { id: "jerseys", cat: "streetwear", name: "Jerseys", badges: ["Full Sublimation", "Tackle Twill", "Low MOQ 30 Pcs"], fabric: "Mesh, interlock or dazzle polyester", custom: "Sublimation, tackle twill, embroidery, custom numbers" },
+      { id: "bra-leggings", cat: "streetwear", name: "Bra & Leggings", badges: ["4-Way Stretch", "Nylon Spandex", "Low MOQ 30 Pcs"], fabric: "Nylon / polyester spandex blends", custom: "Heat-transfer logos, sublimation, custom waistbands" },
+      { id: "hats-caps", cat: "streetwear", name: "Hats & Caps", badges: ["3D Embroidery", "Custom Closure", "Low MOQ 30 Pcs"], fabric: "Cotton twill, wool blend, nylon, corduroy", custom: "3D embroidery, patches, printed undervisor, custom straps" },
+      { id: "socks", cat: "streetwear", name: "Socks", badges: ["Knit-In Logo", "Combed Cotton", "Low MOQ"], fabric: "Combed cotton, cushioned sole options", custom: "Jacquard knit-in logos, custom colours, branded packaging" },
+      { id: "mask-balaclava", cat: "streetwear", name: "Mask & Balaclava", badges: ["Knit / Fleece", "Embroidery", "Low MOQ 30 Pcs"], fabric: "Acrylic knit, fleece or performance fabric", custom: "Embroidery, jacquard, custom openings" },
+      { id: "varsity-jackets", cat: "streetwear", name: "Varsity Jackets", badges: ["Wool + Leather", "Chenille Patch", "Low MOQ 30 Pcs"], fabric: "Melton wool body, genuine or PU leather sleeves", custom: "Chenille & embroidered patches, custom snaps, quilted lining" },
+      { id: "windbreakers", cat: "streetwear", name: "Windbreakers", badges: ["Water-Resistant", "Nylon Shell", "Low MOQ 30 Pcs"], fabric: "Nylon or polyester taslan shell, mesh lining", custom: "Colour blocking, reflective print, embroidery, custom zips" },
+      { id: "denim-jackets", cat: "streetwear", name: "Denim Jeans Jackets", badges: ["Heavy Denim", "Custom Wash", "Low MOQ 30 Pcs"], fabric: "Rigid or stretch denim", custom: "Stone / acid wash, distressing, embroidery, custom hardware" },
+      { id: "denim-pants", cat: "streetwear", name: "Denim Jeans Pants", badges: ["Custom Wash", "Distressing", "Low MOQ 30 Pcs"], fabric: "Rigid or stretch denim", custom: "Baggy / stacked / flared fits, washes, rips, patches, embroidery" },
+      { id: "denim-shorts", cat: "streetwear", name: "Denim Jeans Shorts", badges: ["Custom Wash", "Raw Hem", "Low MOQ 30 Pcs"], fabric: "Rigid or stretch denim", custom: "Washes, distressing, raw or cuffed hems, custom hardware" },
+      // SPORTSWEAR
+      { id: "american-football", cat: "sportswear", name: "American Football Uniform", badges: ["Tackle Twill", "Names & Numbers", "Team Sets"], fabric: "Stretch mesh & pro-dazzle polyester", custom: "Tackle twill, sublimation, sewn numbers, matching pants" },
+      { id: "soccer", cat: "sportswear", name: "Soccer Uniform", badges: ["Full Sublimation", "Moisture-Wicking", "Team Sets"], fabric: "Lightweight breathable polyester", custom: "Full sublimation, crests, sponsor logos, names & numbers" },
+      { id: "baseball", cat: "sportswear", name: "Baseball Uniform", badges: ["Button-Front", "Tackle Twill", "Team Sets"], fabric: "Polyester or poly-cotton, pinstripe options", custom: "Tackle twill script, embroidery, custom piping, matching pants" },
+      { id: "basketball", cat: "sportswear", name: "Basketball Uniform", badges: ["Reversible Option", "Full Sublimation", "Team Sets"], fabric: "Breathable mesh & interlock polyester", custom: "Sublimation, tackle twill, reversible builds, names & numbers" },
+      { id: "rugby", cat: "sportswear", name: "Rugby Uniform", badges: ["Reinforced Seams", "Full Sublimation", "Team Sets"], fabric: "Heavy-duty polyester, stretch panels", custom: "Sublimation, embroidered crests, collar styles, matching shorts" },
+      { id: "ice-hockey", cat: "sportswear", name: "Ice Hockey Uniform", badges: ["Pro Cut", "Fight Strap", "Team Sets"], fabric: "Air-knit & mesh polyester", custom: "Tackle twill, sublimation, lace-up neck, matching socks" },
+      // LEATHER
+      { id: "leather-suits", cat: "leather", name: "Leather Suits", badges: ["Genuine Leather", "Custom Fit", "Made to Spec"], fabric: "Cowhide, sheepskin or lambskin; PU on request", custom: "Embossing, perforation, quilting, custom lining & hardware" },
+      { id: "leather-jackets", cat: "leather", name: "Leather Jackets", badges: ["Genuine Leather", "Custom Lining", "Made to Spec"], fabric: "Cowhide, sheepskin or lambskin; PU on request", custom: "Biker / bomber / trucker cuts, embossing, custom zips & lining" },
+      { id: "leather-pants", cat: "leather", name: "Leather Pants", badges: ["Genuine Leather", "Custom Fit", "Made to Spec"], fabric: "Lambskin, sheepskin or cowhide", custom: "Straight / flared / cargo fits, panelling, custom hardware" },
+      { id: "leather-shorts", cat: "leather", name: "Leather Shorts", badges: ["Genuine Leather", "Custom Fit", "Made to Spec"], fabric: "Lambskin, sheepskin or cowhide", custom: "Panelling, embossing, custom hardware & lining" },
+      { id: "leather-vests", cat: "leather", name: "Leather Vests", badges: ["Genuine Leather", "Club Patches", "Made to Spec"], fabric: "Cowhide or sheepskin", custom: "Embroidered patches, embossing, concealed pockets, custom snaps" },
+      // WORKWEAR
+      { id: "workwear-suits", cat: "workwear", name: "Work Wear Suits", badges: ["Reflective Tape", "Poly-Cotton Twill", "Company Logo"], fabric: "Poly-cotton twill or canvas", custom: "Hi-vis tape, embroidery, multi-pocket layouts, custom colours" },
+      { id: "workwear-jackets", cat: "workwear", name: "Work Wear Jackets", badges: ["Reinforced Stitching", "Reflective Tape", "Company Logo"], fabric: "Canvas, duck or poly-cotton; padded options", custom: "Hi-vis tape, embroidery, quilted lining, tool pockets" },
+      { id: "workwear-pants", cat: "workwear", name: "Work Wear Pants", badges: ["Knee-Pad Pockets", "Triple Stitch", "Company Logo"], fabric: "Canvas, duck or ripstop twill", custom: "Knee-pad pockets, hammer loops, hi-vis tape, embroidery" },
+      { id: "workwear-accessories", cat: "workwear", name: "Work Wear Accessories", badges: ["Heavy Duty", "Company Logo", "Low MOQ"], fabric: "Canvas, leather, webbing", custom: "Tool belts, aprons, caps, gloves — branded to your spec" }
+    ];
+
+    // Factory photos. Each entry is one card; extra imgs become the lightbox gallery (angles, details, colourways).
+    // Every name has a full-size <name>.webp and a card-size <name>-sm.webp. Lines without photos show a placeholder.
+    const PHOTOS = [
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-01"], title: "Purple Sun-Fade Zip Hoodie", badges: ["400+ GSM", "Sun Fade Wash", "Distressed Panels"] },
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-02", "hoodies-02-2", "hoodies-02-3", "hoodies-02-4"], title: "Red Rhinestone Cross Zip Hoodie", badges: ["Rhinestones", "Rivet Hood", "Embroidery"] },
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-03", "hoodies-03-2", "hoodies-03-3"], title: "Cropped Puff-Print Zip Hoodie", badges: ["3D Puff Print", "Cropped Fit", "3 Colourways"] },
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-04", "hoodies-04-2"], title: "Black Embroidered Zip Hoodie", badges: ["Chain-Stitch Embroidery", "Heavyweight", "Bulk Packed"] },
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-05", "hoodies-05-2"], title: "Pink All-Over Print Zip Hoodie", badges: ["All-Over Print", "Zip Up", "Low MOQ 30 Pcs"] },
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-06", "hoodies-06-2", "hoodies-06-3"], title: "Pink Screen-Print Zip Hoodie", badges: ["All-Over Screen Print", "Raw Hem", "Matching Pants"] },
+      { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-07"], title: "Graphic Pullover Hoodies", badges: ["Screen Print", "Heavyweight", "Boxy Fit"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-01", "sweat-suits-01-2", "sweat-suits-01-3", "sweat-suits-01-4"], title: "Sun-Fade Zip Hoodie & Short Sets", badges: ["Sun Fade Wash", "Puff Print", "4 Colourways"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-02", "sweat-suits-02-2"], title: "Camo Hoodie & Short Set", badges: ["Camo Print", "Contrast Panels", "Low MOQ 30 Pcs"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-03"], title: "Faded Puff-Print Hoodie & Shorts", badges: ["Puff Print", "Vintage Wash", "Matching Set"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-04"], title: "Red Rhinestone Cropped Sweat Suit", badges: ["Rhinestones", "Sun Fade", "Flared Pants"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-05"], title: "Rhinestone Hoodie & Shorts Set", badges: ["Rhinestones", "Embroidery", "Matching Set"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-06"], title: "Purple Zip Hoodie & Shorts Set", badges: ["Acid Wash", "Contrast Stripes", "Matching Set"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-07"], title: "Zip Hoodie & Flared Pants Set", badges: ["Puff Print", "Flared Fit", "Matching Set"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-08"], title: "Brown Panelled Tracksuit", badges: ["Contrast Panels", "Flared Pants", "Embroidery"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-09"], title: "Embroidered Sweat Suits — Bulk Run", badges: ["Bulk Production", "Embroidery", "Heavyweight"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-10"], title: "Grey Graphic Sweat Suit", badges: ["Screen Print", "Fleece", "Matching Set"] },
+      { line: "sweat-suits", dir: "images/showcase/streetwear/", imgs: ["sweat-suits-11"], title: "Cropped Hoodie & Shorts Set", badges: ["Fleece", "Cropped Fit", "Custom Colour"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-01"], title: "Boxy Graphic Tee", badges: ["240+ GSM", "Puff Print", "Boxy Fit"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-02"], title: "Black Puff-Print Tee", badges: ["Puff Print", "Boxy Fit", "Heavyweight"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-03"], title: "Black Boxy Graphic Tee", badges: ["Screen Print", "Boxy Fit", "240+ GSM"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-04"], title: "White Boxy Print Tee", badges: ["DTG / Screen Print", "Boxy Fit", "240+ GSM"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-05", "t-shirts-05-2"], title: "Slogan Print Tees", badges: ["Screen Print", "Bulk Order", "2 Colourways"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-06"], title: "Rhinestone Tee & Short Set", badges: ["Rhinestones", "Matching Set", "Boxy Fit"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-07"], title: "All-Over Print Camp Shirt", badges: ["Sublimation", "Camp Collar", "Custom Print"] },
+      { line: "t-shirts", dir: "images/showcase/streetwear/", imgs: ["t-shirts-08"], title: "Split-Print Camp Shirt", badges: ["Sublimation", "Camp Collar", "Custom Print"] },
+      { line: "sweat-shirts", dir: "images/showcase/streetwear/", imgs: ["sweat-shirts-01", "sweat-shirts-01-2", "sweat-shirts-01-3"], title: "Oversized Graphic Crewneck", badges: ["Screen Print", "Sleeve Print", "Heavyweight"] },
+      { line: "sweat-shirts", dir: "images/showcase/streetwear/", imgs: ["sweat-shirts-02"], title: "Collage Print Crewneck", badges: ["All-Over Print", "Heavyweight", "Sleeve Print"] },
+      { line: "sweat-shirts", dir: "images/showcase/streetwear/", imgs: ["sweat-shirts-03"], title: "White Airbrush Print Crewneck", badges: ["Screen Print", "Sleeve Print", "Heavyweight"] },
+      { line: "sweat-shirts", dir: "images/showcase/streetwear/", imgs: ["sweat-shirts-04"], title: "All-Over Airbrush Print Crewneck", badges: ["All-Over Print", "Cropped Fit", "Heavyweight"] },
+      { line: "sweat-shirts", dir: "images/showcase/streetwear/", imgs: ["sweat-shirts-05"], title: "Cropped Graphic Long Sleeve", badges: ["DTG / Screen Print", "Cropped Fit", "Sleeve Print"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-01", "shorts-01-2", "shorts-01-3"], title: "Rhinestone Patch Sweat Shorts", badges: ["Rhinestones", "Chenille Patch", "4 Colourways"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-02", "shorts-02-2", "shorts-02-3"], title: "All-Over Print Mesh Shorts", badges: ["Sublimation", "Mesh", "3 Colourways"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-03", "shorts-03-2", "shorts-03-3"], title: "Star Appliqué Sweat Shorts", badges: ["Appliqué", "Sun Fade", "Rope Drawcord"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-04", "shorts-04-2"], title: "Sun-Fade Logo Shorts", badges: ["Sun Fade", "Puff Print", "3 Colourways"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-05"], title: "Rhinestone Puff-Print Shorts", badges: ["Rhinestones", "Puff Print", "4 Colourways"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-06"], title: "Sun-Fade Sweat Shorts", badges: ["Sun Fade", "Puff Print", "Raw Hem"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-07"], title: "Vintage Wash Sweat Shorts", badges: ["Vintage Wash", "Puff Print", "2 Colourways"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-08"], title: "Panelled Fleece Shorts", badges: ["Colour Block", "Embroidery", "French Terry"] },
+      { line: "shorts", dir: "images/showcase/streetwear/", imgs: ["shorts-09"], title: "Printed Mesh Shorts", badges: ["Custom Print", "Mesh", "Low MOQ 30 Pcs"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-01", "pants-01-2", "pants-01-3"], title: "Flame Print Flared Sweatpants", badges: ["Puff Print", "Flared Fit", "3 Colourways"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-02", "pants-02-2"], title: "Rhinestone Flared Sweatpants", badges: ["Rhinestones", "Embroidery", "Flared Fit"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-03"], title: "Flared Graphic Sweatpants", badges: ["Puff Print", "Flared Fit", "Appliqué"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-04"], title: "Varsity Letter Sweatpants", badges: ["Appliqué", "Flared Fit", "Heavy Fleece"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-05"], title: "Stacked Puff-Print Sweatpants", badges: ["Puff Print", "Raw Hem", "Stacked Fit"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-06"], title: "Panelled Flared Sweatpants", badges: ["Contrast Panel", "Embroidery", "Flared Fit"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-07"], title: "Cross Appliqué Panel Sweatpants", badges: ["Appliqué", "Contrast Panel", "Flared Fit"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-08"], title: "Cross Patch Flared Sweatpants", badges: ["Appliqué", "Flared Fit", "Heavy Fleece"] },
+      { line: "pants", dir: "images/showcase/streetwear/", imgs: ["pants-09"], title: "Wide-Leg Print Sweatpants", badges: ["Screen Print", "Wide Leg", "Heavy Fleece"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-01", "jerseys-01-2"], title: "Champs Football Jersey", badges: ["Sublimation", "Front & Back Numbers", "Mesh"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-02", "jerseys-02-2"], title: "Panthers Mesh Football Jersey", badges: ["Tackle Twill", "Mesh", "2 Colourways"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-03", "jerseys-03-2"], title: "Custom Moto Football Jersey", badges: ["Sublimation", "Custom Numbers", "Mesh"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-04"], title: "Pinstripe Baseball Jersey", badges: ["Pinstripe", "Tackle Twill", "Button Front"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-05"], title: "Black & Gold Baseball Jersey", badges: ["Pinstripe", "Embroidery", "Button Front"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-06"], title: "Long Sleeve Moto Jersey", badges: ["Twill Numbers", "Long Sleeve", "Sublimation"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-07"], title: "Anime Print Long Sleeve Jersey", badges: ["Sublimation", "Long Sleeve", "Custom Art"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-08"], title: "V-Neck Mesh Jersey", badges: ["Mesh", "Twill Numbers", "Custom Colours"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-09"], title: "Script Print Football Jersey", badges: ["Sublimation", "Custom Script", "Mesh"] },
+      { line: "jerseys", dir: "images/showcase/streetwear/", imgs: ["jerseys-10"], title: "Retro Mesh Football Jersey", badges: ["Mesh", "Twill Numbers", "Custom Colours"] },
+      { line: "bra-leggings", dir: "images/showcase/streetwear/", imgs: ["bra-leggings-01"], title: "Printed Sports Bra & Biker Shorts", badges: ["Logo Print", "4-Way Stretch", "Matching Set"] },
+      { line: "bra-leggings", dir: "images/showcase/streetwear/", imgs: ["bra-leggings-02"], title: "Tie-Dye Leggings & Bra Set", badges: ["Tie-Dye", "4-Way Stretch", "Matching Set"] },
+      { line: "bra-leggings", dir: "images/showcase/streetwear/", imgs: ["bra-leggings-03"], title: "Leopard Leggings & Bra Set", badges: ["Custom Print", "4-Way Stretch", "Matching Set"] },
+      { line: "bra-leggings", dir: "images/showcase/streetwear/", imgs: ["bra-leggings-04"], title: "Grey Leggings & Sports Bra Set", badges: ["4-Way Stretch", "Nylon Spandex", "Matching Set"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-01", "hats-caps-01-2", "hats-caps-01-3"], title: "Rhinestone Knit Beanie", badges: ["Rhinestones", "Woven Label", "Distressed"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-02", "hats-caps-02-2"], title: "Custom Dad Hats & Caps", badges: ["3D Embroidery", "Printed Brim", "Custom Colours"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-03"], title: "Chenille Letter Beanies", badges: ["Chenille Patch", "Custom Colours", "Low MOQ"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-04"], title: "Jacquard Logo Beanies", badges: ["Jacquard Knit", "Custom Colours", "Low MOQ"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-05"], title: "Custom Knit Beanies", badges: ["Jacquard Knit", "Embroidery", "Custom Colours"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-06"], title: "Jacquard Skully Beanies", badges: ["Jacquard Knit", "Custom Colours", "Low MOQ"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-07"], title: "Two-Tone Embroidered Caps", badges: ["3D Embroidery", "Two-Tone", "Structured"] },
+      { line: "hats-caps", dir: "images/showcase/streetwear/", imgs: ["hats-caps-08"], title: "Washed Embroidered Cap", badges: ["Vintage Wash", "Embroidery", "Unstructured"] },
+      { line: "socks", dir: "images/showcase/streetwear/", imgs: ["socks-01", "socks-01-2"], title: "Jacquard Logo Crew Socks", badges: ["Knit-In Logo", "Branded Packaging", "Custom Colours"] },
+      { line: "socks", dir: "images/showcase/streetwear/", imgs: ["socks-02"], title: "Multi-Colour Logo Socks", badges: ["Knit-In Logo", "Custom Colours", "Combed Cotton"] },
+      { line: "socks", dir: "images/showcase/streetwear/", imgs: ["socks-03"], title: "Flame Knit Crew Socks", badges: ["Knit-In Design", "Cushioned Sole", "Combed Cotton"] },
+      { line: "socks", dir: "images/showcase/streetwear/", imgs: ["socks-04"], title: "Grip Socks", badges: ["Anti-Slip Grip", "Knit-In Logo", "Cushioned Sole"] },
+      { line: "socks", dir: "images/showcase/streetwear/", imgs: ["socks-05"], title: "White Crew Socks", badges: ["Knit-In Logo", "Combed Cotton", "Low MOQ"] },
+      { line: "mask-balaclava", dir: "images/showcase/streetwear/", imgs: ["mask-balaclava-01"], title: "Embroidered Knit Ski Mask", badges: ["Embroidery", "Knit", "Custom Colours"] },
+      { line: "mask-balaclava", dir: "images/showcase/streetwear/", imgs: ["mask-balaclava-02"], title: "Custom Knit Ski Masks", badges: ["Embroidery", "Custom Colours", "Knit"] },
+      { line: "mask-balaclava", dir: "images/showcase/streetwear/", imgs: ["mask-balaclava-03"], title: "White Embroidered Balaclava", badges: ["Embroidery", "Knit", "Custom Colours"] },
+      { line: "mask-balaclava", dir: "images/showcase/streetwear/", imgs: ["mask-balaclava-04"], title: "Printed Balaclava", badges: ["Screen Print", "Stretch Fabric", "Custom Art"] },
+      { line: "varsity-jackets", dir: "images/showcase/streetwear/", imgs: ["varsity-jackets-01", "varsity-jackets-01-2", "varsity-jackets-01-3", "varsity-jackets-01-4"], title: "Chenille Patch Varsity Jacket", badges: ["Chenille Patch", "4 Colourways", "Wool Body"] },
+      { line: "varsity-jackets", dir: "images/showcase/streetwear/", imgs: ["varsity-jackets-02"], title: "Letterman Varsity Jacket", badges: ["Chenille Letters", "Contrast Sleeves", "Wool Body"] },
+      { line: "varsity-jackets", dir: "images/showcase/streetwear/", imgs: ["varsity-jackets-03"], title: "Pink Embroidered Varsity Jacket", badges: ["Embroidery", "Contrast Sleeves", "Wool Body"] },
+      { line: "varsity-jackets", dir: "images/showcase/streetwear/", imgs: ["varsity-jackets-04"], title: "Pink Varsity Jacket", badges: ["Embroidery", "Contrast Sleeves", "Wool Body"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-01"], title: "Emerald Track Jacket & Shorts", badges: ["Embroidery", "Contrast Piping", "Nylon Shell"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-02"], title: "Green Track Jacket & Shorts", badges: ["Nylon Shell", "Embroidery", "Colour Block"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-03"], title: "Blue Track Jacket & Shorts", badges: ["Nylon Shell", "Embroidery", "Colour Block"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-04"], title: "Rhinestone Track Set", badges: ["Rhinestones", "Colour Block", "Matching Set"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-05"], title: "Olive Piped Windbreaker Set", badges: ["Nylon Shell", "Contrast Piping", "Matching Set"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-06"], title: "Orange Panelled Track Set", badges: ["Nylon Shell", "Colour Block", "Matching Set"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-07"], title: "Colour-Block Windbreaker Set", badges: ["Nylon Shell", "Colour Block", "Matching Set"] },
+      { line: "windbreakers", dir: "images/showcase/streetwear/", imgs: ["windbreakers-08"], title: "Hooded Windbreaker Tracksuit", badges: ["Water-Resistant", "Colour Block", "Matching Set"] },
+      { line: "denim-jackets", dir: "images/showcase/streetwear/", imgs: ["denim-jackets-01"], title: "Wreath Print Denim Jacket", badges: ["Custom Print", "Trucker Fit", "Mid Wash"] },
+      { line: "denim-jackets", dir: "images/showcase/streetwear/", imgs: ["denim-jackets-02"], title: "Embroidered Cropped Denim Jacket", badges: ["Embroidery", "Cropped Fit", "Light Wash"] },
+      { line: "denim-jackets", dir: "images/showcase/streetwear/", imgs: ["denim-jackets-03"], title: "Rhinestone Denim Shirt", badges: ["Rhinestones", "Camp Collar", "Light Wash"] },
+      { line: "denim-pants", dir: "images/showcase/streetwear/", imgs: ["denim-pants-01"], title: "Cross Patch Flared Jeans", badges: ["Leather Patches", "Washed", "Flared Fit"] },
+      { line: "denim-pants", dir: "images/showcase/streetwear/", imgs: ["denim-pants-02"], title: "Panelled Cross Jeans", badges: ["Leather Patches", "Contrast Panel", "Raw Hem"] },
+      { line: "denim-pants", dir: "images/showcase/streetwear/", imgs: ["denim-pants-03"], title: "Acid Wash Panel Jeans", badges: ["Acid Wash", "Contrast Panel", "Flared Fit"] },
+      { line: "denim-pants", dir: "images/showcase/streetwear/", imgs: ["denim-pants-04"], title: "Wreath Print Straight Jeans", badges: ["Custom Print", "Light Wash", "Straight Fit"] },
+      { line: "denim-shorts", dir: "images/showcase/streetwear/", imgs: ["denim-shorts-01"], title: "Rhinestone Embellished Jorts", badges: ["Rhinestones", "Raw Hem", "Washed"] },
+      { line: "denim-shorts", dir: "images/showcase/streetwear/", imgs: ["denim-shorts-02", "denim-shorts-02-2"], title: "Puff Print Denim Jorts", badges: ["Puff Print", "Raw Hem", "Contrast Panel"] },
+      { line: "denim-shorts", dir: "images/showcase/streetwear/", imgs: ["denim-shorts-03"], title: "Rhinestone Script Jorts", badges: ["Rhinestones", "Dark Wash", "2 Colourways"] },
+      { line: "denim-shorts", dir: "images/showcase/streetwear/", imgs: ["denim-shorts-04"], title: "Printed Denim Jorts", badges: ["Custom Print", "Mid Wash", "Baggy Fit"] },
+      { line: "denim-shorts", dir: "images/showcase/streetwear/", imgs: ["denim-shorts-05"], title: "Distressed Denim Shorts", badges: ["Distressing", "Light Wash", "Raw Hem"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-01"], title: "Titan Squad Football Uniform", badges: ["Full Sublimation", "Jersey + Pants", "Team Sets"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-02"], title: "Wolves Sublimated Football Uniform", badges: ["Full Sublimation", "Custom Pant Print", "Team Sets"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-03"], title: "Iron Lions Football Uniform", badges: ["Full Sublimation", "Custom Pant Print", "Team Sets"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-04"], title: "City Cyclones Football Uniform", badges: ["Full Sublimation", "Jersey + Pants", "Team Sets"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-05", "american-football-05-2"], title: "Maroon Football Uniform", badges: ["Names & Numbers", "Jersey + Pants", "Team Sets"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-06"], title: "7v7 Flag Football Uniform", badges: ["Full Sublimation", "7v7 Cut", "Team Sets"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-07"], title: "7v7 Team Pack with Backpacks", badges: ["Full Team Pack", "Backpacks & Headbands", "Custom Branding"] },
+      { line: "american-football", dir: "images/showcase/sportswear/", imgs: ["american-football-08"], title: "Bulldogs 7v7 Team Pack", badges: ["Full Team Pack", "Backpacks & Headbands", "Custom Branding"] },
+      { line: "soccer", dir: "images/showcase/sportswear/", imgs: ["soccer-01"], title: "Outlaws Soccer Kit & Socks", badges: ["Full Sublimation", "Kit + Socks", "Bulk Packed"] },
+      { line: "soccer", dir: "images/showcase/sportswear/", imgs: ["soccer-02"], title: "Striped Soccer Kit", badges: ["Full Sublimation", "Names & Numbers", "Team Sets"] },
+      { line: "soccer", dir: "images/showcase/sportswear/", imgs: ["soccer-03", "soccer-03-2"], title: "Gradient Soccer Kit", badges: ["Full Sublimation", "Gradient Design", "2 Teams"] },
+      { line: "soccer", dir: "images/showcase/sportswear/", imgs: ["soccer-04"], title: "Classic V-Neck Soccer Kit", badges: ["Moisture-Wicking", "Names & Numbers", "Team Sets"] },
+      { line: "basketball", dir: "images/showcase/sportswear/", imgs: ["basketball-01"], title: "Eagles Basketball Uniform", badges: ["Full Sublimation", "Names & Numbers", "Team Sets"] },
+      { line: "basketball", dir: "images/showcase/sportswear/", imgs: ["basketball-02"], title: "Champs Home & Away Basketball Set", badges: ["Home & Away", "Full Sublimation", "Team Sets"] },
+      { line: "basketball", dir: "images/showcase/sportswear/", imgs: ["basketball-03", "basketball-03-2"], title: "Team Next Basketball Uniform", badges: ["Full Sublimation", "Custom Names", "2 Versions"] },
+      { line: "basketball", dir: "images/showcase/sportswear/", imgs: ["basketball-04"], title: "Youth League Basketball Uniform", badges: ["Full Sublimation", "Names & Numbers", "Team Sets"] },
+      { line: "baseball", dir: "images/showcase/sportswear/", imgs: ["baseball-01", "baseball-01-2"], title: "Chill Pinstripe Baseball Uniform", badges: ["Pinstripe", "Jersey + Pants", "2 Colourways"] },
+      { line: "baseball", dir: "images/showcase/sportswear/", imgs: ["baseball-02"], title: "Tribe Baseball Uniform", badges: ["Twill Script", "Jersey + Pants", "Team Sets"] },
+      { line: "baseball", dir: "images/showcase/sportswear/", imgs: ["baseball-03"], title: "Nitro Softball Uniform", badges: ["Sublimation", "Piped Pants", "Team Sets"] },
+      { line: "baseball", dir: "images/showcase/sportswear/", imgs: ["baseball-04"], title: "Cardinals Home & Away Uniform", badges: ["Home & Away", "Piped Pants", "Team Sets"] },
+      { line: "baseball", dir: "images/showcase/sportswear/", imgs: ["baseball-05"], title: "On Beat Pinstripe Baseball Vest", badges: ["Pinstripe", "Sleeveless", "Team Sets"] },
+      { line: "rugby", dir: "images/showcase/sportswear/", imgs: ["rugby-01"], title: "Teal Sublimated Rugby Kit", badges: ["Full Sublimation", "Jersey + Shorts", "Team Sets"] },
+      { line: "ice-hockey", dir: "images/showcase/sportswear/", imgs: ["ice-hockey-01"], title: "Tigers Ice Hockey Jersey", badges: ["Full Sublimation", "Pro Cut", "Team Sets"] },
+      { line: "ice-hockey", dir: "images/showcase/sportswear/", imgs: ["ice-hockey-02"], title: "Bears Home & Away Hockey Set", badges: ["Home & Away", "Matching Shells", "Team Sets"] },
+      { line: "leather-suits", dir: "images/showcase/leather/", imgs: ["leather-suits-01"], title: "Burgundy Leather Jacket & Pants Suit", badges: ["Genuine Leather", "Matching Set", "Cargo Pockets"] },
+      { line: "leather-suits", dir: "images/showcase/leather/", imgs: ["leather-suits-02"], title: "Leather Varsity Tracksuit", badges: ["Genuine Leather", "Rib Trim", "Matching Set"] },
+      { line: "leather-suits", dir: "images/showcase/leather/", imgs: ["leather-suits-03"], title: "Orange Leather Logo Suit", badges: ["Genuine Leather", "Printed Logo", "Matching Set"] },
+      { line: "leather-jackets", dir: "images/showcase/leather/", imgs: ["leather-jackets-01"], title: "Black Leather Biker Jacket", badges: ["Genuine Leather", "Asymmetric Zip", "Belted Hem"] },
+      { line: "leather-jackets", dir: "images/showcase/leather/", imgs: ["leather-jackets-02", "leather-jackets-02-2"], title: "Leather Bomber with Appliqué", badges: ["Genuine Leather", "Appliqué", "2 Colourways"] },
+      { line: "leather-jackets", dir: "images/showcase/leather/", imgs: ["leather-jackets-03"], title: "Burgundy Flame Leather Jacket", badges: ["Genuine Leather", "Flame Embroidery", "Custom Lining"] },
+      { line: "leather-jackets", dir: "images/showcase/leather/", imgs: ["leather-jackets-04"], title: "Panelled Leather Moto Jacket", badges: ["Genuine Leather", "Appliqué", "Panelled"] },
+      { line: "leather-pants", dir: "images/showcase/leather/", imgs: ["leather-pants-01"], title: "Leather Cargo Pants", badges: ["Genuine Leather", "Cargo Pockets", "Drawcord Waist"] },
+      { line: "leather-pants", dir: "images/showcase/leather/", imgs: ["leather-pants-02"], title: "Wide-Leg Leather Pants", badges: ["Genuine Leather", "Wide Leg", "Washed Finish"] },
+      { line: "leather-pants", dir: "images/showcase/leather/", imgs: ["leather-pants-03"], title: "Straight Leather Pants", badges: ["Genuine Leather", "Straight Fit", "Washed Finish"] },
+      { line: "leather-pants", dir: "images/showcase/leather/", imgs: ["leather-pants-04"], title: "Baggy Leather Jeans", badges: ["Genuine Leather", "5-Pocket", "Baggy Fit"] },
+      { line: "leather-shorts", dir: "images/showcase/leather/", imgs: ["leather-shorts-01"], title: "Leather Drawcord Shorts", badges: ["Genuine Leather", "Drawcord Waist", "Zip Pockets"] },
+      { line: "leather-vests", dir: "images/showcase/leather/", imgs: ["leather-vests-01"], title: "Grained Leather Vest", badges: ["Genuine Leather", "Zip Front", "Custom Lining"] },
+      { line: "leather-vests", dir: "images/showcase/leather/", imgs: ["leather-vests-02"], title: "Utility Leather Vest", badges: ["Genuine Leather", "Flap Pockets", "Epaulettes"] },
+      { line: "leather-vests", dir: "images/showcase/leather/", imgs: ["leather-vests-03"], title: "Logo-Debossed Leather Vest", badges: ["Genuine Leather", "Debossed Logo", "Zip Pockets"] },
+      { line: "leather-vests", dir: "images/showcase/leather/", imgs: ["leather-vests-04"], title: "Embossed Utility Leather Vest", badges: ["Genuine Leather", "Embossed Pattern", "Cargo Pockets"] },
+      { line: "leather-vests", dir: "images/showcase/leather/", imgs: ["leather-vests-05", "leather-vests-05-2"], title: "Leather & Denim Vest", badges: ["Leather + Denim", "Snap Front", "Custom Mix"] },
+      { line: "workwear-suits", dir: "images/showcase/workwear/", imgs: ["workwear-suits-01"], title: "Reflective Work Suit — Factory Floor", badges: ["Reflective Tape", "Jacket + Pants", "Bulk Production"] },
+      { line: "workwear-suits", dir: "images/showcase/workwear/", imgs: ["workwear-suits-02"], title: "Branded Coverall", badges: ["Custom Logo Print", "Knee Panels", "Coverall"] },
+      { line: "workwear-suits", dir: "images/showcase/workwear/", imgs: ["workwear-suits-03"], title: "Grey Utility Coverall", badges: ["Poly-Cotton Twill", "Multi-Pocket", "Coverall"] },
+      { line: "workwear-suits", dir: "images/showcase/workwear/", imgs: ["workwear-suits-04"], title: "Hi-Vis Navy Coverall", badges: ["Reflective Tape", "Hi-Vis", "Coverall"] },
+      { line: "workwear-jackets", dir: "images/showcase/workwear/", imgs: ["workwear-jackets-01"], title: "Grey Work Jacket", badges: ["Poly-Cotton Twill", "ID Pocket", "Contrast Trims"] },
+      { line: "workwear-jackets", dir: "images/showcase/workwear/", imgs: ["workwear-jackets-02"], title: "Multi-Pocket Work Vest", badges: ["Multi-Pocket", "Contrast Trims", "Poly-Cotton"] },
+      { line: "workwear-jackets", dir: "images/showcase/workwear/", imgs: ["workwear-jackets-03"], title: "Canvas Utility Vest", badges: ["Canvas", "Multi-Pocket", "D-Ring"] },
+      { line: "workwear-pants", dir: "images/showcase/workwear/", imgs: ["workwear-pants-01"], title: "Work Bib Overalls", badges: ["Knee-Pad Pockets", "Contrast Panels", "Adjustable Straps"] },
+    ];
+
+    /* ---------- build items ---------- */
+    const lineById = Object.fromEntries(LINES.map(l => [l.id, l]));
+    const ITEMS = [];
+    LINES.forEach(l => {
+      const shots = PHOTOS.filter(p => p.line === l.id);
+      if (!shots.length) ITEMS.push({ line: l, title: l.name, badges: l.badges, imgs: [] });
+      shots.forEach(p => ITEMS.push({ line: l, title: p.title || l.name, badges: p.badges || l.badges, imgs: p.imgs.map(n => p.dir + n) }));
+    });
+
+    const $ = id => document.getElementById(id);
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    document.getElementById("yr").textContent = new Date().getFullYear();
+    $("lineCount").textContent = LINES.length;
+    const thumb = it => it.imgs[0] + "-sm.webp";
+    const photoCount = cat => ITEMS.filter(i => i.line.cat === cat && i.imgs.length).length;
+    document.querySelectorAll("[data-count]").forEach(el => {
+      const n = photoCount(el.dataset.count);
+      if (n) el.textContent = n + " styles";
+    });
+
+
+    /* ---------- filter state ---------- */
+    let state = { cat: "all", line: "all" };
+    let view = [];
+
+    function renderTabs() {
+      const count = c => c === "all" ? ITEMS.length : ITEMS.filter(i => i.line.cat === c).length;
+      const keys = ["all", ...Object.keys(CATS)];
+      $("tabs").innerHTML = keys.map(k =>
+        `<button class="tab" data-cat="${k}" aria-pressed="${state.cat === k}">${k === "all" ? "All" : CATS[k].label}<span class="n">${count(k)}</span></button>`
+      ).join("");
+      const subs = $("subs");
+      if (state.cat === "all") { subs.hidden = true; subs.innerHTML = ""; return; }
+      subs.hidden = false;
+      const lines = LINES.filter(l => l.cat === state.cat);
+      subs.innerHTML = [`<button class="chip" data-line="all" aria-pressed="${state.line === "all"}">All ${esc(CATS[state.cat].label)}</button>`]
+        .concat(lines.map(l => `<button class="chip" data-line="${l.id}" aria-pressed="${state.line === l.id}">${esc(l.name)}</button>`)).join("");
+    }
+
+    const camIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>';
+    const lineCount = id => ITEMS.filter(i => i.line.id === id).length;
+
+    function cardHTML(it, i) {
+      const media = it.imgs.length
+        ? `<img src="${esc(thumb(it))}" alt="${esc(it.title + " — custom " + it.line.name.toLowerCase() + " by Perfect Outfit Intl")}" loading="lazy" decoding="async">`
+          + (it.imgs.length > 1 ? `<span class="pcount">${camIcon}${it.imgs.length}</span>` : "")
+        : `<span class="ph" aria-hidden="true"><b>${esc(it.line.name)}</b><small>Factory photo coming soon</small></span>`;
+      const badges = it.badges.slice(0, 3).map((b, k) => `<span class="badge${k === 0 ? " hot" : ""}">${esc(b)}</span>`).join("");
+      return `<article class="card enter" style="--i:${Math.min(i, 12)}" data-i="${i}">
+        <button class="media" data-open="${i}" aria-label="View ${esc(it.title)} specs and pricing">
+          <span class="badges">${badges}</span>${media}<span class="veil"><span>View specs + price sheet</span></span>
+        </button>
+        <div class="body">
+          <span class="cat">${esc(CATS[it.line.cat].label)}</span>
+          <h3>${esc(it.title)}</h3>
+          <p class="fab">${esc(it.line.fabric)}</p>
+          ${state.cat === "all" && lineCount(it.line.id) > 1 ? `<button class="more" data-line="${it.line.id}">+${lineCount(it.line.id) - 1} more ${esc(it.line.name.toLowerCase())} →</button>` : ""}
+          <button class="btn btn-primary" data-quote="${i}">Quote this item →</button>
+        </div>
+      </article>`;
+    }
+
+    function render() {
+      // All: one highlight per product line. Category: every style, grouped by line. Line: every style.
+      const grouped = state.cat !== "all" && state.line === "all";
+      if (state.cat === "all") {
+        const seen = new Set();
+        view = ITEMS.filter(i => !seen.has(i.line.id) && seen.add(i.line.id));
+      } else {
+        view = ITEMS.filter(i => i.line.cat === state.cat && (state.line === "all" || i.line.id === state.line));
+      }
+      let html = "", lastLine = null;
+      view.forEach((it, i) => {
+        if (grouped && it.line !== lastLine) {
+          const n = lineCount(it.line.id);
+          html += `<div class="g-head"><h3>${esc(it.line.name)}<span>${n} ${n === 1 ? "style" : "styles"}</span></h3>`
+            + (n > 1 ? `<button data-line="${it.line.id}">Only ${esc(it.line.name.toLowerCase())} →</button>` : "") + `</div>`;
+          lastLine = it.line;
+        }
+        html += cardHTML(it, i);
+      });
+      $("grid").innerHTML = html || `<div class="empty">No styles here yet — <a class="gold" href="index.html#quote">request it custom →</a></div>`;
+      $("resultMeta").innerHTML = state.cat === "all"
+        ? `Showing <b>${view.length}</b> product lines — pick a category to see all <b>${ITEMS.length}</b> styles`
+        : `Showing <b>${view.length}</b> ${view.length === 1 ? "style" : "styles"} in ${esc(state.line !== "all" ? lineById[state.line].name : CATS[state.cat].label)}`;
+      renderTabs();
+      trackInView();
+    }
+
+    function setFilter(cat, line = "all", scroll) {
+      state = { cat, line };
+      history.replaceState(null, "", cat === "all" ? location.pathname : "#" + (line !== "all" ? line : cat));
+      render();
+      if (scroll) {
+        const y = $("results").getBoundingClientRect().top + scrollY - document.querySelector("header.site").offsetHeight - $("catalog").offsetHeight;
+        scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+
+    $("tabs").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b) setFilter(b.dataset.cat, "all", true); });
+    $("subs").addEventListener("click", e => { const b = e.target.closest("[data-line]"); if (b) setFilter(state.cat, b.dataset.line, true); });
+    document.querySelectorAll("[data-go]").forEach(el => el.addEventListener("click", e => {
+      e.preventDefault();
+      menu.classList.remove("open");
+      setFilter(el.dataset.go, "all", true);
+    }));
+    $("grid").addEventListener("click", e => {
+      const open = e.target.closest("[data-open]"), quote = e.target.closest("[data-quote]"), line = e.target.closest("[data-line]");
+      if (line) setFilter(lineById[line.dataset.line].cat, line.dataset.line, true);
+      if (open) openLB(+open.dataset.open);
+      if (quote) openLB(+quote.dataset.quote, true);
+    });
+
+    // Deep links: showcase.html#leather or showcase.html#hoodies
+    (function () {
+      const h = location.hash.slice(1);
+      if (CATS[h]) state.cat = h;
+      else if (lineById[h]) state = { cat: lineById[h].cat, line: h };
+    })();
+
+    /* ---------- lightbox ---------- */
+    const lb = $("lb");
+    let cur = 0;
+
+    function fillLB(i) {
+      cur = (i + view.length) % view.length;
+      const it = view[cur], c = CATS[it.line.cat];
+      showPhoto(0);
+      $("lbThumbs").innerHTML = it.imgs.length > 1
+        ? it.imgs.map((src, k) => `<button data-photo="${k}" aria-label="Photo ${k + 1} of ${it.imgs.length}" style="background-image:url('${esc(src)}-sm.webp')"></button>`).join("")
+        : "";
+      markThumb(0);
+      $("lbCat").textContent = c.label;
+      $("lbTitle").textContent = it.title;
+      $("lbFormName").textContent = it.title;
+      $("lbBadges").innerHTML = it.badges.map((b, k) => `<span class="badge${k === 0 ? " hot" : ""}">${esc(b)}</span>`).join("");
+      $("lbFabric").textContent = it.line.fabric;
+      $("lbCustom").textContent = it.line.custom;
+      $("lbTurn").textContent = c.turnaround;
+      $("lbMoq").textContent = c.moq;
+      $("lbCount").textContent = `${cur + 1} / ${view.length}`;
+      $("leadMsg").textContent = "";
+      const single = view.length < 2;
+      $("lbPrev").hidden = $("lbNext").hidden = single;
+    }
+
+    function showPhoto(k) {
+      const it = view[cur];
+      $("lbMedia").innerHTML = it.imgs.length
+        ? `<img src="${esc(it.imgs[k])}.webp" alt="${esc(it.title)} — photo ${k + 1}">`
+        : `<span class="ph" aria-hidden="true"><b>${esc(it.line.name)}</b><small>Factory photo coming soon</small></span>`;
+    }
+    function markThumb(k) {
+      $("lbThumbs").querySelectorAll("button").forEach((b, n) => b.setAttribute("aria-current", n === k));
+    }
+    $("lbThumbs").addEventListener("click", e => {
+      const b = e.target.closest("[data-photo]");
+      if (b) { showPhoto(+b.dataset.photo); markThumb(+b.dataset.photo); }
+    });
+
+    function openLB(i, focusForm) {
+      fillLB(i);
+      if (!lb.open) lb.showModal();
+      document.body.classList.add("lb-open");
+      trackInView();
+      if (focusForm) {
+        const f = $("l-email");
+        if (window.matchMedia("(max-width: 900px)").matches) $("leadForm").scrollIntoView({ block: "start" });
+        f.focus({ preventScroll: true });
+      } else $("lbClose").focus();
+    }
+
+    $("lbPrev").addEventListener("click", () => fillLB(cur - 1));
+    $("lbNext").addEventListener("click", () => fillLB(cur + 1));
+    $("lbClose").addEventListener("click", () => lb.close());
+    lb.addEventListener("close", () => { document.body.classList.remove("lb-open"); trackInView(); });
+    lb.addEventListener("keydown", e => {
+      if (e.target.matches("input")) return;
+      if (e.key === "ArrowLeft") fillLB(cur - 1);
+      if (e.key === "ArrowRight") fillLB(cur + 1);
+    });
+    // Swipe between styles on touch
+    (function () {
+      let x0 = null;
+      $("lbStage").addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+      $("lbStage").addEventListener("touchend", e => {
+        if (x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 50) fillLB(cur + (dx < 0 ? 1 : -1));
+        x0 = null;
+      });
+    })();
+
+    // Price-sheet request: opens WhatsApp (preferred) or email with everything pre-filled
+    $("leadForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const email = $("l-email").value.trim(), wa = $("l-wa").value.trim(), msg = $("leadMsg");
+      const okEmail = email && $("l-email").checkValidity(), okWa = wa.replace(/\D/g, "").length >= 7;
+      if (!okEmail && !okWa) { msg.textContent = "Add your email or WhatsApp number so we can send the price sheet."; return; }
+      const it = view[cur];
+      const text = [
+        `Hi Perfect Outfit Intl, please send me the price sheet for: ${it.title} (${CATS[it.line.cat].label}).`,
+        email && "Email: " + email, wa && "WhatsApp: " + wa
+      ].filter(Boolean).join("\n");
+      if (WHATSAPP_NUMBER) {
+        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+        msg.textContent = "WhatsApp opened — hit send and we'll reply with the price sheet.";
+      } else if (CONTACT_EMAIL) {
+        window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Price sheet request — " + it.title) + "&body=" + encodeURIComponent(text);
+        msg.textContent = "Your email app is opening — hit send and we'll reply within 24 hours.";
+      } else {
+        msg.textContent = "Price sheets are being set up — message us on Instagram @perfect_outfit_intl for now.";
+      }
+    });
+
+    /* ---------- sticky quick-quote bar ---------- */
+    const qbar = $("qbar");
+    let focusIdx = -1, ticking = false;
+
+    function trackInView() {
+      const cards = $("grid").querySelectorAll(".card");
+      const mid = innerHeight * 0.5;
+      let best = -1, bestD = Infinity;
+      cards.forEach(c => {
+        const r = c.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight) return;
+        const d = Math.abs((r.top + r.bottom) / 2 - mid);
+        if (d < bestD) { bestD = d; best = +c.dataset.i; }
+      });
+      const gridR = $("grid").getBoundingClientRect();
+      const show = gridR.top < innerHeight * 0.6 && gridR.bottom > innerHeight * 0.4 && best > -1 && !lb.open;
+      qbar.classList.toggle("show", show);
+      qbar.setAttribute("aria-hidden", !show);
+      $("qBtn").tabIndex = show ? 0 : -1;
+      document.body.classList.toggle("bar-on", show);
+      if (best !== focusIdx && best > -1) {
+        focusIdx = best;
+        const it = view[best];
+        $("qName").textContent = it.title;
+        const t = $("qThumb");
+        t.style.backgroundImage = it.imgs.length ? `url("${thumb(it)}")` : "";
+        t.textContent = it.imgs.length ? "" : it.title.charAt(0);
+      }
+    }
+    addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { trackInView(); ticking = false; }); } }, { passive: true });
+    addEventListener("resize", trackInView);
+    $("qBtn").addEventListener("click", () => { if (focusIdx > -1) openLB(focusIdx, true); });
+
+    /* ---------- header / contact ---------- */
+    const burger = $("burger"), menu = $("menu");
+    burger.addEventListener("click", () => burger.setAttribute("aria-expanded", menu.classList.toggle("open")));
+    if (WHATSAPP_NUMBER) {
+      const wa = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Hi Perfect Outfit Intl, I saw your factory showcase and I'd like a quote.");
+      document.querySelectorAll(".js-wa-float").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
+    }
+
+    render();
+  </script>
+</body>
+</html>

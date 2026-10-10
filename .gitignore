@@ -12,3 +12,6 @@ supabase/.branches/
 .vercel
 .env*
 !.env.example
+
+# Original uploads (processed copies live in images/showcase/<category>/)
+images/showcase/_originals/

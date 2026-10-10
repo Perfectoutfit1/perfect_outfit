@@ -101,13 +101,14 @@
     .logo { font-family: "Anton", sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
     .logo small { font-family: "Inter", sans-serif; font-size: .6rem; font-weight: 700; letter-spacing: .3em; color: var(--accent); margin-left: 6px; vertical-align: middle; }
     .menu { display: flex; gap: 26px; list-style: none; }
-    .menu a { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .15s; }
+    .menu a { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .15s; white-space: nowrap; }
+    @media (max-width: 1240px) { .menu { gap: 18px; } .menu a { font-size: .74rem; letter-spacing: .06em; } }
     .menu a:hover, .menu a[aria-current] { color: var(--accent); }
     .nav-cta { display: flex; align-items: center; gap: 12px; }
     .nav-cta .btn { padding: 11px 18px; font-size: .75rem; }
     .burger { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; }
     .burger svg { width: 26px; height: 26px; }
-    @media (max-width: 1020px) {
+    @media (max-width: 1100px) {
       .menu {
         display: none; position: absolute; top: var(--header); left: 0; right: 0;
         flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line);
@@ -623,8 +624,7 @@
       // WORKWEAR
       { id: "workwear-suits", cat: "workwear", name: "Work Wear Suits", badges: ["Reflective Tape", "Poly-Cotton Twill", "Company Logo"], fabric: "Poly-cotton twill or canvas", custom: "Hi-vis tape, embroidery, multi-pocket layouts, custom colours" },
       { id: "workwear-jackets", cat: "workwear", name: "Work Wear Jackets", badges: ["Reinforced Stitching", "Reflective Tape", "Company Logo"], fabric: "Canvas, duck or poly-cotton; padded options", custom: "Hi-vis tape, embroidery, quilted lining, tool pockets" },
-      { id: "workwear-pants", cat: "workwear", name: "Work Wear Pants", badges: ["Knee-Pad Pockets", "Triple Stitch", "Company Logo"], fabric: "Canvas, duck or ripstop twill", custom: "Knee-pad pockets, hammer loops, hi-vis tape, embroidery" },
-      { id: "workwear-accessories", cat: "workwear", name: "Work Wear Accessories", badges: ["Heavy Duty", "Company Logo", "Low MOQ"], fabric: "Canvas, leather, webbing", custom: "Tool belts, aprons, caps, gloves — branded to your spec" }
+      { id: "workwear-pants", cat: "workwear", name: "Work Wear Pants", badges: ["Knee-Pad Pockets", "Triple Stitch", "Company Logo"], fabric: "Canvas, duck or ripstop twill", custom: "Knee-pad pockets, hammer loops, hi-vis tape, embroidery" }
     ];
 
     // Factory photos. Each entry is one card; extra imgs become the lightbox gallery (angles, details, colourways).

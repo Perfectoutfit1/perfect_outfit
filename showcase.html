@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
   <style>
     :root {
       --bg: #0A0A0A;
@@ -393,6 +394,7 @@
     .lead-box .btn { width: 100%; margin-top: 14px; }
     .lead-box .trust { margin-top: 14px; }
     .lead-msg { margin-top: 10px; font-size: .85rem; color: var(--accent); min-height: 1.2em; }
+    .lead-msg a { text-decoration: underline; }
     .lb-more { margin-top: 18px; font-size: .85rem; color: var(--muted); }
     .lb-more a { color: var(--text); border-bottom: 1px solid var(--accent); }
 
@@ -500,6 +502,7 @@
         </div>
         <div class="side">
           <a href="index.html#quote" class="btn btn-primary">Start a custom quote →</a>
+          <button type="button" class="btn btn-ghost" data-meeting>Book a meeting with us</button>
           <ul class="trust">
             <li>7–10 Days Fast Sampling</li>
             <li>100% Custom Cut &amp; Sew</li>
@@ -570,23 +573,20 @@
           <li>NDA Protected Designs</li>
         </ul>
       </form>
-      <p class="lb-more">Have a tech pack or full collection? <a href="index.html#quote">Request a full custom quote →</a></p>
+      <p class="lb-more">Have a tech pack or full collection? <a href="index.html#quote">Request a full custom quote →</a><br>Prefer to talk? <a href="#" data-meeting>Book a meeting with us →</a></p>
     </div>
     <button class="lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </dialog>
 
+  <script src="assets/site.js"></script>
   <script>
-    // Fill these in to make the price-sheet form and WhatsApp buttons go live (same values as index.html).
-    const CONTACT_EMAIL = "";      // e.g. "orders@perfectoutfitintl.com"
-    const WHATSAPP_NUMBER = "";    // international format, digits only, e.g. "923001234567"
-
     const SAMPLE_TIME = "Sample in 7–10 days";
 
     const CATS = {
-      streetwear: { label: "Streetwear", moq: "30 pcs per design / colour", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" },
-      sportswear: { label: "Sportswear", moq: "30 pcs per design (team sizes mixable)", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" },
-      leather:    { label: "Leather Garments", moq: "30 pcs per design", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" },
-      workwear:   { label: "Workwear", moq: "30 pcs per design", turnaround: SAMPLE_TIME + " · bulk timeline confirmed with your quote" }
+      streetwear: { label: "Streetwear", moq: "30 pcs per design / colour", turnaround: SAMPLE_TIME + " · bulk in 7–14 days after sample approval" },
+      sportswear: { label: "Sportswear", moq: "30 pcs per design (team sizes mixable)", turnaround: SAMPLE_TIME + " · bulk in 7–14 days after sample approval" },
+      leather:    { label: "Leather Garments", moq: "30 pcs per design", turnaround: SAMPLE_TIME + " · bulk in 7–14 days after sample approval" },
+      workwear:   { label: "Workwear", moq: "30 pcs per design", turnaround: SAMPLE_TIME + " · bulk in 7–14 days after sample approval" }
     };
 
     // One entry per product line. Badges: first one is highlighted on the card.
@@ -978,26 +978,24 @@
       });
     })();
 
-    // Price-sheet request: opens WhatsApp (preferred) or email with everything pre-filled
+    // Price-sheet request: emailed straight to the inbox, with WhatsApp as the fallback
     $("leadForm").addEventListener("submit", e => {
       e.preventDefault();
       const email = $("l-email").value.trim(), wa = $("l-wa").value.trim(), msg = $("leadMsg");
       const okEmail = email && $("l-email").checkValidity(), okWa = wa.replace(/\D/g, "").length >= 7;
       if (!okEmail && !okWa) { msg.textContent = "Add your email or WhatsApp number so we can send the price sheet."; return; }
-      const it = view[cur];
-      const text = [
-        `Hi Perfect Outfit Intl, please send me the price sheet for: ${it.title} (${CATS[it.line.cat].label}).`,
-        email && "Email: " + email, wa && "WhatsApp: " + wa
-      ].filter(Boolean).join("\n");
-      if (WHATSAPP_NUMBER) {
-        window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
-        msg.textContent = "WhatsApp opened — hit send and we'll reply with the price sheet.";
-      } else if (CONTACT_EMAIL) {
-        window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Price sheet request — " + it.title) + "&body=" + encodeURIComponent(text);
-        msg.textContent = "Your email app is opening — hit send and we'll reply within 24 hours.";
-      } else {
-        msg.textContent = "Price sheets are being set up — message us on Instagram @perfect_outfit_intl for now.";
-      }
+      const it = view[cur], btn = $("leadForm").querySelector("button[type=submit]");
+      btn.disabled = true; msg.textContent = "Sending…";
+      PO.sendLead("Price sheet request — " + it.title, {
+        Product: it.title, Category: CATS[it.line.cat].label, email: email, WhatsApp: wa
+      }).then(ok => {
+        btn.disabled = false;
+        const chat = PO.waLink(`Hi Perfect Outfit Intl, please send me the price sheet for: ${it.title} (${CATS[it.line.cat].label}).`);
+        msg.innerHTML = ok
+          ? `Sent! We'll send the ${esc(it.title)} price sheet within 24 hours. Need it faster? <a href="${chat}" target="_blank" rel="noopener">Chat on WhatsApp →</a>`
+          : `Couldn't send right now — <a href="${chat}" target="_blank" rel="noopener">request it on WhatsApp instead →</a>`;
+        if (ok) $("leadForm").reset();
+      });
     });
 
     /* ---------- sticky quick-quote bar ---------- */
@@ -1036,10 +1034,9 @@
     /* ---------- header / contact ---------- */
     const burger = $("burger"), menu = $("menu");
     burger.addEventListener("click", () => burger.setAttribute("aria-expanded", menu.classList.toggle("open")));
-    if (WHATSAPP_NUMBER) {
-      const wa = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Hi Perfect Outfit Intl, I saw your factory showcase and I'd like a quote.");
-      document.querySelectorAll(".js-wa-float").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
-    }
+    document.querySelectorAll(".js-wa-float").forEach(a => {
+      a.href = PO.waLink("Hi Perfect Outfit Intl, I saw your factory showcase and I'd like a quote."); a.target = "_blank"; a.rel = "noopener";
+    });
 
     render();
   </script>

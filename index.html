@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
   <style>
     :root {
       --bg: #0A0A0A;
@@ -451,6 +452,16 @@
     .quote-points { list-style: none; margin-top: 32px; }
     .quote-points li { padding: 14px 0; border-top: 2px solid rgba(10,10,10,.15); color: #111; font-weight: 600; display: flex; gap: 12px; }
     .quote-points li::before { content: "✦"; color: var(--accent-ink); }
+    .talk { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+    .talk p { font-weight: 700; color: #111; }
+    .btn-dark { background: var(--accent-ink); color: var(--accent); border-color: var(--accent-ink); }
+    .btn-dark:hover { transform: translateY(-2px); }
+    .sent { text-align: center; padding: 24px 0 8px; }
+    .sent .tick { width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); }
+    .sent .tick svg { width: 30px; height: 30px; }
+    .sent h3 { font-family: "Anton", sans-serif; font-size: 2rem; }
+    .sent p { color: var(--muted); margin: 10px auto 22px; max-width: 380px; }
+    .form-msg a { text-decoration: underline; }
     .form-shell {
       position: relative; padding: 2px;
       background: conic-gradient(from var(--ang, 0deg), #0A0A0A 0 60%, #FFFFFF 75%, #0A0A0A 90%);
@@ -596,7 +607,7 @@
         <p class="sub">Heavyweight streetwear, sports uniforms, leather and workwear — manufactured to your design, under your label. Start from just 30 pieces per design.</p>
         <div class="ctas">
           <a href="#quote" class="btn btn-primary">Upload your tech pack →</a>
-          <a href="#quote" class="btn btn-ghost">Request a sample</a>
+          <button type="button" class="btn btn-ghost" data-meeting>Book a meeting</button>
         </div>
         <ul class="checks">
           <li>Free quote within 24 hours</li>
@@ -819,7 +830,7 @@
           <li class="step"><div class="dot">1</div><div><h3>Send your design</h3></div><p>Upload a tech pack, a mockup or even a sketch.</p></li>
           <li class="step"><div class="dot">2</div><div><h3>Get your quote</h3></div><p>Pricing and timeline within 24 hours.</p></li>
           <li class="step"><div class="dot">3</div><div><h3>Approve sample</h3></div><p>Your sample made in 7–10 days and shipped to you.</p></li>
-          <li class="step"><div class="dot">4</div><div><h3>Bulk production</h3></div><p>Made to your approved sample, quality-checked at every stage.</p></li>
+          <li class="step"><div class="dot">4</div><div><h3>Bulk production</h3></div><p>Made to your approved sample in 7–14 days, quality-checked at every stage.</p></li>
           <li class="step"><div class="dot">5</div><div><h3>Delivered</h3></div><p>Express shipping straight to your door, worldwide.</p></li>
         </ol>
         <div class="mt"><a href="#quote" class="btn btn-primary">Start step 1 →</a></div>
@@ -871,6 +882,10 @@
             <li>Sample in 7–10 days</li>
             <li>Your designs stay 100% confidential</li>
           </ul>
+          <div class="talk">
+            <p>Prefer to talk it through first?</p>
+            <button type="button" class="btn btn-dark" data-meeting>Book a meeting with us →</button>
+          </div>
         </div>
         <div class="form-shell">
         <form class="quote" id="quoteForm" novalidate>
@@ -894,7 +909,7 @@
             <div class="field full"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" name="message" placeholder="Product, fabric/GSM, print or embroidery, colours, deadline…"></textarea></div>
           </div>
           <button type="submit" class="btn btn-primary">Get my free quote</button>
-          <p class="secure">🔒 Your designs are 100% confidential. NDA available on request.<br>Your email app will open — attach your tech pack or mockup before sending.</p>
+          <p class="secure">🔒 Your designs are 100% confidential. NDA available on request.<br>Have a tech pack or mockup? You can send it on WhatsApp after submitting.</p>
           <p class="form-msg" id="formMsg" role="status"></p>
         </form>
         </div>
@@ -910,12 +925,11 @@
         </div>
         <div class="faq">
           <details><summary>What is your minimum order quantity?</summary><p>Our MOQ starts at just 30 pieces per design.</p></details>
-          <details><summary>How much does a sample cost?</summary><p>[Sample policy — e.g. sample fee and whether it is credited against your bulk order.]</p></details>
-          <details><summary>How long does bulk production take?</summary><p>Bulk production typically takes [X–X] weeks after your sample is approved, depending on quantity and decoration.</p></details>
+          <details><summary>How much does a sample cost?</summary><p>It depends on your design — the fabric, construction and customization involved. We confirm the exact sample cost with your quote.</p></details>
+          <details><summary>How long does bulk production take?</summary><p>Bulk production takes 7–14 days after your sample is approved.</p></details>
           <details><summary>Do I need a tech pack?</summary><p>No. A mockup, reference photo or even a sketch is enough — our team will help you develop it into a production-ready spec.</p></details>
           <details><summary>Do you ship to my country?</summary><p>Yes. We ship worldwide by DHL and FedEx express, door to door — including the USA, UK, Europe and Australia.</p></details>
           <details><summary>Will my designs stay private?</summary><p>Always. We never resell, reuse or share client designs, and we're happy to sign an NDA before you send your files.</p></details>
-          <details><summary>What payment methods do you accept?</summary><p>[Payment terms — e.g. 50% deposit to start production, 50% before shipping.]</p></details>
         </div>
       </div>
     </section>
@@ -957,9 +971,9 @@
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><a href="#" class="js-email">[Business email]</a></li>
-            <li><a href="#" class="js-wa">[WhatsApp number]</a></li>
-            <li><p>[Factory address]</p></li>
+            <li><a href="mailto:perfectoutfitintl@gmail.com" class="js-email">perfectoutfitintl@gmail.com</a></li>
+            <li><a href="https://wa.me/923246574840" class="js-wa" target="_blank" rel="noopener">+92 324 6574840</a></li>
+            <li><p>Shahabpura, Sialkot,<br>Punjab 51310, Pakistan</p></li>
           </ul>
           <div class="ship"><span>DHL</span><span>FEDEX</span></div>
         </div>
@@ -975,10 +989,8 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
   </a>
 
+  <script src="assets/site.js"></script>
   <script>
-    // Fill these in to make the form and WhatsApp buttons go live.
-    const CONTACT_EMAIL = "";      // e.g. "orders@perfectoutfitintl.com"
-    const WHATSAPP_NUMBER = "";    // international format, digits only, e.g. "923001234567"
 
     document.getElementById("yr").textContent = new Date().getFullYear();
 
@@ -993,38 +1005,38 @@
       burger.setAttribute("aria-expanded", "false");
     }));
 
-    if (WHATSAPP_NUMBER) {
-      const wa = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Hi Perfect Outfit Intl, I'd like a quote for my brand.");
-      document.querySelectorAll(".js-wa, .js-wa-float").forEach(a => { a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
-      document.querySelectorAll(".js-wa").forEach(a => a.textContent = "+" + WHATSAPP_NUMBER);
-    }
-    if (CONTACT_EMAIL) {
-      document.querySelectorAll(".js-email").forEach(a => { a.href = "mailto:" + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; });
-    }
+    document.querySelectorAll(".js-wa, .js-wa-float").forEach(a => {
+      a.href = PO.waLink("Hi Perfect Outfit Intl, I'd like a quote for my brand."); a.target = "_blank"; a.rel = "noopener";
+    });
 
     const form = document.getElementById("quoteForm");
     const msg = document.getElementById("formMsg");
-    form.addEventListener("submit", e => {
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    form.addEventListener("submit", async e => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(form));
       if (!d.name.trim() || !form.email.checkValidity() || !d.email.trim()) {
         msg.textContent = "Please add your name and a valid email.";
         return;
       }
-      if (!CONTACT_EMAIL) {
-        msg.textContent = "Quote form is being set up — please message us on Instagram @perfect_outfit_intl for now.";
-        return;
+      const btn = form.querySelector("button[type=submit]");
+      btn.disabled = true; btn.textContent = "Sending…"; msg.textContent = "";
+      const ok = await PO.sendLead("New quote request — " + (d.brand.trim() || d.name.trim()), {
+        Name: d.name.trim(), Brand: d.brand.trim(), email: d.email.trim(), WhatsApp: d.whatsapp.trim(),
+        Country: d.country.trim(), Product: d.product, "Quantity per design": d.quantity, Project: d.message.trim()
+      });
+      if (ok) {
+        const wa = PO.waLink("Hi Perfect Outfit Intl, I just sent a quote request from your website (" + (d.brand.trim() || d.name.trim()) + "). Here is my tech pack / mockup:");
+        form.innerHTML = `<div class="sent">
+          <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></div>
+          <h3>Request received</h3>
+          <p>Thanks, ${esc(d.name.trim())}! We'll reply to <b>${esc(d.email.trim())}</b> within 24 hours.</p>
+          <a class="btn btn-primary" href="${wa}" target="_blank" rel="noopener">Send your tech pack on WhatsApp →</a>
+        </div>`;
+      } else {
+        btn.disabled = false; btn.textContent = "Get my free quote";
+        msg.innerHTML = `Couldn't send right now — please <a href="${PO.waLink("Hi Perfect Outfit Intl, I'd like a quote for my brand.")}" target="_blank" rel="noopener">message us on WhatsApp</a> or email ${PO.email}.`;
       }
-      const body = [
-        "Name: " + d.name, "Brand: " + d.brand, "Email: " + d.email,
-        "WhatsApp: " + d.whatsapp, "Country: " + d.country,
-        "Product: " + d.product, "Quantity per design: " + d.quantity,
-        "", d.message, "", "(Tech pack / mockup attached)"
-      ].join("\n");
-      window.location.href = "mailto:" + CONTACT_EMAIL +
-        "?subject=" + encodeURIComponent("Quote request — " + (d.brand || d.name)) +
-        "&body=" + encodeURIComponent(body);
-      msg.textContent = "Opening your email app — don't forget to attach your tech pack.";
     });
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

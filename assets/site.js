@@ -37,6 +37,35 @@
       .then(j => String(j.success) === "true")
       .catch(() => false);
 
+  /* ---------- Workshop videos ---------- */
+  // Muted clips play only while on screen (nothing downloads until then); tap to pause / resume.
+  const clips = document.querySelectorAll(".wk");
+  if (clips.length) {
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const playIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg>';
+    const seen = new IntersectionObserver(entries => entries.forEach(en => {
+      const fig = en.target, v = fig.querySelector("video");
+      if (en.isIntersecting && !fig.classList.contains("paused")) v.play().catch(() => fig.classList.add("paused"));
+      else v.pause();
+    }), { threshold: 0.4 });
+    clips.forEach(fig => {
+      const v = fig.querySelector("video");
+      v.muted = true;
+      fig.insertAdjacentHTML("beforeend", `<span class="wk-play" aria-hidden="true">${playIcon}</span>`);
+      fig.tabIndex = 0;
+      fig.setAttribute("role", "button");
+      if (still) fig.classList.add("paused");
+      const toggle = () => {
+        const pause = !v.paused;
+        fig.classList.toggle("paused", pause);
+        pause ? v.pause() : v.play().catch(() => {});
+      };
+      fig.addEventListener("click", toggle);
+      fig.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+      seen.observe(fig);
+    });
+  }
+
   /* ---------- Book a meeting ---------- */
   const dlg = document.createElement("dialog");
   dlg.className = "meet";

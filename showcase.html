@@ -7,6 +7,15 @@
   <meta name="description" content="Browse 31 product lines made in our factory: heavyweight hoodies, sweat suits, team uniforms, leather jackets and workwear. Low MOQ, 7–10 day samples, NDA protected. Get a price sheet.">
   <meta property="og:title" content="Factory Showcase — Perfect Outfit Intl">
   <meta property="og:description" content="31 product lines, 100% custom cut &amp; sew. Pick a style and get the price sheet.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perfectoutfit.vercel.app/showcase.html">
+  <meta property="og:image" content="https://perfectoutfit.vercel.app/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hoodie, football uniform, leather jacket and work suit made by Perfect Outfit Intl">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://perfectoutfit.vercel.app/showcase.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0A0A0A">
   <script>document.documentElement.classList.add("js")</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -287,6 +296,10 @@
     .empty { grid-column: 1 / -1; padding: 64px 16px; text-align: center; color: var(--muted); border: 1px dashed var(--line); }
 
     /* ---------- CUSTOM BAND ---------- */
+    .workshop { border-top: 1px solid var(--line); padding: 88px 0; }
+    .ws-lead { color: var(--muted); font-size: 1.05rem; max-width: 620px; margin-top: 16px; }
+    .ws-more { margin-top: 40px; }
+    @media (max-width: 860px) { .workshop { padding: 64px 0; } }
     .custom { border-top: 1px solid var(--line); padding: 88px 0; background: var(--surface); }
     .custom .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
     .custom p { color: var(--muted); margin-top: 16px; max-width: 560px; }
@@ -426,6 +439,7 @@
         <li><a href="#catalog" data-go="leather">Leather</a></li>
         <li><a href="#catalog" data-go="workwear">Workwear</a></li>
         <li><a href="index.html#process">How It Works</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
       </ul>
       <div class="nav-cta">
@@ -463,10 +477,10 @@
           </div>
         </div>
         <div class="collage" aria-label="Jump to a category">
-          <button data-go="streetwear" style="background-image:url('images/cat-streetwear.jpg')"><span class="lbl"><span data-count="streetwear">16 styles</span><b>Streetwear</b></span></button>
-          <button data-go="sportswear" style="background-image:url('images/cat-sportswear.jpg')"><span class="lbl"><span data-count="sportswear">6 uniforms</span><b>Sportswear</b></span></button>
-          <button data-go="leather" style="background-image:url('images/cat-leather.jpg')"><span class="lbl"><span data-count="leather">5 styles</span><b>Leather</b></span></button>
-          <button data-go="workwear" style="background-image:url('images/cat-workwear.jpg')"><span class="lbl"><span data-count="workwear">4 lines</span><b>Workwear</b></span></button>
+          <button data-go="streetwear" style="background-image:url('images/showcase/streetwear/hoodies-01.webp')"><span class="lbl"><span data-count="streetwear">16 styles</span><b>Streetwear</b></span></button>
+          <button data-go="sportswear" style="background-image:url('images/showcase/sportswear/american-football-01.webp')"><span class="lbl"><span data-count="sportswear">6 uniforms</span><b>Sportswear</b></span></button>
+          <button data-go="leather" style="background-image:url('images/showcase/leather/leather-suits-01.webp')"><span class="lbl"><span data-count="leather">5 styles</span><b>Leather</b></span></button>
+          <button data-go="workwear" style="background-image:url('images/showcase/workwear/workwear-suits-01.webp')"><span class="lbl"><span data-count="workwear">4 lines</span><b>Workwear</b></span></button>
         </div>
       </div>
     </section>
@@ -490,6 +504,22 @@
         </ul>
       </div>
       <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- WORKSHOP -->
+    <section class="workshop" id="workshop">
+      <div class="wrap">
+        <span class="eyebrow">Inside our workshop</span>
+        <h2>Where these pieces <span class="gold">were made.</span></h2>
+        <p class="ws-lead">Real clips from our Sialkot workshop. No stock footage.</p>
+        <div class="wk-grid">
+          <figure class="wk"><video muted loop playsinline preload="none" poster="images/workshop/clip-6.jpg" aria-label="Our stitching floor at the Perfect Outfit Intl workshop in Sialkot"><source src="images/workshop/clip-6.mp4" type="video/mp4"></video><figcaption><small>01</small>Our stitching floor</figcaption></figure>
+          <figure class="wk"><video muted loop playsinline preload="none" poster="images/workshop/clip-3.jpg" aria-label="Leather stitching at the Perfect Outfit Intl workshop in Sialkot"><source src="images/workshop/clip-3.mp4" type="video/mp4"></video><figcaption><small>02</small>Leather stitching</figcaption></figure>
+          <figure class="wk"><video muted loop playsinline preload="none" poster="images/workshop/clip-1.jpg" aria-label="Folding, sizing and tagging at the Perfect Outfit Intl workshop in Sialkot"><source src="images/workshop/clip-1.mp4" type="video/mp4"></video><figcaption><small>03</small>Folding, sizing &amp; tagging</figcaption></figure>
+          <figure class="wk"><video muted loop playsinline preload="none" poster="images/workshop/clip-4.jpg" aria-label="Boxed and ready to ship at the Perfect Outfit Intl workshop in Sialkot"><source src="images/workshop/clip-4.mp4" type="video/mp4"></video><figcaption><small>04</small>Boxed &amp; ready to ship</figcaption></figure>
+        </div>
+        <div class="ws-more"><a href="about.html#workshop" class="btn btn-ghost">More from the workshop →</a></div>
+      </div>
     </section>
 
     <!-- DON'T SEE IT? -->
@@ -517,7 +547,7 @@
   <footer>
     <div class="wrap">
       <span>© <span id="yr">2026</span> Perfect Outfit Intl. All rights reserved.</span>
-      <span><a href="index.html">Home</a> · <a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a> · Custom · Private Label · OEM / ODM</span>
+      <span><a href="index.html">Home</a> · <a href="about.html">About us</a> · <a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a> · Custom · Private Label · OEM / ODM</span>
     </div>
   </footer>
 

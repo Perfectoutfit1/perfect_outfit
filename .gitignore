@@ -15,3 +15,6 @@ supabase/.branches/
 
 # Original uploads (processed copies live in images/showcase/<category>/)
 images/showcase/_originals/
+
+# Raw workshop videos (web versions live in images/workshop/)
+images/showcase/factory proof/

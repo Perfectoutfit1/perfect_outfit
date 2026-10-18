@@ -16,22 +16,24 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://perfectoutfit.vercel.app/showcase.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#0A0A0A">
+  <meta name="theme-color" content="#080808">
   <script>document.documentElement.classList.add("js")</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
   <style>
     :root {
-      --bg: #0A0A0A;
-      --surface: #141414;
+      --bg: #080808;
+      --surface: #121212;
       --surface-2: #1C1C1C;
       --line: #2A2A2A;
-      --text: #FFFFFF;
+      --text: #F5F5F5;
       --muted: #A3A3A3;
-      --accent: #F5C518;
-      --accent-ink: #0A0A0A;
+      --accent: #D9B872;
+      --accent-ink: #080808;
+      --display: "Inter Tight", "Inter", system-ui, sans-serif;
+      --serif: "Instrument Serif", Georgia, serif;
       --max: 1280px;
       --header: 72px;
     }
@@ -52,7 +54,7 @@
     @media (min-width: 768px) { .wrap { padding: 0 32px; } }
 
     h1, h2, h3, .display {
-      font-family: "Anton", Impact, sans-serif;
+      font-family: var(--display);
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.01em;
@@ -75,7 +77,7 @@
       cursor: pointer; white-space: nowrap;
     }
     .btn-primary { background: var(--accent); color: var(--accent-ink); }
-    .btn-primary:hover { background: #FFD84D; transform: translateY(-2px); }
+    .btn-primary:hover { background: #E7CD94; transform: translateY(-2px); }
     .btn-ghost { background: transparent; color: var(--text); border-color: var(--text); }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
     .btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible {
@@ -108,7 +110,7 @@
       border-bottom: 1px solid var(--line);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: var(--header); gap: 24px; }
-    .logo { font-family: "Anton", sans-serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
+    .logo { font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
     .logo small { font-family: "Inter", sans-serif; font-size: .6rem; font-weight: 700; letter-spacing: .3em; color: var(--accent); margin-left: 6px; vertical-align: middle; }
     .menu { display: flex; gap: 26px; list-style: none; }
     .menu a { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); transition: color .15s; white-space: nowrap; }
@@ -133,7 +135,7 @@
     .s-hero { position: relative; overflow: hidden; padding: 56px 0 44px; border-bottom: 1px solid var(--line); }
     .s-hero::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse 45% 60% at 85% 20%, rgba(245,197,24,.10), transparent 70%);
+      background: radial-gradient(ellipse 45% 60% at 85% 20%, rgba(217,184,114,.10), transparent 70%);
     }
     .s-hero .wrap { position: relative; }
     .s-hero h1 { font-size: clamp(2.4rem, 5.4vw, 4.2rem); max-width: 900px; }
@@ -218,14 +220,14 @@
     .ph {
       position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(245,197,24,.08), transparent 70%),
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(217,184,114,.08), transparent 70%),
         repeating-linear-gradient(135deg, transparent 0 14px, rgba(255,255,255,.025) 14px 15px),
         var(--surface-2);
       transition: transform .6s cubic-bezier(.16,1,.3,1);
     }
     .card:hover .ph { transform: scale(1.04); }
     .ph b {
-      font-family: "Anton", sans-serif; font-weight: 400; text-transform: uppercase; line-height: .95;
+      font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .95;
       font-size: clamp(1.8rem, 4.2vw, 2.8rem); color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.22);
       word-break: break-word;
     }
@@ -346,7 +348,7 @@
       width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--line); padding: 13px 14px;
       font: inherit; font-size: .95rem; border-radius: 0; transition: border-color .2s, box-shadow .2s;
     }
-    .lead-fields input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(245,197,24,.18); }
+    .lead-fields input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(217,184,114,.18); }
     .lead-box .btn { width: 100%; margin-top: 14px; }
     .lead-box .trust { margin-top: 14px; }
     .lead-msg { margin-top: 10px; font-size: .85rem; color: var(--accent); min-height: 1.2em; }
@@ -367,6 +369,7 @@
       * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
     }
   </style>
+  <link rel="stylesheet" href="assets/luxe.css">
 </head>
 <body>
 
@@ -405,6 +408,12 @@
             <a href="#catalog" class="btn btn-primary">Browse the catalog ↓</a>
             <a href="index.html#quote" class="btn btn-ghost">Upload a tech pack</a>
           </div>
+          <ul class="spec-row" aria-label="Key specifications">
+            <li><b>320&ndash;500 GSM</b>Heavyweight fleece</li>
+            <li><b>3D puff &amp; chenille</b>Print &amp; embroidery</li>
+            <li><b>7&ndash;10 days</b>Custom sample</li>
+            <li><b>30 pcs</b>Minimum per design</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -558,7 +567,7 @@
     ];
 
     // Factory photos. Each entry is one card; extra imgs become the lightbox gallery (angles, details, colourways).
-    // Every name has a full-size <name>.webp and a card-size <name>-sm.webp. Lines without photos show a placeholder.
+    // Every name has a full-size <name>.webp and a card-size <name>-sm.webp. Lines without photos stay hidden.
     const PHOTOS = [
       { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-01"], title: "Purple Sun-Fade Zip Hoodie", badges: ["400+ GSM", "Sun Fade Wash", "Distressed Panels"] },
       { line: "hoodies", dir: "images/showcase/streetwear/", imgs: ["hoodies-02", "hoodies-02-2", "hoodies-02-3", "hoodies-02-4"], title: "Red Rhinestone Cross Zip Hoodie", badges: ["Rhinestones", "Rivet Hood", "Embroidery"] },
@@ -707,17 +716,17 @@
 
     /* ---------- build items ---------- */
     const lineById = Object.fromEntries(LINES.map(l => [l.id, l]));
+    const SHOWN = LINES.filter(l => PHOTOS.some(p => p.line === l.id));
     const ITEMS = [];
-    LINES.forEach(l => {
+    SHOWN.forEach(l => {
       const shots = PHOTOS.filter(p => p.line === l.id);
-      if (!shots.length) ITEMS.push({ line: l, title: l.name, badges: l.badges, imgs: [] });
       shots.forEach(p => ITEMS.push({ line: l, title: p.title || l.name, badges: p.badges || l.badges, imgs: p.imgs.map(n => p.dir + n) }));
     });
 
     const $ = id => document.getElementById(id);
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     document.getElementById("yr").textContent = new Date().getFullYear();
-    $("lineCount").textContent = LINES.length;
+    $("lineCount").textContent = SHOWN.length;
     const thumb = it => it.imgs[0] + "-sm.webp";
 
 
@@ -734,7 +743,7 @@
       const subs = $("subs");
       if (state.cat === "all") { subs.hidden = true; subs.innerHTML = ""; return; }
       subs.hidden = false;
-      const lines = LINES.filter(l => l.cat === state.cat);
+      const lines = SHOWN.filter(l => l.cat === state.cat);
       subs.innerHTML = [`<button class="chip" data-line="all" aria-pressed="${state.line === "all"}">All ${esc(CATS[state.cat].label)}</button>`]
         .concat(lines.map(l => `<button class="chip" data-line="${l.id}" aria-pressed="${state.line === l.id}">${esc(l.name)}</button>`)).join("");
     }
@@ -916,5 +925,6 @@
 
     render();
   </script>
+  <script src="assets/luxe.js" defer></script>
 </body>
 </html>

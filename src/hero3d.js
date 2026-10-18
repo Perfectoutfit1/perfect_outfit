@@ -23,7 +23,7 @@ const FOV = 28, TAN = Math.tan((FOV / 2) * Math.PI / 180);
 
 // Desktop row: x, bottom edge, depth, height (world units). Width comes from the photo.
 const ROW = [
-  { x: -4.6, y: -1.35, z: -0.4, h: 2.85 },
+  { x: -4.6, y: -1.2, z: -0.4, h: 2.45 },
   { x: -1.6, y: -1.7, z: 0.4, h: 3.9 },
   { x: 1.5, y: -0.8, z: 0, h: 2.3 },
   { x: 4.6, y: -1.65, z: -0.3, h: 3.8 }

@@ -116,7 +116,23 @@
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
       text-align: center; padding: 9px 16px;
     }
-    .announce span { margin: 0 10px; opacity: .5; }
+    .announce .sep { margin: 0 10px; opacity: .5; }
+    /* Phones: one message at a time, cycling */
+    @media (max-width: 640px) {
+      .announce { position: relative; height: 34px; padding: 0; overflow: hidden; }
+      .announce .sep { display: none; }
+      .announce .a-msg {
+        position: absolute; inset: 0; display: grid; place-items: center; padding: 0 12px; white-space: nowrap;
+        opacity: 0; animation: annc 12s infinite;
+      }
+      .announce .a-msg:nth-child(3) { animation-delay: 4s; }
+      .announce .a-msg:nth-child(5) { animation-delay: 8s; }
+      @keyframes annc { 0% { opacity: 0; transform: translateY(8px); } 4%, 29% { opacity: 1; transform: none; } 33%, 100% { opacity: 0; transform: translateY(-8px); } }
+    }
+    @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+      .announce .a-msg { animation: none !important; }
+      .announce .a-msg:first-child { opacity: 1; }
+    }
 
     /* Header */
     header.site {
@@ -145,7 +161,7 @@
       .menu a { display: block; padding: 16px; border-top: 1px solid var(--line); }
       .burger { display: inline-flex; align-items: center; justify-content: center; }
     }
-    @media (max-width: 480px) { .nav-cta .btn { display: none; } }
+    @media (max-width: 480px) { .nav-cta { gap: 6px; } .nav-cta .btn { padding: 9px 12px; font-size: .66rem; letter-spacing: .08em; } .logo { font-size: 1.25rem; } .logo small { display: none; } }
 
     /* Hero: garments hanging in a dark studio, one per product line */
     .hero {
@@ -286,11 +302,12 @@
     .gl-dots i.on { background: var(--accent); }
     .gl3d .stage .stage-hint, .gl3d .stage[data-mode="ring"] .backdrop { display: none; }
     @media (max-width: 760px), (hover: none) {
-      .gl3d .stage { height: min(122vw, 600px); }
+      .gl3d .stage { height: min(100vw, 480px); }
       .gl3d .stage-hint { display: none; }
     }
 
     .hero-copy { position: relative; text-align: center; margin-top: 28px; }
+    @media (max-width: 640px) { .hero-copy { margin-top: 18px; } .hero-copy .eyebrow { font-size: .62rem; letter-spacing: .14em; margin-bottom: 10px; } .hero { padding-bottom: 56px; } }
     @media (min-width: 900px) { .hero h1 br { display: none; } }
     .hero-copy .eyebrow { font-size: .7rem; }
     .hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); margin: 2px 0 14px; }
@@ -493,7 +510,21 @@
       width: 100%; transition: border-color .2s, box-shadow .2s;
     }
     .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(245,197,24,.18); }
-    .field textarea { min-height: 110px; resize: vertical; }
+    .field textarea { min-height: 90px; resize: vertical; }
+    .field label i, .f-more summary i { font-style: normal; text-transform: none; letter-spacing: 0; color: #6B6B6B; font-weight: 500; }
+    .f-hint { font-size: .78rem; color: var(--muted); margin-top: -6px; }
+    .field input[type=file] { padding: 10px; font-size: .85rem; color: var(--muted); cursor: pointer; }
+    .field input[type=file]::file-selector-button {
+      margin-right: 12px; padding: 8px 14px; border: 1px solid var(--accent); background: transparent; color: var(--accent);
+      font: inherit; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer;
+    }
+    .f-note { font-size: .74rem; color: #6B6B6B; }
+    .f-more summary { cursor: pointer; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); list-style: none; }
+    .f-more summary::before { content: "+ "; color: var(--accent); }
+    .f-more[open] summary::before { content: "– "; }
+    .f-more summary::-webkit-details-marker { display: none; }
+    .f-more .fields { margin-top: 14px; }
+    .secure a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
     form.quote .btn { width: 100%; margin-top: 22px; position: relative; overflow: hidden; }
     .secure { margin-top: 14px; font-size: .8rem; color: var(--muted); text-align: center; }
     .form-msg { margin-top: 14px; font-size: .9rem; color: var(--accent); text-align: center; min-height: 1em; }
@@ -578,7 +609,7 @@
 </head>
 <body>
 
-  <div class="announce">Low MOQ from 30 pcs<span>/</span>Samples in 7–10 days<span>/</span>Worldwide DHL &amp; FedEx shipping</div>
+  <div class="announce"><span class="a-msg">Low MOQ from 30 pcs</span><span class="sep">/</span><span class="a-msg">Samples in 7–10 days</span><span class="sep">/</span><span class="a-msg">Worldwide DHL &amp; FedEx shipping</span></div>
 
   <header class="site">
     <div class="wrap nav">
@@ -613,7 +644,7 @@
         <nav class="rig" id="rig" aria-label="Product lines">
           <div class="hang" style="--x:21%;--w:clamp(150px,15vw,250px);--z:-60px;--wire:110px;--dur:7s;--del:-2s;--in:.1s">
             <div class="sway"><a class="card" href="showcase.html#streetwear" data-gl="images/hero3d/streetwear" data-rough=".95">
-              <img src="images/showcase/streetwear/hoodies-01-sm.webp" alt="Purple sun-fade zip hoodie made by Perfect Outfit" width="560" height="700" fetchpriority="high">
+              <img src="images/showcase/streetwear/hoodies-05-sm.webp" alt="Pink all-over print zip hoodie made by Perfect Outfit" width="525" height="700" fetchpriority="high">
               <span class="tag"><span class="n">01</span><b>Streetwear</b><span class="go">View styles →</span></span>
             </a></div>
           </div>
@@ -682,7 +713,7 @@
         <h2>What we manufacture</h2>
         <div class="cats" data-stagger="rv-up">
           <a href="showcase.html#streetwear" class="cat">
-            <div class="cat-media" style="background-image:url('images/showcase/streetwear/hoodies-01.webp')"></div>
+            <div class="cat-media" style="background-image:url('images/showcase/streetwear/hoodies-05.webp')"></div>
             <span class="big" aria-hidden="true">01</span>
             <h3>Streetwear</h3>
             <p>Heavyweight hoodies, acid wash tees, sweat suits, denim, varsity jackets, windbreakers and more.</p>
@@ -840,24 +871,33 @@
           <div class="form-title">Start your <span>project</span></div>
           <div class="fields">
             <div class="field"><label for="f-name">Name *</label><input id="f-name" name="name" required autocomplete="name"></div>
-            <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" name="brand" autocomplete="organization"></div>
-            <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
-            <div class="field"><label for="f-wa">WhatsApp number</label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" autocomplete="country-name"></div>
             <div class="field"><label for="f-type">Product type</label>
               <select id="f-type" name="product">
                 <option>Streetwear</option><option>Sportswear &amp; Uniforms</option><option>Leather Garments</option><option>Workwear</option><option>Not sure yet</option>
               </select>
             </div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com"></div>
+            <div class="field"><label for="f-wa">WhatsApp</label><input id="f-wa" name="whatsapp" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></div>
+            <p class="field full f-hint">* Add an email or a WhatsApp number &mdash; whichever you&rsquo;d like us to reply on.</p>
             <div class="field full"><label for="f-qty">Quantity per design</label>
               <select id="f-qty" name="quantity">
                 <option>30–50 pcs</option><option>50–100 pcs</option><option>100–300 pcs</option><option>300+ pcs</option>
               </select>
             </div>
-            <div class="field full"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" name="message" placeholder="Product, fabric/GSM, print or embroidery, colours, deadline…"></textarea></div>
+            <div class="field full"><label for="f-msg">Tell us about your project <i>(optional)</i></label><textarea id="f-msg" name="message" placeholder="Fabric/GSM, print or embroidery, colours, deadline…"></textarea></div>
+            <div class="field full"><label for="f-file">Design file <i>(optional)</i></label>
+              <input id="f-file" name="attachment" type="file" accept="image/*,.pdf,.zip,.ai,.psd,.eps">
+              <small class="f-note">Tech pack, mockup, sketch or reference photo &middot; one file up to 10 MB (zip several together)</small>
+            </div>
+            <details class="field full f-more"><summary>Add brand &amp; country <i>(optional)</i></summary>
+              <div class="fields">
+                <div class="field"><label for="f-brand">Brand name</label><input id="f-brand" name="brand" autocomplete="organization"></div>
+                <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" autocomplete="country-name"></div>
+              </div>
+            </details>
           </div>
           <button type="submit" class="btn btn-primary">Get my free quote</button>
-          <p class="secure">🔒 Your designs are 100% confidential. NDA available on request.<br>Have a tech pack or mockup? You can send it on WhatsApp after submitting.</p>
+          <p class="secure">🔒 Your designs are 100% confidential. NDA available on request. <a href="privacy.html">Privacy policy</a></p>
           <p class="form-msg" id="formMsg" role="status"></p>
         </form>
         </div>
@@ -888,7 +928,7 @@
         </div>
         <div>
           <h4>Company</h4>
-          <ul><li><a href="about.html">About us</a></li><li><a href="#faq">FAQ</a></li><li><a href="#quote">Get a quote</a></li><li><a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a></li></ul>
+          <ul><li><a href="about.html">About us</a></li><li><a href="#faq">FAQ</a></li><li><a href="#quote">Get a quote</a></li><li><a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a></li><li><a href="privacy.html">Privacy policy</a></li></ul>
         </div>
         <div>
           <h4>Contact</h4>
@@ -937,24 +977,37 @@
     form.addEventListener("submit", async e => {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(form));
-      if (!d.name.trim() || !form.email.checkValidity() || !d.email.trim()) {
-        msg.textContent = "Please add your name and a valid email.";
+      const name = d.name.trim(), email = d.email.trim(), wa = d.whatsapp.trim(), file = form.attachment.files[0];
+      if (!name) { msg.textContent = "Please add your name."; return; }
+      if (!email && !wa) { msg.textContent = "Please add an email or a WhatsApp number so we can reply."; return; }
+      if (email && !form.email.checkValidity()) { msg.textContent = "That email doesn't look right — please check it."; return; }
+      if (file && file.size > 10 * 1024 * 1024) { msg.textContent = "That file is over 10 MB — please send a smaller one, or share it on WhatsApp."; return; }
+      if (file) {
+        // Attachments only go through FormSubmit's regular (non-AJAX) post, which then lands on our thank-you page.
+        const hidden = { _subject: "New quote request — " + (d.brand.trim() || name), _template: "table", _captcha: "false", _next: new URL("thanks.html", location.href).href, "Sent from": location.href };
+        Object.entries(hidden).forEach(([k, v]) => form.insertAdjacentHTML("beforeend", `<input type="hidden" name="${k}" value="${esc(v)}">`));
+        form.action = PO.formEndpoint.replace("/ajax/", "/");
+        form.method = "POST";
+        form.enctype = "multipart/form-data";
+        const b = form.querySelector("button[type=submit]");
+        b.disabled = true; b.textContent = "Uploading…";
+        HTMLFormElement.prototype.submit.call(form);
         return;
       }
       const btn = form.querySelector("button[type=submit]");
       btn.disabled = true; btn.textContent = "Sending…"; msg.textContent = "";
-      const ok = await PO.sendLead("New quote request — " + (d.brand.trim() || d.name.trim()), {
-        Name: d.name.trim(), Brand: d.brand.trim(), email: d.email.trim(), WhatsApp: d.whatsapp.trim(),
+      const ok = await PO.sendLead("New quote request — " + (d.brand.trim() || name), {
+        Name: name, Brand: d.brand.trim(), email, WhatsApp: wa,
         Country: d.country.trim(), Product: d.product, "Quantity per design": d.quantity, Project: d.message.trim(),
-        _autoresponse: PO.autoReply(`Hi ${d.name.trim()},\n\nThanks for contacting Perfect Outfit Intl — we've received your quote request (${d.product}, ${d.quantity} per design). Our team will review it and reply within 24 hours with pricing and next steps.`)
+        _autoresponse: PO.autoReply(`Hi ${name},\n\nThanks for contacting Perfect Outfit Intl — we've received your quote request (${d.product}, ${d.quantity} per design). Our team will review it and reply within 24 hours with pricing and next steps.`)
       });
       if (ok) {
-        const wa = PO.waLink("Hi Perfect Outfit Intl, I just sent a quote request from your website (" + (d.brand.trim() || d.name.trim()) + "). Here is my tech pack / mockup:");
+        const waUrl = PO.waLink("Hi Perfect Outfit Intl, I just sent a quote request from your website (" + (d.brand.trim() || name) + "). Here is my tech pack / mockup:");
         form.innerHTML = `<div class="sent">
           <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></div>
           <h3>Request received</h3>
-          <p>Thanks, ${esc(d.name.trim())}! We'll reply to <b>${esc(d.email.trim())}</b> within 24 hours.</p>
-          <a class="btn btn-primary" href="${wa}" target="_blank" rel="noopener">Send your tech pack on WhatsApp →</a>
+          <p>Thanks, ${esc(name)}! We'll reply ${email ? `to <b>${esc(email)}</b>` : `on WhatsApp at <b>${esc(wa)}</b>`} within 24 hours.</p>
+          <a class="btn btn-primary" href="${waUrl}" target="_blank" rel="noopener">Send your tech pack on WhatsApp →</a>
         </div>`;
       } else {
         btn.disabled = false; btn.textContent = "Get my free quote";

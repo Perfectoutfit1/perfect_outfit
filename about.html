@@ -83,7 +83,23 @@
     .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     .announce { background: var(--accent); color: var(--accent-ink); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; text-align: center; padding: 9px 16px; }
-    .announce span { margin: 0 10px; opacity: .5; }
+    .announce .sep { margin: 0 10px; opacity: .5; }
+    /* Phones: one message at a time, cycling */
+    @media (max-width: 640px) {
+      .announce { position: relative; height: 34px; padding: 0; overflow: hidden; }
+      .announce .sep { display: none; }
+      .announce .a-msg {
+        position: absolute; inset: 0; display: grid; place-items: center; padding: 0 12px; white-space: nowrap;
+        opacity: 0; animation: annc 12s infinite;
+      }
+      .announce .a-msg:nth-child(3) { animation-delay: 4s; }
+      .announce .a-msg:nth-child(5) { animation-delay: 8s; }
+      @keyframes annc { 0% { opacity: 0; transform: translateY(8px); } 4%, 29% { opacity: 1; transform: none; } 33%, 100% { opacity: 0; transform: translateY(-8px); } }
+    }
+    @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+      .announce .a-msg { animation: none !important; }
+      .announce .a-msg:first-child { opacity: 1; }
+    }
 
     header.site { position: sticky; top: 0; z-index: 50; background: rgba(10,10,10,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
@@ -102,7 +118,7 @@
       .menu a { display: block; padding: 16px; border-top: 1px solid var(--line); }
       .burger { display: inline-flex; align-items: center; justify-content: center; }
     }
-    @media (max-width: 480px) { .nav-cta .btn { display: none; } }
+    @media (max-width: 480px) { .nav-cta { gap: 6px; } .nav-cta .btn { padding: 9px 12px; font-size: .66rem; letter-spacing: .08em; } .logo { font-size: 1.25rem; } .logo small { display: none; } }
 
     /* Hero */
     .a-hero { position: relative; overflow: hidden; padding: 110px 0 96px; }
@@ -197,7 +213,7 @@
 </head>
 <body>
 
-  <div class="announce">Since 2015<span>/</span>Sialkot, Pakistan<span>/</span>Worldwide DHL &amp; FedEx shipping</div>
+  <div class="announce"><span class="a-msg">Since 2015</span><span class="sep">/</span><span class="a-msg">Sialkot, Pakistan</span><span class="sep">/</span><span class="a-msg">Worldwide DHL &amp; FedEx shipping</span></div>
 
   <header class="site">
     <div class="wrap nav">
@@ -282,7 +298,7 @@
         <span class="eyebrow">What we make</span>
         <h2>Four product lines. <span class="gold">One factory partner.</span></h2>
         <div class="lines">
-          <a class="line rv" href="showcase.html#streetwear"><img src="images/showcase/streetwear/hoodies-01-sm.webp" alt="Purple sun-fade zip hoodie made by Perfect Outfit Intl" loading="lazy" decoding="async"><span><small>01</small>Streetwear</span></a>
+          <a class="line rv" href="showcase.html#streetwear"><img src="images/showcase/streetwear/hoodies-05-sm.webp" alt="Pink all-over print zip hoodie made by Perfect Outfit Intl" loading="lazy" decoding="async"><span><small>01</small>Streetwear</span></a>
           <a class="line rv" href="showcase.html#sportswear"><img src="images/showcase/sportswear/american-football-01-sm.webp" alt="Custom American football uniform made by Perfect Outfit Intl" loading="lazy" decoding="async"><span><small>02</small>Sportswear &amp; uniforms</span></a>
           <a class="line rv" href="showcase.html#leather"><img src="images/showcase/leather/leather-jackets-01-sm.webp" alt="Black leather jacket made by Perfect Outfit Intl" loading="lazy" decoding="async"><span><small>03</small>Leather garments</span></a>
           <a class="line rv" href="showcase.html#workwear"><img src="images/showcase/workwear/workwear-suits-01-sm.webp" alt="Reflective work suit made by Perfect Outfit Intl" loading="lazy" decoding="async"><span><small>04</small>Workwear</span></a>
@@ -338,7 +354,7 @@
   <footer>
     <div class="wrap">
       <span>© <span id="yr">2026</span> Perfect Outfit Intl. All rights reserved. Our product photos and workshop videos may not be reused without permission.</span>
-      <span><a href="index.html">Home</a> · <a href="showcase.html">Showcase</a> · <a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a></span>
+      <span><a href="index.html">Home</a> · <a href="showcase.html">Showcase</a> · <a href="https://www.instagram.com/perfect_outfit_intl/" target="_blank" rel="noopener">Instagram</a> · <a href="privacy.html">Privacy</a></span>
     </div>
   </footer>
 
